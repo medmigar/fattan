@@ -1,0 +1,100 @@
+.nav1 {
+    display: table;
+    background-color: #a0c;
+}
+
+.timeline__steps {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 8px 0;
+    position: relative;
+}
+.bloc {
+    display: table-cell;
+    width: 3px;
+}
+.timeline__step {
+    display: table-cell;
+    height: 18px;
+    font-size: 20px;
+    background: #ececec;
+    border-bottom: 3px solid rgba(0,0,0,.25);
+    text-decoration: none;
+    
+}
+
+.c1, .c2, .c3, .c4, .c5, .c6, .c7{
+    position: absolute;
+    top: -80px;
+    left: 0;
+    right: 0;
+    text-align: center;
+   display: none;
+   width: 200px;
+}
+a:hover .c1, a:hover .c2, a:hover .c3, a:hover .c4, a:hover .c5, a:hover .c6, a:hover .c7{
+    position: absolute;
+    //top: -60px;
+    left: 50px;
+    right: 0;
+    text-align: center;
+    display: block;
+
+
+}
+    .bloc {
+    display: table-cell;
+    width: 3px;
+    background-color: red;
+}
+a{
+    border-left: 1px solid rgba(0,0,0,.08);
+    font-size: 20px;
+}
+a:hover{
+    background-color: #0cecec;
+    transition: background .25s ease;
+    color: #fff;
+}
+
+
+
+
+
+.iconContainer {
+    display: table-cell;
+    vertical-align: top;
+}
+.roundIcon:hover, .roundIcon:visited {
+    color: #fff;
+}
+a.roundIcon {
+    cursor: pointer;
+    text-decoration: none;
+}
+.roundIcon {
+    //font-size: 24px;
+    display: inline-block;
+    line-height: 1.5em;
+    height: 1.5em;
+    width: 1.5em;
+    background: rgba(130,130,130,.6);
+    transition: background .1s ease;
+    color: #fff;
+    text-align: center;
+    border-radius: 100%;
+}
+.roundIcon .roundIcon__icon {
+    font-size: .9em;
+    position: relative;
+    line-height: inherit;
+    display: block;
+}
+.timeline__steps {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 8px 0;
+    position: relative;
+}   
