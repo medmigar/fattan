@@ -1,0 +1,66 @@
+﻿	html{
+		padding: 0px;
+		margin: 0px;
+		text-shadow: 2px 2px 3px #000;
+		font-family: 'Droid Arabic Kufi', sans-serif;			
+	}
+
+	@font-face {
+    	font-family: myfont;
+    	src: url(../fonts/normal.ttf);
+	}
+
+	h3{
+		text-align: center;
+	}
+	
+	.entete, .pied{
+		color: yellow;
+		text-align: center;
+		width: 90%;
+		margin:auto;
+		
+	}
+	.entete{
+		border-radius: 20px 20px 0px 0px;
+		background: linear-gradient(#34b9e7, #9a5b71, #34b9e7);
+	}
+	.pied{
+		
+		border-radius: 0px 0px 20px 20px;
+		background: -webkit-linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%);
+		
+	}
+
+	.content{
+		display: flex;
+		justify-content: space-around;
+		background-color: #fff;
+		width:90%;
+		margin:auto;		
+		
+	}
+
+	.content2{
+		display: flex;
+		justify-content: space-around;
+		background: linear-gradient(#34b9e7, #9a5b71, #34b9e7);
+		width:90%;
+		margin:auto;		
+		
+	}	
+	
+	.form{
+		background: linear-gradient(#34b9e7, #9a5b71, #34b9e7);
+		border-radius: 17px 17px 0px 0px;
+		padding:10px;
+		margin:5px;
+		color: #fff;
+	}
+
+	.im1{
+    display: block;
+    margin: auto;
+    width: 100%;
+    border-radius: 50%;
+}
