@@ -21,10 +21,7 @@
     <h1>أهلا وسهلا بك زائرنا الكريم  Bienvenue notre honorable visiteur Welcome our dear visitor</h1>
     &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
     &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;     
-</header>
-		<?php require 'menus/menu_principal.php'; ?>
-    <article>
-      <header>
+    </header>
         <h4 style="color:#dbdad9;background: -webkit-gradient(linear, left top, left bottom, from(#A9A9A9), to(#7A7A7A));text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center; max-width: 100%;">
           <span id="jour" style="color:#dbdad9;text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center;">
           </span>          
@@ -33,8 +30,7 @@
           ?>
           <br>
           <span id="cloc" style="color:#dbdad9;text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center;">
-          </span>
-          <div id="bloc"></div>     
+          </span>    
           <marquee direction="left" height="" width="100%" behavior="alternate" onMouseOver='this.stop()' onMouseOut='this.start()' scrollAmount='1' scrollDelay='20'>
             Actualités أخبار news 
           </marquee>      
@@ -51,8 +47,9 @@
           var jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
           document.getElementById("jour").innerHTML = jours[d.getDay()];
         </script>           
-        &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
-        <h1>
+        
+        <h1><span style="color: green;">
+            &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;</span>
           <details>
             <summary  style="cursor: pointer;display: inline;">
               <i class="fa fa-at"></i> Informations de contact
@@ -75,10 +72,10 @@
             <summary id="but1" style="cursor: pointer;display: inline;color: #fff;" onmouseout="ap();">
               RAGIM Mohamed
             </summary>
-          </details>
+            <span style="color: green;">
+            &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;</span>
         </h1>
-            &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;             
-      </header>                
+                           
       <p id="p1" style="text-align: center;display: none;">
         <img src="images/med2.jpg" alt="med" class="im1" style="max-width:100%;height:auto;border-radius: 50%;border: solid 3px #d6e498;" >
         <br>
@@ -92,11 +89,13 @@
       </p>
     </article>
     <img id="ain" src="images/004.jpg" alt="med" class="im1" style="display: block;margin: auto;width: 100%;">
-    <FRAMESET cols="200,*" onResize="if (navigator.family == 'nn4') window.location.reload()"> 
-  <FRAME src="index.html" name="treeframe" > 
-  <FRAME SRC="titre.htm" name="basefrm"> 
-</FRAMESET><NOFRAMES></NOFRAMES>
-    <?php require'/parties/footer.php' ?>
+    <footer>
+    Copyright &copy; 2015 - <?php echo date("Y");?> Développé et Réalisé par Ragim - Mohamed        
+    <br>
+    Tous droits réservés à RAGIM Mohamed. Il est strictement interdit de copier et de distribuer le contenu de ce site sans l'accord express de son propriétaire
+    <p style="direction: rtl;">
+    جميع الحقوق محفوظة ل : رجيم محمد ويمنع منعا باتا نسخ وتوزيع محتويات هذا الموقع دون موافقة صريحة من مالكه<a href="/fattan/"style="text-decoration: none;"><br>الرئيسية</a></p>
+</footer>
 	</div>
   <script src="js/jquery-min.js"></script>
   <script src="js/script.js"></script>

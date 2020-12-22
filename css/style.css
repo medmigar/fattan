@@ -15,8 +15,7 @@ html{
 
 body{
   line-height: 1.5;
-  font-family:  Arial, Helvetica, sans-serif; 
- // font-size: 0.8em;
+  font-family:  Arial, Helvetica, sans-serif;
   background: linear-gradient(#34b9e7, yellow,#34b9e7);
 }
 
@@ -30,7 +29,6 @@ body{
 
 #conteneur p{
   padding: 10px;
-  //font-size: 13px;
   text-align: justify;
   max-width: 90%;
   margin: auto;
@@ -38,16 +36,7 @@ body{
   box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
 }
 
-#conteneur pre{
-  margin: auto;
-  max-width: 90%;
-  color: #feef0e;
-  background-color: RoyalBlue;
-  padding: 10px;
-  overflow: auto;
-  text-shadow: 2px 2px 3px #0e0e00;
-  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.4);
-}
+
 
 #Haut{
   position: fixed;
@@ -66,7 +55,7 @@ h3,h4,h2,h5 {
   text-align: center;
   padding: 10px;
   background-color: #eee;
-  border-radius: 25px 25px 0px 0px;
+  //border-radius: 25px 25px 0px 0px;
   margin: auto;
   max-width: 90%;
 }
