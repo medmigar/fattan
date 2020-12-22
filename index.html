@@ -29,8 +29,7 @@
             echo date("d - m - Y");
           ?>
           <br>
-          <span id="cloc" style="color:#dbdad9;text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center;">
-          </span>    
+          <span id="cloc" style="color:#dbdad9;text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center;"></span>    
           <marquee direction="left" height="" width="100%" behavior="alternate" onMouseOver='this.stop()' onMouseOut='this.start()' scrollAmount='1' scrollDelay='20'>
             Actualités أخبار news 
           </marquee>      
@@ -48,7 +47,7 @@
           document.getElementById("jour").innerHTML = jours[d.getDay()];
         </script>           
         
-        <h1><span style="color: green;">
+        <h4 style="text-align: center;"><span style="color: green;">
             &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;</span>
           <details>
             <summary  style="cursor: pointer;display: inline;">
@@ -64,17 +63,17 @@
           <details>
             <summary style="cursor: pointer;display: inline;">Mise à jour</summary>
             <span> 
-              Mise à jour le: <?php echo date("d - m - Y");?>      
+              Mise à jour le: <span id="cloc" style="color:#dbdad9;text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center;">Mardi 22 Décembre 2020</span>      
             </span>
           </details>            
           <br>
           <details>
-            <summary id="but1" style="cursor: pointer;display: inline;color: #fff;" onmouseout="ap();">
+            <summary id="but1" style="cursor: pointer;display: inline;" onmouseout="ap();">
               RAGIM Mohamed
             </summary>
             <span style="color: green;">
             &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;</span>
-        </h1>
+        </h4>
                            
       <p id="p1" style="text-align: center;display: none;">
         <img src="images/med2.jpg" alt="med" class="im1" style="max-width:100%;height:auto;border-radius: 50%;border: solid 3px #d6e498;" >
