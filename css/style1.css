@@ -1,6 +1,6 @@
 .nav1 {
     display: table;
-    background-color: #a0c;
+    background-color: #a0c;    
 }
 
 .timeline__steps {
@@ -10,91 +10,81 @@
     padding: 8px 0;
     position: relative;
 }
-.bloc {
+
+a.timeline__step {
     display: table-cell;
-    width: 3px;
-}
-.timeline__step {
-    display: table-cell;
-    height: 18px;
-    font-size: 20px;
+    height: 1em;
+    /*font-size: 20px;*/
     background: #ececec;
     border-bottom: 3px solid rgba(0,0,0,.25);
     text-decoration: none;
+    transition: all 3s;
+
+}
+
+.c1, .c2, .c3, .c4, .c5, .c6, .c7{    
+    text-align: center;
+    display: none;
+    /*font-size: 20px;*/
+    z-index: auto;
     
 }
 
-.c1, .c2, .c3, .c4, .c5, .c6, .c7{
-    position: absolute;
-    top: -80px;
-    left: 0;
-    right: 0;
-    text-align: center;
-   display: none;
-   width: 200px;
-}
-a:hover .c1, a:hover .c2, a:hover .c3, a:hover .c4, a:hover .c5, a:hover .c6, a:hover .c7{
-    position: absolute;
-    //top: -60px;
-    left: 50px;
-    right: 0;
-    text-align: center;
+.nav1 a:hover .c1, .nav1 a:hover .c2, .nav1 a:hover .c3, .nav1 a:hover .c4, .nav1 a:hover .c5, .nav1 a:hover .c6, .nav1 a:hover .c7{
     display: block;
-
-
+    position: absolute;
+    top: -35px;
+    left: auto;
+    /*right: auto;*/
+    /*width: 130px;*/    
+    background: linear-gradient(#ff7f50, #ff7f50, #0cecec, #0cecec, #ff7f50, #ff7f50);
+    border-radius: 50%;
 }
-    .bloc {
+
+.bloc {
     display: table-cell;
     width: 3px;
-    background-color: red;
+    background-color: blue;
 }
-a{
+
+.nav1 a{
     border-left: 1px solid rgba(0,0,0,.08);
     font-size: 20px;
 }
-a:hover{
-    background-color: #0cecec;
-    transition: background .25s ease;
+.nav1 a:hover{
+    background-color: #0cecec;    
     color: #fff;
+    text-shadow: 2px 2px 3px #0e0e00;
 }
-
-
-
-
 
 .iconContainer {
     display: table-cell;
     vertical-align: top;
 }
-.roundIcon:hover, .roundIcon:visited {
-    color: #fff;
-}
+
+
 a.roundIcon {
     cursor: pointer;
     text-decoration: none;
 }
+
 .roundIcon {
-    //font-size: 24px;
     display: inline-block;
     line-height: 1.5em;
     height: 1.5em;
     width: 1.5em;
     background: rgba(130,130,130,.6);
-    transition: background .1s ease;
+    transition: all 3s;
     color: #fff;
     text-align: center;
     border-radius: 100%;
 }
+
 .roundIcon .roundIcon__icon {
     font-size: .9em;
     position: relative;
     line-height: inherit;
     display: block;
 }
-.timeline__steps {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    padding: 8px 0;
-    position: relative;
-}   
+
+   
