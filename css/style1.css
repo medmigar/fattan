@@ -22,21 +22,18 @@ a.timeline__step {
 
 }
 
-.c1, .c2, .c3, .c4, .c5, .c6, .c7{    
+.c1{    
     text-align: center;
     display: none;
-    /*font-size: 20px;*/
     z-index: auto;
     
 }
 
-.nav1 a:hover .c1, .nav1 a:hover .c2, .nav1 a:hover .c3, .nav1 a:hover .c4, .nav1 a:hover .c5, .nav1 a:hover .c6, .nav1 a:hover .c7{
+.nav1 a:hover .c1{
     display: block;
     position: absolute;
     top: -35px;
-    left: auto;
-    /*right: auto;*/
-    /*width: 130px;*/    
+    left: auto;   
     background: linear-gradient(#ff7f50, #ff7f50, #0cecec, #0cecec, #ff7f50, #ff7f50);
     border-radius: 50%;
 }
@@ -75,13 +72,12 @@ a.roundIcon {
     width: 1.5em;
     background: rgba(130,130,130,.6);
     transition: all 3s;
-    color: #fff;
+    color: #ff0;
     text-align: center;
     border-radius: 100%;
 }
 
 .roundIcon .roundIcon__icon {
-    font-size: .9em;
     position: relative;
     line-height: inherit;
     display: block;

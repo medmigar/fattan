@@ -64,6 +64,15 @@ h3,h4,h2,.anachid{
   text-align: center;
   padding: 10px;
   background-color: #eee;
+  /*border-radius: 25px 25px 0px 0px;*/
+  margin: auto;
+  max-width: 95%;
+}
+
+h3{
+  text-align: center;
+  padding: 10px;
+  background-color: #eee;
   border-radius: 25px 25px 0px 0px;
   margin: auto;
   max-width: 95%;
@@ -98,19 +107,9 @@ footer{
 }
 
 header{
-  margin-bottom: 0px;
+  margin-top: 20px;
   border-radius: 25px 25px 0px 0px;
   background: linear-gradient(#cce5ff, rgba(255, 99, 71, 0.1),#000, #3399ff, #34b9e7, #d3d3d3);
-}
-
-#hea{
-  margin-top: 0px;
-  width: 100%;
-  font-weight: bold;
-  color: #e7e5e5;
-  text-align: center;
-  background: linear-gradient(#2a80d5,#f58233, yellow,#f58233, #2a80d5);
-  text-shadow: 2px 2px 3px #000;
 }
 
  #conteneur .parhpe{
