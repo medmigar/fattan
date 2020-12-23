@@ -79,7 +79,7 @@
             res=texte.substring(0, texte.length-3);
         }
         res="<h1 class='h'>La liste des nombres premiers inférieurs à "+
-        n+"</h1>"+"<span class='pa'>"+res+"</span><br><a href='/fattan/maths/index.html'style='text-decoration: none;'>Math</a>";
+        n+"</h1>"+"<span class='pa'>"+res+"</span>";
         document.getElementById("conteneur").innerHTML=res;
         return tab;
     }
@@ -105,7 +105,7 @@
     n1 = parseInt(document.fo.num1.value);
     n2 = parseInt(document.fo.num2.value);
     let m=(n1*n2)/di;
-    document.getElementById("conteneur").innerHTML = "<h1 class='h'>pgcd et ppcm</h1><span class='pa'>pgcd("+n1+","+n2+")="+di+"<br>ppcm("+n1+","+n2+")="+m+"</span><br><a href='/fattan/maths/index.html'style='text-decoration: none;'>Math</a>";
+    document.getElementById("conteneur").innerHTML = "<h1 class='h'>pgcd et ppcm</h1><span class='pa'>pgcd("+n1+","+n2+")="+di+"<br>ppcm("+n1+","+n2+")="+m+"</span>";
 
 }
 
@@ -125,12 +125,12 @@ function diviseurs() {
         var pre=n1;
         var msg;
         if (tabn.length==2) {msg="<b>Remarque:</b><br>"+pre+" est un nombre premier !"}
-            else{msg="<b>Remarque:</b><br>"+pre+" n'est pas un nombre premier !<br><a href='/fattan/maths/index.html'style='text-decoration: none;'>Math</a>"}
+            else{msg="<b>Remarque:</b><br>"+pre+" n'est pas un nombre premier !"}
         for (var j = 0; j < tabn.length; j++) {
             text+=tabn[j]+",";
             var res=text.substring(0, text.length-1);
         }
-        document.getElementById("conteneur").innerHTML ="<h1 class='h'>Diviseurs du nombres: "+n1+"</h1><span class='pa'>D={"+res+"} <br>"+"le nombre des diviseurs de "+n1+" est: "+tabn.length+"<br>"+msg+"</span><br><a href='/fattan/maths/index.html'style='text-decoration: none;'>Math</a>";
+        document.getElementById("conteneur").innerHTML ="<h1 class='h'>Diviseurs du nombres: "+n1+"</h1><span class='pa'>D={"+res+"} <br>"+"le nombre des diviseurs de "+n1+" est: "+tabn.length+"<br>"+msg+"</span>";
     }
 
 
@@ -181,7 +181,7 @@ function diviseurs() {
     let af=n+" = ";
     if (facteurs.length==1){
         af+=facteurs[0];
-        document.getElementById("conteneur").innerHTML=sh+af+"<br><b>Remarque:</b><br>"+n+" est un nombre premier !</span><br><a href='/fattan/maths/index.html'style='text-decoration: none;'>Math</a>";
+        document.getElementById("conteneur").innerHTML=sh+af+"<br><b>Remarque:</b><br>"+n+" est un nombre premier !</span>";
     }
     if(facteurs.length!=1){
     while (facteurs.length!=0){
@@ -199,7 +199,7 @@ function diviseurs() {
     }
         
         let af1=af.substring(0, af.length-1);
-        document.getElementById("conteneur").innerHTML=sh+af1+"</span><h4><a href='/fattan/maths/index.html'style='text-decoration: none;'>Math</a></h4>";
+        document.getElementById("conteneur").innerHTML=sh+af1+"</span>";
         } 
     }
 
@@ -222,7 +222,7 @@ function diviseurs() {
             tex+= "<tr><td>"+L1[j]+"</td></tr>";    
         }
         tex+="</table>";
-        document.getElementById("conteneur").innerHTML=tex+"<br><a href='/fattan/maths/index.html'style='text-decoration: none;'>Math</a>";
+        document.getElementById("conteneur").innerHTML=tex;
     }
 
 
