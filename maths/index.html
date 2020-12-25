@@ -9,19 +9,51 @@
   <?php require'../parties/favicon.php' ?>
   <style>
     #fo,table,.pa{
-            display: block;
             padding: 10px;
             font-size: 20px;
             font-weight: 200;
             font-family: monospace;
             background-color: #00a89b;
-            width: 100%;
-            text-align: center;
+            width: 95%;
         }
-        .h{
-            background-color: #fff;
-            width: 90%
-            margin:auto;
+        .put{
+            background-color: #c2ea45;
+            height: 35px;
+            border-radius: 6px;
+            width: 215px;
+            font-size: 18px;
+            text-align: center;
+
+        }
+        .but{
+            background-color: #ff0;
+            height: 30px;
+            border-radius: 10px;
+            width: 105px;
+            font-size: 18px;
+        }
+        input:hover{
+            background-color: #95c8da;
+            color: red;
+        }
+
+        fieldset{
+            background-color: #ff8ccc;
+            border: 5px solid #f90;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        form{
+            background-color: #777877;
+            padding: 10px;
+            width: 300px;
+        }
+        legend{
+            color: #efe;
+            background-color: #f90;
+            border-radius: 10px;
+            font-size: 18px;
+            padding: 5px;
         }
   </style>
 </head>
@@ -33,16 +65,73 @@
     &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
     &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
     </header>
-    <div id="conteneur"> 
-    <form name="fo" id="fo">
-    Nombre 1 <input type="text" name="num1"><br>
-    Nombre 2  <input type="text" name="num2"><br>
-    <input type="button" value="Diviseurs" onclick="diviseurs()">
-    <input type="button" value="pgcd-ppcm" onclick="pgcd()">
-    <input type="button" value="Nombres Premiers" onclick="premier()">
-    <input type="button" onclick="composer()" value="Décomposer">
-    <input type="button" onclick="triangle()" value="Triangle">
-</form>
+    <div id="conteneur">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;background-color: #777877;">
+    <form name="fordiv" id="fordiv" autocomplete="on">
+        <fieldset>
+        <legend>diviseurs:</legend>
+        <label for="div">Entrer un nombre entier positif</label>
+        <input type="text" name="div" id="div" required     class="put"><br>
+        <input type="button" value="diviseurs" onclick="diviseurs()" class="but">
+        <input type="button" value="Vider" onclick="document.getElementById('affdiv').innerHTML='';document.fordiv.div.value='';" class="but">
+        </fieldset>
+    </form>    
+    <div id="affdiv"></div>
+    <form name="fortri" id="fortri" autocomplete="on">
+        <fieldset>
+        <legend>Triangle:</legend>
+        <label for="tri">Entrer un nombre entier positif</label>
+        <input type="text" name="tri" id="tri" required    class="put"><br>
+        <input type="button" onclick="triangle()" value="Triangle" class="but">
+        <input type="button" value="Vider" onclick="document.getElementById('afftri').innerHTML='';document.fortri.tri.value='';" class="but">
+        </fieldset>
+    </form>    
+    <div id="afftri"></div>   
+    <form name="forprem" id="forprem" autocomplete="on">
+        <fieldset>
+        <legend>Nombres premiers:</legend>
+        <label for="prem">Entrer un nombre entier positif</label><br>
+        <input type="text" name="prem" id="prem" required class="put"><br>
+        <input type="button" value="Premiers" onclick="premier()" class="but">
+        <input type="button" value="Vider" onclick="document.getElementById('affprem').innerHTML='';document.forprem.prem.value='';"class="but">
+        </fieldset>
+    </form>
+    <div id="affprem"></div>
+    <form name="forcomp" id="forcomp" autocomplete="on">
+        <fieldset>
+        <legend>Décomposition:</legend>
+        <label for="comp">Entrer un nombre entier positif</label><br>
+        <input type="text" name="comp" id="comp" required     class="put"><br>
+        <input type="button" onclick="composer()" value="Décomposer" class="but">
+        <input type="button" value="Vider" onclick="document.getElementById('affcomp').innerHTML='';document.forcomp.comp.value='';" class="but">
+        </fieldset>
+    </form>
+    <div id="affcomp"></div>
+    <form name="forpgcd" id="forpgcd" autocomplete="on">
+        <fieldset>
+        <legend>PGCD:</legend>
+        <label for="pgcd1">Entrer le premier nombre entier positif</label>
+        <input type="text" name="pgcd1" id="pgcd1" required   class="put"><br>
+        <label for="pgcd2">Entrer le deuxième nombre entier positif</label>
+        <input type="text" name="pgcd2" id="pgcd2" required class="put"><br>
+        <input type="button" value="PGCD" onclick="pgcd()" class="but">
+        <input type="button" value="Vider" onclick="document.getElementById('affpgcd').innerHTML='';document.forpgcd.pgcd1.value='';document.forpgcd.pgcd2.value='';" class="but">
+        </fieldset>
+    </form>    
+        <div id="affpgcd"></div>
+    <form name="forppcm" id="forppcm" autocomplete="on">
+        <fieldset>
+        <legend>PPCM:</legend>
+        <label for="ppcm1">Entrer le premier nombre entier positif</label>
+        <input type="text" name="ppcm1" id="ppcm1" required  class="put"><br>
+        <label for="ppcm2">Entrer le deuxième nombre entier positif</label>
+        <input type="text" name="ppcm2" id="ppcm2" required class="put"><br>
+        <input type="button" onclick="ppcm()" value="PPCM" class="but">
+        <input type="button" value="Vider" onclick="document.getElementById('affppmc').innerHTML='';document.forppcm.ppcm1.value='';document.forppcm.ppcm2.value='';" class="but">
+        </fieldset>
+    </form>    
+        <div id="affppmc"></div>
+   </div> 
 </div>
   <footer class="pied">
     Copyright &copy; 2015 - 2020 Développé et Réalisé par Ragim - Mohamed        
@@ -55,7 +144,7 @@
     let n=0;
 
     function premier(){
-        n=parseInt(document.fo.num1.value);
+        n=parseInt(document.forprem.prem.value);
         let p=[]; 
         let texte="";
         let res=""; 
@@ -78,15 +167,15 @@
             texte+=tab[k]+"  -  ";
             res=texte.substring(0, texte.length-3);
         }
-        res="<h1 class='h'>La liste des nombres premiers inférieurs à "+
-        n+"</h1>"+"<span class='pa'>"+res+"</span>";
-        document.getElementById("conteneur").innerHTML=res;
+        res="<h3>La liste des nombres premiers inférieurs à "+
+        n+"</h3>"+"<p>"+res+"</p>";
+        document.getElementById("affprem").innerHTML=res;
         return tab;
     }
 
     function pgcd(){
-    let  n1 = parseInt(document.fo.num1.value);
-    let  n2 = parseInt(document.fo.num2.value);
+    let  n1 = parseInt(document.forpgcd.pgcd1.value);
+    let  n2 = parseInt(document.forpgcd.pgcd2.value);
     let di="";
 
     if (n2>n1){
@@ -102,17 +191,41 @@
     }
 
     di=n2;
-    n1 = parseInt(document.fo.num1.value);
-    n2 = parseInt(document.fo.num2.value);
+    n1 = parseInt(document.forpgcd.pgcd1.value);
+    n2 = parseInt(document.forpgcd.pgcd2.value);
     let m=(n1*n2)/di;
-    document.getElementById("conteneur").innerHTML = "<h1 class='h'>pgcd et ppcm</h1><span class='pa'>pgcd("+n1+","+n2+")="+di+"<br>ppcm("+n1+","+n2+")="+m+"</span>";
+    document.getElementById("affpgcd").innerHTML = "<h3>pgcd </h3><p>pgcd("+n1+","+n2+")="+di+"</p>";
+
+}
+
+function ppcm(){
+    let  n1 = parseInt(document.forppcm.ppcm1.value);
+    let  n2 = parseInt(document.forppcm.ppcm2.value);
+    let di="";
+
+    if (n2>n1){
+        di=n1;
+        n1=n2;
+        n2=di;
+    }
+
+    while(n1>n2&&n1%n2!=0){
+        di=n2;
+        n2=n1%n2;
+        n1=di;
+    }
+
+    di=n2;
+    n1 = parseInt(document.forppcm.ppcm1.value);
+    n2 = parseInt(document.forppcm.ppcm2.value);
+    let m=(n1*n2)/di;
+    document.getElementById("affppmc").innerHTML = "<h3>ppcm </h3><p>ppcm("+n1+","+n2+")="+m+"</p>";
 
 }
 
 function diviseurs() {
         var text ="";
-      var  n1 = parseInt(document.fo.num1.value);
-      var  n2 = parseInt(document.fo.num2.value);
+      var  n1 = parseInt(document.fordiv.div.value);
       n1=Math.abs(n1);
       
         var tabn=[];
@@ -124,13 +237,13 @@ function diviseurs() {
         }
         var pre=n1;
         var msg;
-        if (tabn.length==2) {msg="<b>Remarque:</b><br>"+pre+" est un nombre premier !"}
+        if (tabn.length==2) {msg="<b>Remarque:</b><br>"+pre+"est un nombre premier !"}
             else{msg="<b>Remarque:</b><br>"+pre+" n'est pas un nombre premier !"}
         for (var j = 0; j < tabn.length; j++) {
             text+=tabn[j]+",";
             var res=text.substring(0, text.length-1);
         }
-        document.getElementById("conteneur").innerHTML ="<h1 class='h'>Diviseurs du nombres: "+n1+"</h1><span class='pa'>D={"+res+"} <br>"+"le nombre des diviseurs de "+n1+" est: "+tabn.length+"<br>"+msg+"</span>";
+        document.getElementById("affdiv").innerHTML ="<h3>Diviseurs du nombres: "+n1+"</h3><p>D={"+res+"} <br>"+"le nombre des diviseurs de "+n1+" est: "+tabn.length+"<br>"+msg+"</p>";
     }
 
 
@@ -138,7 +251,7 @@ function diviseurs() {
 
     function composer() {
         
-        n=parseInt(document.fo.num1.value);
+        n=parseInt(document.forcomp.comp.value);
         let p=[]; 
         let tab=[2];        
 
@@ -164,8 +277,8 @@ function diviseurs() {
                 i--;
             }
         }
-        n = parseInt(document.fo.num1.value);
-        let sh="<h1 class='h'>La décomposition en facteurs premiers</h1><span class='pa'>";
+        n = parseInt(document.forcomp.comp.value);
+        let sh="<h3>La décomposition en facteurs premiers</h3><p>";
         let t=n;
         for (var i = 0; i < facteurs.length; i++) {            
             sh+=t+"/"+facteurs[i]+"<br>";
@@ -181,7 +294,7 @@ function diviseurs() {
     let af=n+" = ";
     if (facteurs.length==1){
         af+=facteurs[0];
-        document.getElementById("conteneur").innerHTML=sh+af+"<br><b>Remarque:</b><br>"+n+" est un nombre premier !</span>";
+        document.getElementById("affcomp").innerHTML=sh+af+"<br><b>Remarque:</b><br>"+n+" est un nombre premier !</p>";
     }
     if(facteurs.length!=1){
     while (facteurs.length!=0){
@@ -199,12 +312,12 @@ function diviseurs() {
     }
         
         let af1=af.substring(0, af.length-1);
-        document.getElementById("conteneur").innerHTML=sh+af1+"</span>";
+        document.getElementById("affcomp").innerHTML=sh+af1+"</span>";
         } 
     }
 
     function triangle() {
-        n = parseInt(document.fo.num1.value);
+        n = parseInt(document.fortri.tri.value);
         let tex;
         let L1=[1,1], L=[1,1];
         for (i=1;i<=n;i++) {    
@@ -217,12 +330,12 @@ function diviseurs() {
             L1[i]=nL.join(" ");
         }
 
-        tex="<h1 class='h'>Triangle de Pascal</h1><table>";
+        tex="<h3>Triangle de Pascal</h3><table>";
         for (let j = 0; j < L1.length; j++){
             tex+= "<tr><td>"+L1[j]+"</td></tr>";    
         }
         tex+="</table>";
-        document.getElementById("conteneur").innerHTML=tex;
+        document.getElementById("afftri").innerHTML=tex;
     }
 
 
