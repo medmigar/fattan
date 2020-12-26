@@ -66,72 +66,79 @@
     &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
     </header>
     <div id="conteneur">
+
         <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;background-color: #777877;">
-    <form name="fordiv" id="fordiv" autocomplete="on">
-        <fieldset>
-        <legend>diviseurs:</legend>
-        <label for="div">Entrer un nombre entier positif</label>
-        <input type="text" name="div" id="div" required     class="put"><br>
-        <input type="button" value="diviseurs" onclick="diviseurs()" class="but">
-        <input type="button" value="Vider" onclick="document.getElementById('affdiv').innerHTML='';document.fordiv.div.value='';" class="but">
-        </fieldset>
-    </form>    
-    <div id="affdiv"></div>
-    <form name="fortri" id="fortri" autocomplete="on">
-        <fieldset>
-        <legend>Triangle:</legend>
-        <label for="tri">Entrer un nombre entier positif</label>
-        <input type="text" name="tri" id="tri" required    class="put"><br>
-        <input type="button" onclick="triangle()" value="Triangle" class="but">
-        <input type="button" value="Vider" onclick="document.getElementById('afftri').innerHTML='';document.fortri.tri.value='';" class="but">
-        </fieldset>
-    </form>    
-    <div id="afftri"></div>   
-    <form name="forprem" id="forprem" autocomplete="on">
-        <fieldset>
-        <legend>Nombres premiers:</legend>
-        <label for="prem">Entrer un nombre entier positif</label><br>
-        <input type="text" name="prem" id="prem" required class="put"><br>
-        <input type="button" value="Premiers" onclick="premier()" class="but">
-        <input type="button" value="Vider" onclick="document.getElementById('affprem').innerHTML='';document.forprem.prem.value='';"class="but">
-        </fieldset>
-    </form>
-    <div id="affprem"></div>
-    <form name="forcomp" id="forcomp" autocomplete="on">
-        <fieldset>
-        <legend>Décomposition:</legend>
-        <label for="comp">Entrer un nombre entier positif</label><br>
-        <input type="text" name="comp" id="comp" required     class="put"><br>
-        <input type="button" onclick="composer()" value="Décomposer" class="but">
-        <input type="button" value="Vider" onclick="document.getElementById('affcomp').innerHTML='';document.forcomp.comp.value='';" class="but">
-        </fieldset>
-    </form>
-    <div id="affcomp"></div>
-    <form name="forpgcd" id="forpgcd" autocomplete="on">
-        <fieldset>
-        <legend>PGCD:</legend>
-        <label for="pgcd1">Entrer le premier nombre entier positif</label>
-        <input type="text" name="pgcd1" id="pgcd1" required   class="put"><br>
-        <label for="pgcd2">Entrer le deuxième nombre entier positif</label>
-        <input type="text" name="pgcd2" id="pgcd2" required class="put"><br>
-        <input type="button" value="PGCD" onclick="pgcd()" class="but">
-        <input type="button" value="Vider" onclick="document.getElementById('affpgcd').innerHTML='';document.forpgcd.pgcd1.value='';document.forpgcd.pgcd2.value='';" class="but">
-        </fieldset>
-    </form>    
-        <div id="affpgcd"></div>
-    <form name="forppcm" id="forppcm" autocomplete="on">
-        <fieldset>
-        <legend>PPCM:</legend>
-        <label for="ppcm1">Entrer le premier nombre entier positif</label>
-        <input type="text" name="ppcm1" id="ppcm1" required  class="put"><br>
-        <label for="ppcm2">Entrer le deuxième nombre entier positif</label>
-        <input type="text" name="ppcm2" id="ppcm2" required class="put"><br>
-        <input type="button" onclick="ppcm()" value="PPCM" class="but">
-        <input type="button" value="Vider" onclick="document.getElementById('affppmc').innerHTML='';document.forppcm.ppcm1.value='';document.forppcm.ppcm2.value='';" class="but">
-        </fieldset>
-    </form>    
-        <div id="affppmc"></div>
-   </div> 
+        <form name="fordiv" id="fordiv" autocomplete="on">
+            <fieldset>
+                <legend>diviseurs:</legend>
+                <label for="div">Entrer un nombre entier positif</label>
+                <input type="text" name="div" id="div" required     class="put"><br>
+                <input type="button" value="diviseurs" onclick="diviseurs()" class="but">
+                <input type="button" value="Vider" onclick="document.getElementById('affdiv').innerHTML='';document.fordiv.div.value='';" class="but">
+            </fieldset>
+        </form>    
+    
+        <form name="fortri" id="fortri" autocomplete="on">
+            <fieldset>
+                <legend>Triangle:</legend>
+                <label for="tri">Entrer un nombre entier positif</label>
+                <input type="text" name="tri" id="tri" required    class="put"><br>
+                <input type="button" onclick="triangle()" value="Triangle" class="but">
+                <input type="button" value="Vider" onclick="document.getElementById('afftri').innerHTML='';document.fortri.tri.value='';" class="but">
+            </fieldset>
+        </form>    
+       
+        <form name="forprem" id="forprem" autocomplete="on">
+            <fieldset>
+                <legend>Nombres premiers:</legend>
+                <label for="prem">Entrer un nombre entier positif</label><br>
+                <input type="text" name="prem" id="prem" required class="put"><br>
+                <input type="button" value="Premiers" onclick="premier()" class="but">
+                <input type="button" value="Vider" onclick="document.getElementById('affprem').innerHTML='';document.forprem.prem.value='';"class="but">
+            </fieldset>
+        </form>
+    
+        <form name="forcomp" id="forcomp" autocomplete="on">
+            <fieldset>
+                <legend>Décomposition:</legend>
+                <label for="comp">Entrer un nombre entier positif</label><br>
+                <input type="text" name="comp" id="comp" required     class="put"><br>
+                <input type="button" onclick="composer()" value="Décomposer" class="but">
+                <input type="button" value="Vider" onclick="document.getElementById('affcomp').innerHTML='';document.forcomp.comp.value='';" class="but">
+            </fieldset>
+        </form>
+    
+        <form name="forpgcd" id="forpgcd" autocomplete="on">
+            <fieldset>
+                <legend>PGCD:</legend>
+                <label for="pgcd1">Entrer le premier nombre entier positif</label>
+                <input type="text" name="pgcd1" id="pgcd1" required   class="put"><br>
+                <label for="pgcd2">Entrer le deuxième nombre entier positif</label>
+                <input type="text" name="pgcd2" id="pgcd2" required class="put"><br>
+                <input type="button" value="PGCD" onclick="pgcd()" class="but">
+                <input type="button" value="Vider" onclick="document.getElementById('affpgcd').innerHTML='';document.forpgcd.pgcd1.value='';document.forpgcd.pgcd2.value='';" class="but">
+            </fieldset>
+        </form>    
+        
+        <form name="forppcm" id="forppcm" autocomplete="on">
+            <fieldset>
+                <legend>PPCM:</legend>
+                <label for="ppcm1">Entrer le premier nombre entier positif</label>
+                <input type="text" name="ppcm1" id="ppcm1" required  class="put"><br>
+                <label for="ppcm2">Entrer le deuxième nombre entier positif</label>
+                <input type="text" name="ppcm2" id="ppcm2" required class="put"><br>
+                <input type="button" onclick="ppcm()" value="PPCM" class="but">
+                <input type="button" value="Vider" onclick="document.getElementById('affppmc').innerHTML='';document.forppcm.ppcm1.value='';document.forppcm.ppcm2.value='';" class="but">
+            </fieldset>
+        </form>    
+        
+   </div><br>
+   <div id="affdiv"></div>
+   <div id="afftri"></div>
+   <div id="affprem"></div>
+   <div id="affcomp"></div>
+   <div id="affpgcd"></div>
+   <div id="affppmc"></div>
 </div>
   <footer class="pied">
     Copyright &copy; 2015 - 2020 Développé et Réalisé par Ragim - Mohamed        
