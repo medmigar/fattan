@@ -86,4 +86,36 @@ a.roundIcon {
     display: block;
 }
 
-   
+
+  @media only screen and (max-width: 600px) {
+  body {
+    background-color: red;
+  }
+ .nav1, .timeline__steps, a.timeline__step{
+    display: block;
+    text-align: center;
+    
+  }
+  .nav1 a{
+    border-left: 0px;
+    height: 40px;
+  }
+  .timeline__steps{
+    position: static;
+  }
+  .roundIcon {
+    background-color: #a0c;
+    width: 100%;
+  }
+  .nav1 a:hover .c1{
+    position: static;
+  }
+  .iconContainer{
+    display: block;
+    width: 100%;
+  }
+  .iconContainer a:hover .c1{
+    width: 100%;
+  }
+
+} 

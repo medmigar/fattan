@@ -31,7 +31,6 @@ body{
   margin: 0px auto;
   margin-top: 0px;
   box-shadow: 0.5px 3px 9px #000;
-  background: linear-gradient(#98afb6, #34b9e7, #add8e6, #90ee90, yellow, #d3d3d3, #34b9e7, #6d838a);
   word-wrap: break-word; /*couper les textes trop larges c'est  la césure */
 }
 
@@ -162,3 +161,8 @@ article {
 }
 
 
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: red;
+  }
+}
