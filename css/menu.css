@@ -85,23 +85,38 @@ a.roundIcon {
     line-height: inherit;
     display: block;
 }
+.btnMenu, .btnClose{
+background-color: DodgerBlue;
+  border: 4px solid #ff8ccc;
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 7px;
+}
+.btnMenu:hover, .btnClose{
+    background-color: #ff8ccc;
+    color: #000;
+    border: 4px solid DodgerBlue;
+}
+.divMenu{
+    text-align: center;
+}
 
 
   @media only screen and (max-width: 600px) {
-  body {
-    background-color: red;
-  }
- .nav1, .timeline__steps, a.timeline__step{
-    display: block;
+  
+  .nav1{
+    display: none;
     text-align: center;
-    
+  }
+ .timeline__steps, a.timeline__step{
+    display: block;
+    text-align: center;    
   }
   .nav1 a{
     border-left: 0px;
     height: 40px;
-  }
-  .timeline__steps{
-    position: static;
   }
   .roundIcon {
     background-color: #a0c;
@@ -114,8 +129,4 @@ a.roundIcon {
     display: block;
     width: 100%;
   }
-  .iconContainer a:hover .c1{
-    width: 100%;
-  }
-
 } 

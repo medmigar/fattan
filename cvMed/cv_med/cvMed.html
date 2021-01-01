@@ -7,57 +7,22 @@
 	<link rel="stylesheet" href="../../css/style.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-  	<link rel="stylesheet" href="../../css/style1.css">
+  	<link rel="stylesheet" href="../../css/menu.css">
+  	<script src="../../js/script.js"></script>
 </head>
 <body><br><br>
-	<header class="hed">
-    &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
-    &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
-    <h1>أهلا وسهلا بك زائرنا الكريم  Bienvenue notre honorable visiteur Welcome our dear visitor</h1>
-    &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
-    &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; 
-    </header>
+	<header class="hed" id="header"><script>inclureHeader(header);</script></header>
+    <div class="divMenu" id="divMenu">
+      <button class='btnMenu' onclick="basculer()" id="btnMenu"><i class='fa fa-bars'></i> Menu</button>
+    </div>
 	<div id="conteneur">
-		<nav class="nav1">
-        <div class="timeline__steps">              <!-- 
-          Premier icôme 
-          *************                             -->
-            <span class="iconContainer">
-            <a href="/fattan/" class="roundIcon timeline__roundIcon"><span class="c1">Accueil</span><i class="fa fa-home fa-fw" style="font-size: 16px;color: #fff"></i></a>
-            </span>                                 <!-- 
-          Fin du premier icôme 
-          *************                             -->
-                <span class="bloc"></span>    
-                <a href="/fattan/maths/index.html" class="timeline__step"><span class="c1">Maths</span></a>
-                <span class="bloc"></span>
-                <a href="/fattan/web/index.html" class="timeline__step"><span class="c1">Web</span></a>
-                <span class="bloc"></span>
-                <a href="#" class="timeline__step"><span class="c1">4</span></a>
-                <span class="bloc"></span>
-                <a href="#" class="timeline__step"><span class="c1">5</span></a>
-                <span class="bloc"></span>
-                <a href="#" class="timeline__step"><span class="c1">6</span></a>
-                <span class="bloc"></span>
-                <a href="#" class="timeline__step"><span class="c1">7</span></a>
-                <span class="bloc"></span>
-                <a href="#" class="timeline__step"><span class="c1">8</span></a>
-                <span class="bloc"></span>
-                                                                                    <!-- 
-                Dermier icôme 
-                *************                                                      -->
-                <span class="iconContainer">
-                <a href="#" class="roundIcon timeline__roundIcon">
-                <i class='fas fa-fist-raised' style='font-size:20px;color:#fff'></i></a>
-                </span>                                                  
-            </div>            
-        </nav>
+		<nav class="nav1" id="nav1"><script>inclureMenu(menu);</script></nav>
 		<div style="text-align: center;background-color: #f2f1f3;">	
 		<img src="../../images/alam.gif" alt="" style="height:auto;width:15%;float: left;">
 		<img src="../../images/005.gif" alt="" style="height:auto;width:15%;">
 		<img src="../../images/alam.gif" alt="" style="height:auto;width:15%;float: right;">
 		</div>
 		<hr>
-		<h1><a href="/fattan/">Accueil</a><br>Curriculum Vitæ de RAGIM Mohamed</h1><hr>
 		<div style="text-align: center; background-color: #fff;">
 			<img src="../../images/001.jpg" alt="" style="height:auto;max-width:50%;">
 			<img src="../../images/med.jpg" alt="med" style="height:auto;max-width:100%;border-radius: 50%;border: solid 3px #d6e498;">	
@@ -100,10 +65,6 @@
 		</article>
 					
 	</div>
-	<footer class="pied"><br>
-			Développé par: RAGIM Mohamed <br>
-			جميع حقوق النشر محفوظة © 2017<br>
-			<a href="/fattan/">الرئيسية</a><br><br>
-		</footer><br><br>	
+	<footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>	
 </body>
 </html>

@@ -7,17 +7,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/mad.ico"sizes="20x20">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/menu.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <script src="js/script.js"></script>
 </head>
 <body>
-    <header class="hed">
-    &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
-    &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
-    <h1>أهلا وسهلا بك زائرنا الكريم  Bienvenue notre honorable visiteur Welcome our dear visitor</h1>
-    &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
-    &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
-    </header>
+    <header class="hed" id="header"><script>inclureHeader(header);</script></header>    
 	<div id="conteneur">
     
     
@@ -29,7 +24,12 @@
           <marquee direction="left" height="" width="100%" behavior="alternate" onMouseOver='this.stop()' onMouseOut='this.start()' scrollAmount='1' scrollDelay='20'>
             Actualités أخبار news 
           </marquee>      
-        </h4>     
+        </h4>
+        <div class="divMenu" id="divMenu">
+            <button class='btnMenu' onclick="basculer()" id="btnMenu">
+                <i class='fa fa-bars'></i>Menu
+            </button>
+        </div>
         <script>
           var myVar = setInterval(myTimer, 1000);
           var d = new Date();
@@ -43,39 +43,7 @@
           document.getElementById("jour").innerHTML = jours[d.getDay()];
         </script> 
 
-        <nav class="nav1">
-        <div class="timeline__steps">              <!-- 
-          Premier icôme 
-          *************                             -->
-            <span class="iconContainer">
-            <a href="/fattan/" class="roundIcon timeline__roundIcon"><span class="c1">Accueil</span><i class="fa fa-home fa-fw" style="font-size: 16px;color: #fff"></i></a>
-            </span>                                 <!-- 
-          Fin du premier icôme 
-          *************                             -->
-                <span class="bloc"></span>    
-                <a href="/fattan/maths/index.html" class="timeline__step"><span class="c1">Maths</span></a>
-                <span class="bloc"></span>
-                <a href="/fattan/web/index.html" class="timeline__step"><span class="c1">Web</span></a>
-                <span class="bloc"></span>
-                <a href="#" class="timeline__step"><span class="c1">4</span></a>
-                <span class="bloc"></span>
-                <a href="#" class="timeline__step"><span class="c1">5</span></a>
-                <span class="bloc"></span>
-                <a href="#" class="timeline__step"><span class="c1">6</span></a>
-                <span class="bloc"></span>
-                <a href="#" class="timeline__step"><span class="c1">7</span></a>
-                <span class="bloc"></span>
-                <a href="#" class="timeline__step"><span class="c1">8</span></a>
-                <span class="bloc"></span>
-                                                                                    <!-- 
-                Dermier icôme 
-                *************                                                      -->
-                <span class="iconContainer">
-                <a href="#" class="roundIcon timeline__roundIcon">
-                <i class='fas fa-fist-raised' style='font-size:20px;color:#fff'></i></a>
-                </span>                                                  
-            </div>            
-        </nav>          
+        <nav class="nav1" id="nav1"><script>inclureMenu(menu);</script></nav>          
         
         <h4 style="text-align: center;"><span style="color: green;">
             &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;</span>
@@ -124,17 +92,10 @@
     
 	</div>
 
-    <footer class="pied">
-        Copyright &copy; 2015 - 2020 Développé et Réalisé par Ragim - Mohamed        
-        <br>
-        Tous droits réservés à RAGIM Mohamed. Il est strictement interdit de copier et de distribuer le contenu de ce site sans l'accord express de son propriétaire<br>
-        <span style="direction: rtl;">
-        جميع الحقوق محفوظة ل : رجيم محمد ويمنع منعا باتا نسخ وتوزيع محتويات هذا الموقع دون موافقة صريحة من مالكه <br><a href="/fattan/"style="text-decoration: none;">الرئيسية</a></span>
-    </footer>
+    <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
   <script src="js/jquery-min.js"></script>
-  <script src="js/script.js"></script>
-  <script>
 
+  <script>
     $(function(){
       $(function(){
         $("#but1").click(function(){
