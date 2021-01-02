@@ -122,8 +122,11 @@ background-color: DodgerBlue;
     background-color: #a0c;
     width: 100%;
   }
-  .nav1 a:hover .c1{
+  .nav1 a .c1{
+    display: block;
     position: static;
+    top: 0px;
+    left: auto;
   }
   .iconContainer{
     display: block;
