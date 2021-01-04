@@ -13,14 +13,14 @@ var menu='<div class="timeline__steps">              <!-- '+
           'Premier icôme '+
           '*************                             -->'+
             '<span class="iconContainer">'+
-            '<a href="/fattan/" class="roundIcon timeline__roundIcon"><span class="c1"><i class="fa fa-home fa-fw" style="font-size: 16px;color: #fff"></i> Accueil</span></a>'+
+            '<a href="/fattan/" class="roundIcon timeline__roundIcon"><i class="fa fa-home fa-fw"></i></a>'+
             '</span>                                 <!-- '+
           'Fin du premier icôme '+
           '*************                             -->'+
                 '<span class="bloc"></span>    '+
-                '<a href="/fattan/maths/index.html" class="timeline__step"><span class="c1">&#8731; Maths</span></a>'+
+                '<a href="/fattan/maths/index.html" class="timeline__step"><span class="c1"><i class="fas fa-square-root-alt"></i> Maths</span></a>'+
                 '<span class="bloc"></span>'+
-                '<a href="/fattan/web/index.html" class="timeline__step"><span class="c1">&#120142; Web</span></a>'+
+                '<a href="/fattan/web/index.html" class="timeline__step"><span class="c1">Web</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="#" class="timeline__step"><span class="c1">4</span></a>'+
                 '<span class="bloc"></span>'+
