@@ -1,10 +1,8 @@
  function basculer() {
       var x = document.getElementById('nav1');
       if (x.style.display === 'none') {
-        x.style.display = 'block';
         document.getElementById('btnMenu').innerHTML="<i class='fa fa-close'></i> Close";
       } else {
-          x.style.display = 'none';
           document.getElementById('btnMenu').innerHTML="<i class='fa fa-bars'></i> Menu";
         }
     }
@@ -65,4 +63,24 @@ var footer="Copyright &copy; 2015 - 2020 Développé et Réalisé par Ragim - Mo
 		function inclureFooter(t){
 			document.getElementById('footer').innerHTML=t;
 		}
-	
+// Calculatrice =============
+
+//fonction qui évalue le chiffre et renvoie la sortie
+function calculer(){
+    let a = document.getElementById("output").value;
+    let b = a+" = "+eval(a);
+    document.getElementById("output").value = b;
+}
+
+//fonction qui affiche la valeur
+function afficherCal(val){ 
+    document.getElementById("output").value+=val;
+}
+
+//fonction qui efface l'écran
+function effacer(){ 
+    document.getElementById("output").value = "";
+}
+
+
+  	

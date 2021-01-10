@@ -8,18 +8,8 @@
   font-family: myfont;
   src: url(../fonts/normal.ttf);
 }
-html{
- background-color: #1abc9c;
-}
 
 body{
-  scrollbar-base-color : #aa00cc;
-  scrollbar-arrow-color :  #00225A ;
-  scrollbar-track-color : #DEE0EA ;
-  scrollbar-3dlight-color : #FFFFFF ;
-  scrollbar-highlight-color : #FFFFFF ;
-  scrollbar-shadow-color : #666666 ;
-  scrollbar-darkshadow-color : #000000 ;
   line-height: 1.5;
   font-family: Arial, 'Segoe UI', Tahoma, Geneva, Verdana, Arial, sans-serif;
   font-size: small;
@@ -158,11 +148,4 @@ article {
   width:98%;
   border-radius: 25px 25px 0px 0px;
   padding: 10px;
-}
-
-
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: red;
-  }
 }

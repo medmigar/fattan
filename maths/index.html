@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <script src="../js/jquery-min.js"></script>
   <style>
     #fo,table,.pa{
             padding: 10px;
@@ -28,15 +29,16 @@
             box-shadow: 5px 10px 18px #888f88;
         }
         .but{
-            background-color: #ff0;
+            background-color: #f59f00;
             height: 30px;
             border-radius: 15px;
             width: 105px;
             font-size: 18px;
+            color: #fff;
         }
         input:hover{
             background-color: #95c8da;
-            color: red;
+            color: green;
         }
 
         fieldset{
@@ -61,6 +63,15 @@
             font-size: 18px;
             padding: 5px;
         }
+        #mydialog{ 
+  border-radius: 10px;  
+  display: none;
+  text-align: center;
+  background-color: #f1f0a1;
+  width: 300px;
+    margin:auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
         @media only screen and (max-width: 600px) {
   body {
@@ -71,293 +82,335 @@
   flex-direction: column; 
     justify-content: center; 
 }
-
   </style>
   <script src="../js/script.js"></script>
+   <script>
+        function Aff() {
+            var dialog = document.getElementById('mydialog');
+            dialog.style.display='block'; 
+            dialog.showModal();
+        }
+        function Ouvr() {
+          var ouvr=document.getElementById('ouvrir').value;
+          var dialog = document.getElementById('mydialog');  
+        if (ouvr!='Med') {dialog.close(); ouvr.value=""; Aff();}
+            
+       else{
+           
+           dialog.close();
+            dialog.style.display='none';
+
+        }
+    }
+
+    </script>
 </head>
 <body>
-  <header class="hed" id="header"><script>inclureHeader(header);</script></header>
-  
+    <dialog id="mydialog">
+        <h1><span>&#127799;</span><br>Entrer dans ce champ un nombre entier positif</h1> 
+        <button class='btnMenu' onclick="var dialog = document.getElementById('mydialog');dialog.close();dialog.style.display='none';"><i class='fa fa-close'></i>
+        </button> 
+    </dialog>    
+    <header class="hed" id="header"><script>inclureHeader(header);</script></header>  
     <div id="conteneur">
-        <nav class="nav1"id="nav1"><script>inclureMenu(menu);</script></nav>
-        <div class="divMenu" id="divMenu" style="box-shadow: 15px 10px 18px #888;">
-      <button class='btnMenu' onclick="basculer()" id="btnMenu"><i class='fa fa-bars'></i> Menu</button>
-    </div>
+        <div id="sc">
+            <nav class="nav1"id="nav1"><script>inclureMenu(menu);</script></nav>
+        </div>
+        <div class="divMenu" id="divMenu">
+            <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+            <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+        </div>        
+        <script>
+            $(function(){
+
+              $("#btnClose").click(function(){
+                $("#sc").slideUp(3000);
+                $('#btnClose').hide();
+                $('#btnMenu').show();
+              });
+
+              $("#btnMenu").click(function(){
+                $("#sc").slideDown(3000);
+                $('#btnMenu').hide();
+                $('#btnClose').show();
+              });
+            });
+        </script>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;background-color: #cecbc9;">
-        <form name="fordiv" id="fordiv" autocomplete="on">
-            <fieldset>
-                <legend>diviseurs:</legend>
-                <label for="div">Entrer un nombre entier positif</label>
-                <input type="text" name="div" id="div" required     class="put"><br>
-                <input type="button" value="diviseurs" onclick="diviseurs()" class="but">
-                <input type="button" value="Vider" onclick="document.getElementById('affdiv').innerHTML='';document.fordiv.div.value='';" class="but">
-            </fieldset>
-        </form>    
-    
-        <form name="fortri" id="fortri" autocomplete="on">
-            <fieldset>
-                <legend>Triangle:</legend>
-                <label for="tri">Entrer un nombre entier positif</label>
-                <input type="text" name="tri" id="tri" required    class="put"><br>
-                <input type="button" onclick="triangle()" value="Triangle" class="but">
-                <input type="button" value="Vider" onclick="document.getElementById('afftri').innerHTML='';document.fortri.tri.value='';" class="but">
-            </fieldset>
-        </form>    
-       
-        <form name="forprem" id="forprem" autocomplete="on">
-            <fieldset>
-                <legend>Nombres premiers:</legend>
-                <label for="prem">Entrer un nombre entier positif</label><br>
-                <input type="text" name="prem" id="prem" required class="put"><br>
-                <input type="button" value="Premiers" onclick="premier()" class="but">
-                <input type="button" value="Vider" onclick="document.getElementById('affprem').innerHTML='';document.forprem.prem.value='';"class="but">
-            </fieldset>
-        </form>
-    
-        <form name="forcomp" id="forcomp" autocomplete="on">
-            <fieldset>
-                <legend>Décomposition:</legend>
-                <label for="comp">Entrer un nombre entier positif</label><br>
-                <input type="text" name="comp" id="comp" required     class="put"><br>
-                <input type="button" onclick="composer()" value="Décomposer" class="but">
-                <input type="button" value="Vider" onclick="document.getElementById('affcomp').innerHTML='';document.forcomp.comp.value='';" class="but">
-            </fieldset>
-        </form>
-    
-        <form name="forpgcd" id="forpgcd" autocomplete="on">
-            <fieldset>
-                <legend>PGCD:</legend>
-                <label for="pgcd1">Entrer le premier nombre entier positif</label>
-                <input type="text" name="pgcd1" id="pgcd1" required   class="put"><br>
-                <label for="pgcd2">Entrer le deuxième nombre entier positif</label>
-                <input type="text" name="pgcd2" id="pgcd2" required class="put"><br>
-                <input type="button" value="PGCD" onclick="pgcd()" class="but">
-                <input type="button" value="Vider" onclick="document.getElementById('affpgcd').innerHTML='';document.forpgcd.pgcd1.value='';document.forpgcd.pgcd2.value='';" class="but">
-            </fieldset>
-        </form>    
+            <form name="fordiv" id="fordiv" autocomplete="on">
+                <fieldset>
+                    <legend>diviseurs:</legend>
+                    <label for="div">Entrer un nombre entier positif</label>
+                    <input type="text" name="div" id="div" required class="put">
+                    <span id="erreur"></span><br>
+                    <input type="button" value="diviseurs" onclick="diviseurs()" class="but">
+                    <input type="button" value="Vider" onclick="document.getElementById('affdiv').innerHTML='';document.fordiv.div.value='';document.getElementById('erreur').innerHTML='';" class="but">
+                </fieldset>
+            </form>    
         
-        <form name="forppcm" id="forppcm" autocomplete="on">
-            <fieldset>
-                <legend>PPCM:</legend>
-                <label for="ppcm1">Entrer le premier nombre entier positif</label>
-                <input type="text" name="ppcm1" id="ppcm1" required  class="put"><br>
-                <label for="ppcm2">Entrer le deuxième nombre entier positif</label>
-                <input type="text" name="ppcm2" id="ppcm2" required class="put"><br>
-                <input type="button" onclick="ppcm()" value="PPCM" class="but">
-                <input type="button" value="Vider" onclick="document.getElementById('affppmc').innerHTML='';document.forppcm.ppcm1.value='';document.forppcm.ppcm2.value='';" class="but">
-            </fieldset>
-        </form>    
+            <form name="fortri" id="fortri" autocomplete="on">
+                <fieldset>
+                    <legend>Triangle:</legend>
+                    <label for="tri">Entrer un nombre entier positif</label>
+                    <input type="text" name="tri" id="tri" required    class="put"><br>
+                    <input type="button" onclick="triangle()" value="Triangle" class="but">
+                    <input type="button" value="Vider" onclick="document.getElementById('afftri').innerHTML='';document.fortri.tri.value='';" class="but">
+                </fieldset>
+            </form>    
+           
+            <form name="forprem" id="forprem" autocomplete="on">
+                <fieldset>
+                    <legend>Nombres premiers:</legend>
+                    <label for="prem">Entrer un nombre entier positif</label><br>
+                    <input type="text" name="prem" id="prem" required class="put"><br>
+                    <input type="button" value="Premiers" onclick="premier()" class="but">
+                    <input type="button" value="Vider" onclick="document.getElementById('affprem').innerHTML='';document.forprem.prem.value='';"class="but">
+                </fieldset>
+            </form>
         
-   </div><br>
-   <div id="affdiv"></div>
-   <div id="afftri"></div>
-   <div id="affprem"></div>
-   <div id="affcomp"></div>
-   <div id="affpgcd"></div>
-   <div id="affppmc"></div>
-</div>
-  <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
-<script>
-    let n=0;
-
-    function premier(){
-        n=parseInt(document.forprem.prem.value);
-        let p=[]; 
-        let texte="";
-        let res=""; 
-        let tab=[2];        
-
-        for (let j = 3; j <=n; j++){
-            if (j%2!=0) {
-                for (let i=1; i<=j; i++) {
-                    if (j%i==0){
-                        p.push(i);
-                    }
-                }
-                if (p.length==2){
-                    tab.push(j);
-                }
-                p.splice(0, p.length);
-            }
-        }
-        for (let k = 0; k < tab.length; k++) {
-            texte+=tab[k]+"  -  ";
-            res=texte.substring(0, texte.length-3);
-        }
-        res="<h3>La liste des nombres premiers inférieurs à "+
-        n+"</h3>"+"<p>"+res+"</p>";
-        document.getElementById("affprem").innerHTML=res;
-        return tab;
-    }
-
-    function pgcd(){
-    let  n1 = parseInt(document.forpgcd.pgcd1.value);
-    let  n2 = parseInt(document.forpgcd.pgcd2.value);
-    let di="";
-
-    if (n2>n1){
-        di=n1;
-        n1=n2;
-        n2=di;
-    }
-
-    while(n1>n2&&n1%n2!=0){
-        di=n2;
-        n2=n1%n2;
-        n1=di;
-    }
-
-    di=n2;
-    n1 = parseInt(document.forpgcd.pgcd1.value);
-    n2 = parseInt(document.forpgcd.pgcd2.value);
-    let m=(n1*n2)/di;
-    document.getElementById("affpgcd").innerHTML = "<h3>pgcd </h3><p>pgcd("+n1+","+n2+")="+di+"</p>";
-
-}
-
-function ppcm(){
-    let  n1 = parseInt(document.forppcm.ppcm1.value);
-    let  n2 = parseInt(document.forppcm.ppcm2.value);
-    let di="";
-
-    if (n2>n1){
-        di=n1;
-        n1=n2;
-        n2=di;
-    }
-
-    while(n1>n2&&n1%n2!=0){
-        di=n2;
-        n2=n1%n2;
-        n1=di;
-    }
-
-    di=n2;
-    n1 = parseInt(document.forppcm.ppcm1.value);
-    n2 = parseInt(document.forppcm.ppcm2.value);
-    let m=(n1*n2)/di;
-    document.getElementById("affppmc").innerHTML = "<h3>ppcm </h3><p>ppcm("+n1+","+n2+")="+m+"</p>";
-
-}
-
-function diviseurs() {
-        var text ="";
-      var  n1 = parseInt(document.fordiv.div.value);
-      n1=Math.abs(n1);
-      
-        var tabn=[];
-        for (var i = 1; i <= n1; i++) {
-            if (n1%i==0) {
-                tabn.push(i);
-            }
+            <form name="forcomp" id="forcomp" autocomplete="on">
+                <fieldset>
+                    <legend>Décomposition:</legend>
+                    <label for="comp">Entrer un nombre entier positif</label><br>
+                    <input type="text" name="comp" id="comp" required     class="put"><br>
+                    <input type="button" onclick="composer()" value="Décomposer" class="but">
+                    <input type="button" value="Vider" onclick="document.getElementById('affcomp').innerHTML='';document.forcomp.comp.value='';" class="but">
+                </fieldset>
+            </form>
+        
+            <form name="forpgcd" id="forpgcd" autocomplete="on">
+                <fieldset>
+                    <legend>PGCD:</legend>
+                    <label for="pgcd1">Entrer le premier nombre entier positif</label>
+                    <input type="text" name="pgcd1" id="pgcd1" required   class="put"><br>
+                    <label for="pgcd2">Entrer le deuxième nombre entier positif</label>
+                    <input type="text" name="pgcd2" id="pgcd2" required class="put"><br>
+                    <input type="button" value="PGCD" onclick="pgcd()" class="but">
+                    <input type="button" value="Vider" onclick="document.getElementById('affpgcd').innerHTML='';document.forpgcd.pgcd1.value='';document.forpgcd.pgcd2.value='';" class="but">
+                </fieldset>
+            </form>    
             
-        }
-        var pre=n1;
-        var msg;
-        if (tabn.length==2) {msg="<b>Remarque:</b><br>"+pre+"est un nombre premier !"}
-            else{msg="<b>Remarque:</b><br>"+pre+" n'est pas un nombre premier !"}
-        for (var j = 0; j < tabn.length; j++) {
-            text+=tabn[j]+",";
-            var res=text.substring(0, text.length-1);
-        }
-        document.getElementById("affdiv").innerHTML ="<h3>Diviseurs du nombres: "+n1+"</h3><p>D={"+res+"} <br>"+"le nombre des diviseurs de "+n1+" est: "+tabn.length+"<br>"+msg+"</p>";
-    }
+            <form name="forppcm" id="forppcm" autocomplete="on">
+                <fieldset>
+                    <legend>PPCM:</legend>
+                    <label for="ppcm1">Entrer le premier nombre entier positif</label>
+                    <input type="text" name="ppcm1" id="ppcm1" required  class="put"><br>
+                    <label for="ppcm2">Entrer le deuxième nombre entier positif</label>
+                    <input type="text" name="ppcm2" id="ppcm2" required class="put"><br>
+                    <input type="button" onclick="ppcm()" value="PPCM" class="but">
+                    <input type="button" value="Vider" onclick="document.getElementById('affppmc').innerHTML='';document.forppcm.ppcm1.value='';document.forppcm.ppcm2.value='';" class="but">
+                </fieldset>
+            </form>
+        </div><br>
+       <div id="affdiv"></div>
+       <div id="afftri"></div>
+       <div id="affprem"></div>
+       <div id="affcomp"></div>
+       <div id="affpgcd"></div>
+       <div id="affppmc"></div>
+    </div>
+    <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+    <script>
+        let n=0;
 
+        function premier(){
+            n=parseInt(document.forprem.prem.value);
+            let p=[]; 
+            let texte="";
+            let res=""; 
+            let tab=[2];              
 
-
-
-    function composer() {
-        
-        n=parseInt(document.forcomp.comp.value);
-        let p=[]; 
-        let tab=[2];        
-
-        for (let j = 3; j <=n; j++){
-            if (j%2!=0) {
-                for (let i=1; i<=j; i++) {
-                    if (j%i==0){
-                        p.push(i);
+            for (let j = 3; j <=n; j++){
+                if (j%2!=0) {
+                    for (let i=1; i<=j; i++) {
+                        if (j%i==0){
+                            p.push(i);
+                        }
                     }
+                    if (p.length==2){
+                        tab.push(j);
+                    }
+                    p.splice(0, p.length);
                 }
-                if (p.length==2){
-                    tab.push(j);
+            }
+            for (let k = 0; k < tab.length; k++) {
+                texte+=tab[k]+"  -  ";
+                res=texte.substring(0, texte.length-3);
+            }
+            res="<h3>La liste des nombres premiers inférieurs à "+
+            n+"</h3>"+"<p>"+res+"</p>";
+            document.getElementById("affprem").innerHTML=res;
+            return tab;            
+        }
+
+        function pgcd(){
+            let  n1 = parseInt(document.forpgcd.pgcd1.value);
+            let  n2 = parseInt(document.forpgcd.pgcd2.value);
+            let di="";
+
+            if (n2>n1){
+                di=n1;
+                n1=n2;
+                n2=di;
+            }
+
+            while(n1>n2&&n1%n2!=0){
+                di=n2;
+                n2=n1%n2;
+                n1=di;
+            }
+
+            di=n2;
+            n1 = parseInt(document.forpgcd.pgcd1.value);
+            n2 = parseInt(document.forpgcd.pgcd2.value);
+            let m=(n1*n2)/di;
+            document.getElementById("affpgcd").innerHTML = "<h3>pgcd </h3><p>pgcd("+n1+","+n2+")="+di+"</p>";
+        }
+
+        function ppcm(){
+            let  n1 = parseInt(document.forppcm.ppcm1.value);
+            let  n2 = parseInt(document.forppcm.ppcm2.value);
+            let di="";
+
+            if (n2>n1){
+                di=n1;
+                n1=n2;
+                n2=di;
+            }
+
+            while(n1>n2&&n1%n2!=0){
+                di=n2;
+                n2=n1%n2;
+                n1=di;
+            }
+
+            di=n2;
+            n1 = parseInt(document.forppcm.ppcm1.value);
+            n2 = parseInt(document.forppcm.ppcm2.value);
+            let m=(n1*n2)/di;
+            document.getElementById("affppmc").innerHTML = "<h3>ppcm </h3><p>ppcm("+n1+","+n2+")="+m+"</p>";
+        }
+
+        function diviseurs() {
+            var str = document.fordiv.div.value;
+            var motif = /[a-zA-Z §:;,!%²<>&é"'è(_çà)=°$?ùµ*%£¨!\-\+\^\/\[\.\]\{\}]/g;
+            var result = str.match(motif);
+            var text ="";
+            var  n1 = parseInt(document.fordiv.div.value);
+            var msg=document.getElementById('div');
+            n1=Math.abs(n1);
+
+              if (msg.validity.valueMissing || result!=null) {        
+                document.getElementById('erreur').innerHTML="<br>caractères invalides !";
+                document.getElementById('erreur').style.color="red";
+                document.getElementById('erreur').style.backgroundColor='#fff';
+                var dialog = document.getElementById('mydialog');
+                    dialog.style.display='block'; 
+                    dialog.showModal();
+              }else{
+                document.getElementById('erreur').innerHTML="";
+                var tabn=[];
+                for (var i = 1; i <= n1; i++) {
+                    if (n1%i==0) {
+                        tabn.push(i);
+                    }
+                    
                 }
-                p.splice(0, p.length);
-            }
+                var pre=n1;
+                var msg;
+                if (tabn.length==2) {msg="<b>Remarque:</b><br>"+pre+"est un nombre premier !"}
+                    else{msg="<b>Remarque:</b><br>"+pre+" n'est pas un nombre premier !"}
+                for (var j = 0; j < tabn.length; j++) {
+                    text+=tabn[j]+",";
+                    var res=text.substring(0, text.length-1);
+                }
+                document.getElementById("affdiv").innerHTML ="<h3>Diviseurs du nombres: "+n1+"</h3><p>D={"+res+"} <br>"+"le nombre des diviseurs de "+n1+" est: "+tabn.length+"<br>"+msg+"</p>";
+            }            
         }
 
-        let facteurs=[];        
-        for (let i = 0; i < tab.length; i++) {
-            if (n%tab[i]==0) {
-                facteurs.push(tab[i]);
-                n=n/tab[i];
-                i--;
+        function composer() {
+            
+            n=parseInt(document.forcomp.comp.value);
+            let p=[]; 
+            let tab=[2];        
+
+            for (let j = 3; j <=n; j++){
+                if (j%2!=0) {
+                    for (let i=1; i<=j; i++) {
+                        if (j%i==0){
+                            p.push(i);
+                        }
+                    }
+                    if (p.length==2){
+                        tab.push(j);
+                    }
+                    p.splice(0, p.length);
+                }
             }
-        }
-        n = parseInt(document.forcomp.comp.value);
-        let sh="<h3>La décomposition en facteurs premiers</h3><p>";
-        let t=n;
-        for (var i = 0; i < facteurs.length; i++) {            
-            sh+=t+"/"+facteurs[i]+"<br>";
-            t=t/facteurs[i];
-        }
-        sh+="1/1<br>";
 
-
-
-
-    let puis=0;
-    let rep=facteurs.length;      
-    let af=n+" = ";
-    if (facteurs.length==1){
-        af+=facteurs[0];
-        document.getElementById("affcomp").innerHTML=sh+af+"<br><b>Remarque:</b><br>"+n+" est un nombre premier !</p>";
-    }
-    if(facteurs.length!=1){
-    while (facteurs.length!=0){
-        for (var i = 1; i < rep; i++) {
-            if (facteurs[i-1]==facteurs[i]) {
-                puis++;
+            let facteurs=[];        
+            for (let i = 0; i < tab.length; i++) {
+                if (n%tab[i]==0) {
+                    facteurs.push(tab[i]);
+                    n=n/tab[i];
+                    i--;
+                }
             }
-            if (facteurs[i-1]!=facteurs[i]||i==facteurs.length-1) {
-                puis++;
-                af+=facteurs[i-1]+"<sup>"+puis+"</sup>x";
-                break;
+            n = parseInt(document.forcomp.comp.value);
+            let sh="<h3>La décomposition en facteurs premiers</h3><p>";
+            let t=n;
+            for (var i = 0; i < facteurs.length; i++) {            
+                sh+=t+"/"+facteurs[i]+"<br>";
+                t=t/facteurs[i];
             }
-        }facteurs.splice(0, puis);
-        puis=0;
-    }
-        
-        let af1=af.substring(0, af.length-1);
-        document.getElementById("affcomp").innerHTML=sh+af1+"</span>";
-        } 
-    }
-
-    function triangle() {
-        n = parseInt(document.fortri.tri.value);
-        let tex;
-        let L1=[1,1], L=[1,1];
-        for (i=1;i<=n;i++) {    
-            let nL=[];   
-            nL[0]=1;nL[i]=1;
-            for (j=1;j<i;j++) {
-                nL[j]=L[j-1]+L[j];    
+            sh+="1/1<br>";
+            let puis=0;
+            let rep=facteurs.length;      
+            let af=n+" = ";
+            if (facteurs.length==1){
+                af+=facteurs[0];
+                document.getElementById("affcomp").innerHTML=sh+af+"<br><b>Remarque:</b><br>"+n+" est un nombre premier !</p>";
             }
-            L=nL;
-            L1[i]=nL.join(" ");
+            if(facteurs.length!=1){
+            while (facteurs.length!=0){
+                for (var i = 1; i < rep; i++) {
+                    if (facteurs[i-1]==facteurs[i]) {
+                        puis++;
+                    }
+                    if (facteurs[i-1]!=facteurs[i]||i==facteurs.length-1) {
+                        puis++;
+                        af+=facteurs[i-1]+"<sup>"+puis+"</sup>x";
+                        break;
+                    }
+                }facteurs.splice(0, puis);
+                puis=0;
+            }            
+                let af1=af.substring(0, af.length-1);
+                document.getElementById("affcomp").innerHTML=sh+af1+"</span>";
+            } 
         }
 
-        tex="<h3>Triangle de Pascal</h3><table>";
-        for (let j = 0; j < L1.length; j++){
-            tex+= "<tr><td>"+L1[j]+"</td></tr>";    
+        function triangle() {
+            n = parseInt(document.fortri.tri.value);
+            let tex;
+            let L1=[1,1], L=[1,1];
+            for (i=1;i<=n;i++) {    
+                let nL=[];   
+                nL[0]=1;nL[i]=1;
+                for (j=1;j<i;j++) {
+                    nL[j]=L[j-1]+L[j];    
+                }
+                L=nL;
+                L1[i]=nL.join(" ");
+            }
+
+            tex="<h3>Triangle de Pascal</h3><table>";
+            for (let j = 0; j < L1.length; j++){
+                tex+= "<tr><td>"+L1[j]+"</td></tr>";    
+            }
+            tex+="</table>";
+            document.getElementById("afftri").innerHTML=tex;
         }
-        tex+="</table>";
-        document.getElementById("afftri").innerHTML=tex;
-    }
-
-
-
-
-</script>
+    </script>
 </body>
 </html>

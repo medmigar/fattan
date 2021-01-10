@@ -2,137 +2,107 @@
 <html lang="fr">
 <head>
 	<title>Page principale</title>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/mad.ico"sizes="20x20">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/menu.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="css/menu.css">
     <script src="js/script.js"></script>
+    <script src="js/jquery-min.js"></script>
 </head>
 <body>
-    <header class="hed" id="header"><script>inclureHeader(header);</script></header>    
+  <header class="header" id="header"><script>inclureHeader(header);</script></header>    
 	<div id="conteneur">
-    
-    
-        <h4 style="color:#dbdad9;background: -webkit-gradient(linear, left top, left bottom, from(#A9A9A9), to(#7A7A7A));text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center; max-width: 100%;">
-          <span id="jour" style="color:#dbdad9;text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center;">
-          </span>
+    <div id="sc">
+      <nav class="nav1"id="nav1"><script>inclureMenu(menu);</script></nav>
+    </div>
+    <div class="divMenu" id="divMenu"style="background-color: #a9a9a9;max-width: 95%;margin: auto;">
+      <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+      <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+    </div>    
+    <h4 style="color:#dbdad9;background-color: #a9a9a9;text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center; max-width: 95%;">
+      <span id="jour" style="color:#dbdad9;padding: 5px;text-align: center;"></span>
           <br>
-          <span id="cloc" style="color:#dbdad9;text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center;"></span>    
-          <marquee direction="left" height="" width="100%" behavior="alternate" onMouseOver='this.stop()' onMouseOut='this.start()' scrollAmount='1' scrollDelay='20'>
-            Actualités أخبار news 
-          </marquee>      
-        </h4>
-        <div class="divMenu" id="divMenu">
-            <button class='btnMenu' onclick="basculer()" id="btnMenu">
-                <i class='fa fa-bars'></i>Menu
-            </button>
-        </div>
-        <script>
-          var myVar = setInterval(myTimer, 1000);
-          var d = new Date();
+      <span id="cloc" style="color:#dbdad9;text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center;"></span>    
+      <marquee direction="left" height="" width="100%" behavior="alternate" onMouseOver='this.stop()' onMouseOut='this.start()' scrollAmount='1' scrollDelay='20'>
+        Actualités أخبار news 
+      </marquee>      
+    </h4>        
+    <script>
+      $(function(){
 
-          function myTimer() {
-            var d = new Date();
-            document.getElementById("cloc").innerHTML = '&#9956;'+d.toLocaleTimeString()+" الرباط"+'&#9956;';
+        $("#btnClose").click(function(){
+          $("#sc").slideUp(3000);
+          $('#btnClose').hide();
+          $('#btnMenu').show();
+        });
 
-          }            
-          var jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-          document.getElementById("jour").innerHTML = jours[d.getDay()];
-        </script> 
+        $("#btnMenu").click(function(){
+          $("#sc").slideDown(3000);
+            $('#btnMenu').hide();
+            $('#btnClose').show();
+        });
+      });
 
-        <nav class="nav1" id="nav1"><script>inclureMenu(menu);</script></nav>          
-        
-        <h4 style="text-align: center;"><span style="color: green;">
-            &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;</span>
-          <details>
-            <summary  style="cursor: pointer;display: inline;">
-              <i class="fa fa-at"></i> Informations de contact
-            </summary>
-            <span>
-              <a href="mailto:tardamed@gmail.com" style="text-decoration: none;color: #fff;">
-                &#9993; tardamed@gmail.com
-              </a>
-            </span> 
-          </details>
-          <br>
-          <details>
-            <summary style="cursor: pointer;display: inline;">Mise à jour</summary>
-            <span> 
-              Mise à jour le: <span id="cloc" style="color:#600;text-shadow: 1px 1px 1px #1e5c9a;padding: 5px;text-align: center;">Dimanche 27 Décembre 2020</span>      
-            </span>
-          </details>            
-          <br>
-          <details>
-            <summary id="but1" style="cursor: pointer;display: inline;" onmouseout="ap();">
-              RAGIM Mohamed
-            </summary>
-            <span style="color: green;">
-            &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;</span>
+      var myVar = setInterval(myTimer, 1000);
+      var d = new Date();
 
-        </h4>
-                           
-      <p id="p1" style="text-align: center;display: none;">
-        <img src="images/med2.jpg" alt="med" class="im1" style="max-width:100%;height:auto;border-radius: 50%;border: solid 3px #d6e498;" >
+      function myTimer() {
+        var d = new Date();
+        document.getElementById("cloc").innerHTML = '&#9956;'+d.toLocaleTimeString()+" الرباط"+'&#9956;';
+
+      }
+
+      var jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+      document.getElementById("jour").innerHTML = jours[d.getDay()];
+    </script>        
+    <h4 style="text-align: center;">
+      <span style="color: green;">
+        &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
+      </span>
+      <details>
+        <summary  style="cursor: pointer;display: inline;">
+          <i class="fa fa-at"></i> Informations de contact
+        </summary>
+        <span>
+          <a href="mailto:tardamed@gmail.com" style="text-decoration: none;color: #fff;">
+            &#9993; tardamed@gmail.com
+          </a>
+        </span> 
+      </details><br>
+      <details>
+        <summary style="cursor: pointer;display: inline;">Mise à jour</summary>
+        <span> 
+          Mise à jour le: <span style="color:#f90;text-shadow: 1px 1px 3px #09a;padding: 5px;text-align: center;">Samedi 09 Janvier 2021</span>      
+        </span>
+      </details><br>
+      <details>
+        <summary id="but1" style="cursor: pointer;display: inline;">RAGIM Mohamed</summary>
+        <span style="color: green;">
+          &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
+        </span>
+    </h4>                           
+    <p id="p1" style="text-align: center;display: none;">
+      <img src="images/med2.jpg" alt="med" class="im1" style="max-width:100%;height:auto;border-radius: 50%;border: solid 3px #d6e498;" >
         <br>
         <img src="images/med.jpg" alt="med" class="im1" style="max-width:100%;height:auto;border-radius: 50%;border: solid 3px #d6e498;" >
         <br>
-        <span>
-          <a href="/fattan/cvMed/cvMed.html" style="background-color: green;border-bottom: 3px solid #fff;font-weight: bold;font-size: 17px;color: #fff;"> 
-            &nbsp;CV&nbsp; 
-          </a>
-        </span>
-
-      </p>
-      <img id="ain" src="images/004.jpg" alt="med" class="im1" style="display: block;margin: auto;width: 95%;">
-    </article>
-    
-    
+      <span>
+        <a href="/fattan/cvMed/cvMed.html" style="background-color: green;border-bottom: 3px solid #fff;font-weight: bold;font-size: 17px;color: #fff;">&nbsp;CV&nbsp;</a>
+      </span>
+    </p>
+    <img id="ain" src="images/004.jpg" alt="med" class="im1" style="display: block;margin: auto;width: 95%;">   
 	</div>
-
-    <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
-  <script src="js/jquery-min.js"></script>
-
+  <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
   <script>
-    $(function(){
       $(function(){
         $("#but1").click(function(){
-          $("#but1").css({"color":"#f00"});
           $("#ain").slideToggle(5000);
           $("#p1").toggle(5000);          
         });
-      });
-    });
-
-    function ap(){
-      $(function(){
-        $(function(){
-          $("#but1").css({"color":"#fff"});
-        });
-      });
-    }
-    
-            var texte=[];
-            var actual_texte = 0;
-    function changeMessage(){
-
-texte[0]='<?php echo date("h:i");?> الرباط';
-            texte[1]='<?php echo date("h:i");?> مكة';
-                 
-document.getElementById("bloc").innerHTML = texte[actual_texte];
-        
-        actual_texte++;
-
-        if(actual_texte >= texte.length){
-          actual_texte = 0;
-          
-           }
-
-        
-        }     
-        setInterval("changeMessage()",2000);          
+      });          
   </script> 
 </body>
 </html>

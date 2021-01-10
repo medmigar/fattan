@@ -1,24 +1,25 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
-<head>
-	<meta charset="utf-8">
+<head>	
 	<title>cv Med RAGIM</title>
-	<link rel="icon" href="../images/mad.ico"sizes="20x20">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  	<link rel="icon" href="../images/mad.ico"sizes="20x20">
+  	<link rel="stylesheet" href="../css/style.css">
   	<link rel="stylesheet" href="../css/menu.css">
   	<script src="../js/script.js"></script>
+  	<script src="../js/jquery-min.js"></script>
 </head>
-<body><br><br>
-	<header class="hed" id="header"><script>inclureHeader(header);</script></header>
-    
+<body><br>
+	<header class="hed" id="header"><script>inclureHeader(header);</script></header>    
 	<div id="conteneur">
-		<nav class="nav1" id="nav1"><script>inclureMenu(menu);</script></nav>
+		<div id="sc"><nav class="nav1" id="nav1"><script>inclureMenu(menu);</script></nav></div>
 		<div class="divMenu" id="divMenu">
-      <button class='btnMenu' onclick="basculer()" id="btnMenu"><i class='fa fa-bars'></i> Menu</button>
-    </div>
+	      <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+	      <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+    	</div>
 		<div style="text-align: center;background-color: #f2f1f3;">	
 		<img src="../images/alam.gif" alt="" style="height:auto;width:15%;float: left;">
 		<img src="../images/005.gif" alt="" style="height:auto;width:15%;">
@@ -30,8 +31,7 @@
 			<img src="../images/med.jpg" alt="med" style="height:auto;max-width:100%;border-radius: 50%;border: solid 3px #d6e498;">	
 			<img src="../images/001.jpg" alt="" style="height:auto;max-width:50%;">
 		</div><hr>
-		<article>
-			
+		<article>			
 			<h3> Ma vie </h3>
 			<ul class="parhpe">
 				<li>Nationalité Marocaine</li>
@@ -40,20 +40,17 @@
 				<li>L'enseignement collégial à El Ksiba collège Moha Ou Said</li>
 				<li>Les études secondaires à Beni Mellal Lycée Hassan II </li>					
 				<li>Diplôme de l'ENS Takaddoum à Rabat</li>
-			</ul>
-			<br>
+			</ul><br>
 			<h3>Ma formation</h3>
 			<ul class="parhpe">
 				<li>Ancien élève de L'ENS Takaddoum de Rabat</li>
 				<li>Autodidacte à partir des sites internets</li>
-			</ul>
-			<br>
+			</ul><br>
 			<h3> Mon expérience </h3>
 			<ul class="parhpe">
 				<li>Enseignant en classe depuis: 16 - 09 - 1986 jusqu'à O1 - 08 - 2017</li>
 				<li>membre dans plusieurs associations locaux et nationaux </li>
-			</ul>
-			<br>
+			</ul><br>
 			<h3>Mes compétences</h3>
 			<ul class="parhpe">
 				<li>HTML5</li>
@@ -62,11 +59,26 @@
 				<li>SQL</li>
 				<li>PHP</li>
 				<li>Java EE</li>
-			</ul>
-			
-		</article>
-					
+			</ul>			
+		</article>					
 	</div>
-	<footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>	
+	<footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+	<script>
+	    $(function(){
+
+	      $("#btnClose").click(function(){
+	        $("#sc").slideUp(3000);
+	        $('#btnClose').hide();
+	        $('#btnMenu').show();
+	      });
+
+	      $("#btnMenu").click(function(){
+	        $("#sc").slideDown(3000);
+	        $('#btnMenu').hide();
+	        $('#btnClose').show();
+	      });
+	      
+	    });
+	</script>	
 </body>
 </html>
