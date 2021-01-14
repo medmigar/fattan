@@ -29,7 +29,7 @@
             box-shadow: 5px 10px 18px #888f88;
         }
         .but{
-            background-color: #f59f00;
+            background: linear-gradient(to right,#cecbc9, #f59f00, #f00, #ffbe02a1,#fd606aba);
             height: 30px;
             border-radius: 15px;
             width: 105px;
@@ -63,6 +63,9 @@
             font-size: 18px;
             padding: 5px;
         }
+        #div::placeholder{
+    color: #00f;
+}
         #mydialog{ 
   border-radius: 10px;  
   display: none;
@@ -141,7 +144,7 @@
                 <fieldset>
                     <legend>diviseurs:</legend>
                     <label for="div">Entrer un nombre entier positif</label>
-                    <input type="text" name="div" id="div" required class="put">
+                    <input type="text" name="div" id="div" required class="put"placeholder="Entrer un nombre entier">
                     <span id="erreur"></span><br>
                     <input type="button" value="diviseurs" onclick="diviseurs()" class="but">
                     <input type="button" value="Vider" onclick="document.getElementById('affdiv').innerHTML='';document.fordiv.div.value='';document.getElementById('erreur').innerHTML='';" class="but">

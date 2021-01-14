@@ -11,8 +11,101 @@
     <link rel="stylesheet" href="css/menu.css">
     <script src="js/script.js"></script>
     <script src="js/jquery-min.js"></script>
+    <style>
+      body{
+      height: 100vh;
+    }
+    .accueil{
+      height: 100%;
+      width: 100%;
+      display: none;
+    }
+    .loader{
+      position: absolute;
+      background-color: #000;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .lettre{
+      color: #484848;
+      font-size: 150%;
+      letter-spacing: 15px;
+      animation: flash 1.2s linear infinite;
+
+    }
+    @keyframes flash{
+      0%{
+        color: #fff900;
+        text-shadow: 0 0 7px #fff900;
+      }
+      90%{
+        color: #484848;
+        text-shadow: none;
+      }
+      100%{
+        color: #fff900;
+        text-shadow: 0 0 7px #fff900;
+      }
+    }
+    .lettre:nth-child(1){
+      animation-delay: 0.1s;
+    }
+    .lettre:nth-child(2){
+      animation-delay: 0.2s;
+    }
+    .lettre:nth-child(3){
+      animation-delay: 0.3s;
+    }
+    .lettre:nth-child(4){
+      animation-delay: 0.4s;
+    }
+    .lettre:nth-child(5){
+      animation-delay: 0.5s;
+    }
+    .lettre:nth-child(6){
+      animation-delay: 0.6s;
+    }
+    .lettre:nth-child(7){
+      animation-delay: 0.7s;
+    }
+    .lettre:nth-child(8){
+      animation-delay: 0.8s;
+    }
+    .lettre:nth-child(9){
+      animation-delay: 0.9s;
+    }
+    .loader1 {
+  border-radius: 50%;
+  border-top: 10px solid blue;
+  border-right: 10px solid red;
+  border-left: 10px solid green;
+  border-bottom: 10px solid yellow;
+  width: 50px;
+  height: 50px;
+  background-image: url(images/med2.jpg);
+  background-size: cover;
+  animation: spin 1.2s linear infinite;
+}
+    @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  </style>
 </head>
 <body>
+  
+  <div class="loader">
+    <div class="loader1"></div>
+    <span class="lettre"> C</span><span class="lettre">H</span><span class="lettre">A</span>
+    <span class="lettre">R</span><span class="lettre">G</span><span class="lettre">E</span>
+    <span class="lettre">M</span><span class="lettre">E</span><span class="lettre">N</span>
+    <span class="lettre">T</span>
+    <div class="loader1"></div>
+  </div>
+  <div class="accueil">
   <header class="header" id="header"><script>inclureHeader(header);</script></header>    
 	<div id="conteneur">
     <div id="sc">
@@ -44,7 +137,14 @@
             $('#btnMenu').hide();
             $('#btnClose').show();
         });
-      });
+
+            
+            $(".loader").fadeOut(6000, function(){
+              $('.accueil').fadeIn(3000);
+            });
+            
+              
+        });
 
       var myVar = setInterval(myTimer, 1000);
       var d = new Date();
@@ -83,6 +183,7 @@
         <span style="color: green;">
           &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
         </span>
+      </details>
     </h4>                           
     <p id="p1" style="text-align: center;display: none;">
       <img src="images/med2.jpg" alt="med" class="im1" style="max-width:100%;height:auto;border-radius: 50%;border: solid 3px #d6e498;" >
@@ -96,6 +197,7 @@
     <img id="ain" src="images/004.jpg" alt="med" class="im1" style="display: block;margin: auto;width: 95%;">   
 	</div>
   <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+</div>
   <script>
       $(function(){
         $("#but1").click(function(){
