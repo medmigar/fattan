@@ -149,3 +149,10 @@ article {
   border-radius: 25px 25px 0px 0px;
   padding: 10px;
 }
+p .med{
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 6px -6px #777, 0 0 10px 10px #999;
+}

@@ -22,7 +22,7 @@
     }
     .loader{
       position: absolute;
-      background-color: #000;
+      background-color: #7e2ea0;
       width: 100%;
       height: 100%;
       display: flex;
@@ -33,7 +33,7 @@
       color: #484848;
       font-size: 150%;
       letter-spacing: 15px;
-      animation: flash 1.2s linear infinite;
+      animation: flash 1.8s linear infinite;
 
     }
     @keyframes flash{
@@ -46,8 +46,8 @@
         text-shadow: none;
       }
       100%{
-        color: #fff900;
-        text-shadow: 0 0 7px #fff900;
+        color: red;
+        text-shadow: 0 0 7px red;
       }
     }
     .lettre:nth-child(1){
@@ -77,10 +77,13 @@
     .lettre:nth-child(9){
       animation-delay: 0.9s;
     }
+    .lettre:nth-child(10){
+      animation-delay: 1s;
+    }
     .loader1 {
   border-radius: 50%;
   border-top: 10px solid blue;
-  border-right: 10px solid red;
+  border-right: 10px solid #c064d7;
   border-left: 10px solid green;
   border-bottom: 10px solid yellow;
   width: 50px;
@@ -185,10 +188,10 @@
         </span>
       </details>
     </h4>                           
-    <p id="p1" style="text-align: center;display: none;">
-      <img src="images/med2.jpg" alt="med" class="im1" style="max-width:100%;height:auto;border-radius: 50%;border: solid 3px #d6e498;" >
-        <br>
-        <img src="images/med.jpg" alt="med" class="im1" style="max-width:100%;height:auto;border-radius: 50%;border: solid 3px #d6e498;" >
+    <p id="p1" style="text-align: center;display: none;"><br>
+      <img src="images/med2.jpg" alt="med" class="med">
+        <br><br>
+        <img src="images/med.jpg" alt="med" class="med">
         <br>
       <span>
         <a href="/fattan/cvMed/cvMed.html" style="background-color: green;border-bottom: 3px solid #fff;font-weight: bold;font-size: 17px;color: #fff;">&nbsp;CV&nbsp;</a>
