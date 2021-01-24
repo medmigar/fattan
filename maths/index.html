@@ -68,7 +68,8 @@
     color: #00f;
 }
         #mydialog{ 
-  border-radius: 10px; 
+  border-radius: 10px;  
+  display: none;
   text-align: center;
   background-color: #f1f0a1;
   width: 300px;
@@ -87,7 +88,7 @@
 }
   </style>
   <script src="../js/script.js"></script>
-   <!-- <script>
+   <script>
         function Aff() {
             var dialog = document.getElementById('mydialog');
             dialog.style.display='block'; 
@@ -106,16 +107,12 @@
         }
     }
 
-    </script> -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </script>
 </head>
 <body>
     <dialog id="mydialog">
-        <h1 id="fd"><span>&#127799;</span><br>Entrer dans ce champ un nombre entier positif</h1> 
-        <button class='btnMenu' onclick="var dialog = document.getElementById('mydialog');$(function(){$('#mydialog').click(function(){
-          $( '#mydialog').toggle( 'explode', {}, 500 );
-        });$('.(fa fa-close)').fadeOut('slow');});"><i class='fa fa-close'></i>
+        <h1><span>&#127799;</span><br>Entrer dans ce champ un nombre entier positif</h1> 
+        <button class='btnMenu' onclick="var dialog = document.getElementById('mydialog');dialog.close();dialog.style.display='none';"><i class='fa fa-close'></i>
         </button> 
     </dialog>    
     <header class="hed" id="header"><script>inclureHeader(header);</script></header>  
