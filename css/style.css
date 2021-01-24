@@ -150,7 +150,7 @@ article {
   padding: 10px;
 }
 p .med{
-  max-width: 100%;
+  max-width: 95%;
   height: auto;
   border-radius: 50%;
   object-fit: cover;

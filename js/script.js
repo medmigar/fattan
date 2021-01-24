@@ -18,7 +18,7 @@ var menu='<div class="timeline__steps">              <!-- '+
                 '<span class="bloc"></span>    '+
                 '<a href="/fattan/maths/index.html" class="timeline__step"><span class="c1"><i class="fas fa-square-root-alt"></i> Maths</span></a>'+
                 '<span class="bloc"></span>'+
-                '<a href="/fattan/web/index.html" class="timeline__step"><span class="c1">Web</span></a>'+
+                '<a href="/fattan/web/index.html" class="timeline__step"><span class="c1">&Wopf; Web</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="#" class="timeline__step"><span class="c1">4</span></a>'+
                 '<span class="bloc"></span>'+
