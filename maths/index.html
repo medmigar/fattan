@@ -14,10 +14,12 @@
     #fo,table,.pa{
             padding: 10px;
             font-size: 20px;
-            font-weight: 200;
+            font-weight: 100;
             font-family: monospace;
             background-color: #00a89b;
             width: 95%;
+            margin: auto;
+            text-align: left;
         }
         .put{
             background-color: #f8d7da;
@@ -206,7 +208,7 @@
                 res=texte.substring(0, texte.length-3);
             }
             res="<h3>La liste des nombres premiers inférieurs à "+
-            n+"</h3>"+"<p>"+res+"</p>";
+            n+"</h3>"+"<p class='pa'>"+res+"</p>";
             dialog.innerHTML=res+"<button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none';document.forprem.prem.value='';\"><i class='fa fa-close'></i> </button>";
                     dialog.style.display='block'; 
                     dialog.showModal();;
@@ -234,7 +236,7 @@
             n1 = parseInt(document.forpgcd.pgcd1.value);
             n2 = parseInt(document.forpgcd.pgcd2.value);
             let m=(n1*n2)/di;
-            dialog.innerHTML = "<h3>pgcd </h3><p>pgcd("+n1+" , "+n2+") = "+di+"</p><button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none';document.forpgcd.pgcd2.value='';document.forpgcd.pgcd1.value='';\"><i class='fa fa-close'></i> </button>";
+            dialog.innerHTML = "<h3>pgcd </h3><p class='pa'>pgcd("+n1+" , "+n2+") = "+di+"</p><button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none';document.forpgcd.pgcd2.value='';document.forpgcd.pgcd1.value='';\"><i class='fa fa-close'></i> </button>";
             dialog.style.display='block'; 
                     dialog.showModal();
         }
@@ -260,7 +262,7 @@
             n1 = parseInt(document.forppcm.ppcm1.value);
             n2 = parseInt(document.forppcm.ppcm2.value);
             let m=(n1*n2)/di;
-            dialog.innerHTML = "<h3>ppcm </h3><p>ppcm("+n1+" , "+n2+") = "+m+"</p><button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none';document.forppcm.ppcm1.value='';document.forppcm.ppcm2.value='';\"><i class='fa fa-close'></i> </button>";
+            dialog.innerHTML = "<h3>ppcm </h3><p class='pa'>ppcm("+n1+" , "+n2+") = "+m+"</p><button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none';document.forppcm.ppcm1.value='';document.forppcm.ppcm2.value='';\"><i class='fa fa-close'></i> </button>";
             dialog.style.display='block'; 
             dialog.showModal();
         }
@@ -294,7 +296,7 @@ dialog.innerHTML ="<h1><span>&#127799;</span><br>Caractère invalide !<br>Entrer
                     text+=tabn[j]+", ";
                     var res=text.substring(0, text.length-1);
                 }                    
-                dialog.innerHTML ="<h3>Les diviseurs du nombre "+n1+" sont:</h3><p>D = {"+res+"} <br>"+"le nombre des diviseurs de "+n1+" est: "+tabn.length+"<br>"+msg+"</p>"+
+                dialog.innerHTML ="<h3>Les diviseurs du nombre "+n1+" sont:</h3><p class='pa'>D = {"+res+"} <br>"+"le nombre des diviseurs de "+n1+" est: "+tabn.length+"<br>"+msg+"</p>"+
                 "<button class='btnMenu' onclick=\" var dialog = document.getElementById('mydialog');dialog.close();dialog.style.display='none';document.fordiv.div.value='';\"><i class='fa fa-close'></i></button>";
                 dialog.style.display='block'; 
                     dialog.showModal();
@@ -330,7 +332,7 @@ dialog.innerHTML ="<h1><span>&#127799;</span><br>Caractère invalide !<br>Entrer
                 }
             }
             n = parseInt(document.forcomp.comp.value);
-            let sh="<h3>La décomposition en facteurs premiers</h3><p>";
+            let sh="<h3>La décomposition en facteurs premiers</h3><p class='pa'>";
             let t=n;
             for (var i = 0; i < facteurs.length; i++) {            
                 sh+=t+"/"+facteurs[i]+"<br>";
@@ -342,10 +344,9 @@ dialog.innerHTML ="<h1><span>&#127799;</span><br>Caractère invalide !<br>Entrer
             let af=n+" = ";
             if (facteurs.length==1){
                 af+=facteurs[0];
-                dialog.innerHTML=sh+af+"<br><b>Remarque:</b><br>"+n+" est un nombre premier !</p>"+
-                "<br><button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none'; dialog.innerHTML='';document.forcomp.comp.value='';\"><i class='fa fa-close'></i></button>";
+                dialog.innerHTML=sh+af+"<br><b>Remarque:</b><br>"+n+" est un nombre premier !</p>"+"<button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none'; dialog.innerHTML='';document.forcomp.comp.value='';\"><i class='fa fa-close'></i></button>";
                 dialog.style.display='block'; 
-                    dialog.showModal();
+                dialog.showModal();
             }
             if(facteurs.length!=1){
             while (facteurs.length!=0){
