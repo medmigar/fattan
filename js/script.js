@@ -20,7 +20,7 @@ var menu='<div class="timeline__steps">              <!-- '+
                 '<span class="bloc"></span>'+
                 '<a href="/fattan/web/index.html" class="timeline__step"><span class="c1">&Wopf; Web</span></a>'+
                 '<span class="bloc"></span>'+
-                '<a href="#" class="timeline__step"><span class="c1">4</span></a>'+
+                '<a href="/fattan/web/css.html" class="timeline__step"><span class="c1">CSS</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="#" class="timeline__step"><span class="c1">5</span></a>'+
                 '<span class="bloc"></span>'+

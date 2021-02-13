@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>CSS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../images/mad.ico"sizes="20x20">
+  <link rel="stylesheet" href="../css/menu.css">
+  <script src="../js/script.js"></script>
+  <script src="../js/jquery-min.js"></script>
+</head>
+<body>
+    <header class="hed" id="header"><script>inclureHeader(header);</script></header>
+  <div id="conteneur">
+    <div id="sc">   
+      <nav class="nav1" id="nav1"><script>inclureMenu(menu);</script> </nav>
+    </div>
+    <div class="divMenu" id="divMenu">
+      <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+      <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+    </div>
+    <h1 style="text-shadow: -1px -1px white, 1px 1px #333; color:#0cb49f; font-size: 40px;">CSS</h1>    
+    <h3>Introduction</h3>
+    <p>
+      Au début du Web, CSS n'existait pas. En fait, il n'y avait initialement que le langage HTML, qui est né en 1991. Le <b>CSS</b> est le langage qui est venu compléter le <b>HTML</b> en 1996. Il permet de mettre en forme, d'enjoliver le résultat visuel final, de définir la couleur, la taille, l'alignement d'un texte….<br> Le <b>CSS</b> est le diminutif de <b>C</b>ascading <b>S</b>tyle <b>S</b>heets, qui peut se traduire en français par: feuilles de styles en cascade. On dit "Feuille de style" car en général, on écrit le code <b>CSS</b> dans un fichier à part. Le <b>CSS</b> a besoin d'une page <b>HTML</b> pour fonctionner. C'est le fichier <b>HTML</b> qui, lors de son ouverture, va charger le <b>CSS</b> et appliquer les informations de son style.</p>
+    <ul class="parhpe">
+        <li><b>CSS</b> est un langage qui décrit le style d'un document <b>HTML</b>, c'est le langage que l'on utilise pour styliser un document HTML.</li>
+        <li><b>CSS</b> décrit comment les éléments <b>HTML</b> doivent être affichés à l'écran, sur papier ou sur un autre support.</li>
+        <li><b>CSS</b> économise beaucoup de travail. Il peut contrôler la mise en page de plusieurs pages Web en même temps.</li>
+        <li>Les <b>f</b>euilles de <b>s</b>tyle externes sont stockées dans des <b>fichiers CSS.</b></li>
+        <li>Avec un fichier de feuille de style externe, on peut changer l'apparence d'un site Web entier en changeant un seul fichier.</li>
+        <li><b>CSS</b> permet de faire la mise en page et les variations d'affichage pour différents appareils et tailles d'écran.  </li>
+        <li><b>CSS</b> permet de sélectionner la police utilisée sur un  site, permet encore de définir la taille du texte, les bordures, le fond…</li>
+    </ul>
+    <p>
+       Le <b>CSS</b> complète le code <b>HTML</b> et le met en forme  et donne à son contenu l'apparence que l'on souhaite.<br><br>
+      <b>Remarques:</b><br> Avec <b>HTML</b> et <b>CSS</b> on transforme une maquette en page web.<br>
+      Lorsqu'un navigateur lit une feuille de style, il formate le document HTML en fonction des informations contenues dans la feuille de style.
+    </p><br>
+    <h3>Où écrit-on le CSS ?</h3>
+    <p>
+      On a le choix d'écrire et insérer une feuille de style du code en langage CSS à trois endroits différents :<br>
+      - dans un fichier.css: fichier de feuille de style externe (méthode la plus recommandée: <b>CSS externe</b>).<br>
+      - dans l'en-tête <b>&lt;head></b> du fichier HTML.(<b>CSS interne</b>) Elle peut être utilisée si une seule page HTML a un style unique.<br>
+      - directement dans les balises du fichier HTML via l'attribut: style (méthode la moins recommandée <b>CSS en ligne</b>). Le style en ligne peut être utilisé pour appliquer un style unique à un seul élément HTML.<br>
+      Chaque page doit inclure une référence au fichier de feuille de style externe à l'intérieur de l'élément <b>&lt;link>.</b> L'élément <b>&lt;link></b> va à l'intérieur de la section <b>&lt;head>.</b> <br>
+      Une feuille de style externe peut être écrite dans n'importe quel éditeur de texte. Le fichier ne doit contenir aucune balise HTML. Le fichier de feuille de style doit être enregistré avec une extension <b>.css.</b>
+    </p>
+    <pre>
+      &lt;head>
+        &lt;link rel="stylesheet" type="text/css" href="mystyle.css">
+      &lt;/head>
+    </pre>
+    <p>
+      Une feuille de style interne peut être utilisée si une seule page a un style unique.
+
+Les styles internes sont définis dans l'élément &lt;style>, dans la section &lt;head> d'une page HTML:
+</p>
+<pre>
+  &lt;head>
+    &lt;style>
+      body {
+        background-color: linen;
+      }
+
+      h1 {
+        color: maroon;
+        margin-left: 40px;
+      } 
+    &lt;/style>
+  &lt;/head>
+</pre>
+<p>
+  Un style en ligne peut être utilisé pour appliquer un style unique à un seul élément.
+
+Pour utiliser des styles en ligne, on ajoute l'attribut style à l'élément approprié. L'attribut style peut contenir n'importe quelle propriété CSS.
+
+L'exemple ci-dessous montre comment changer la couleur et la marge gauche d'un élément &lt;h1>:
+
+<pre>
+  &lt;h1 style="color:blue;margin-left:30px;">This is a heading&lt;/h1>
+</pre>
+<p>
+  <b>Remarque</b><br>
+Quand il y a plus d'un style spécifié pour un élément HTML, les styles seront mis en cascade dans une nouvelle feuille de style "virtuelle" selon les règles suivantes:
+</p>
+<ol class="parhpe">
+  <li>Style en ligne (à l'intérieur d'un élément HTML)</li>
+  <li>Feuilles de style externes et internes (dans la section principale)</li>
+  <li>Navigateur par défaut</li>
+</ol>
+  
+  
+  </div>
+  <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+  <script>
+    $(function(){
+
+      $("#btnClose").click(function(){
+        $("#sc").slideUp(3000);
+        $('#btnClose').hide();
+        $('#btnMenu').show();
+      });
+
+      $("#btnMenu").click(function(){
+        $("#sc").slideDown(3000);
+        $('#btnMenu').hide();
+        $('#btnClose').show();
+      });
+    });
+  </script>
+  </body>
+  </html>

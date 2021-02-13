@@ -98,10 +98,10 @@ background-color: #4ec2c8;
   transition: all 3s;
 }
 .btnMenu:hover, .btnClose:hover{
-    background-color: #f00;
-    color: #0cb49f;
+    background-color: #fff;
+    color: #f00;
     border: 4px solid #a00;
-    transition: background-color 2s;
+    transition: all 2s;
 }
 .divMenu{
     text-align: center;
