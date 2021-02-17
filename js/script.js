@@ -22,7 +22,7 @@ var menu='<div class="timeline__steps">              <!-- '+
                 '<span class="bloc"></span>'+
                 '<a href="/fattan/web/css.html" class="timeline__step"><span class="c1">CSS</span></a>'+
                 '<span class="bloc"></span>'+
-                '<a href="#" class="timeline__step"><span class="c1">5</span></a>'+
+                '<a href="/fattan/web/regex.html" class="timeline__step"><span class="c1">Regex</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="#" class="timeline__step"><span class="c1">6</span></a>'+
                 '<span class="bloc"></span>'+
