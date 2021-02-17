@@ -181,16 +181,23 @@
     </div>
     <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
     <script>
+        let result="<h1><span>&#127799;</span><br>Caractère invalide !<br>Entrer dans ce champ un nombre entier positif</h1><button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none';document.fordiv.div.value='';\"><i class='fa fa-close'></i> </button>";
         let n=0;
         let dialog = document.getElementById('mydialog');
+        let motif = /^[0-9]+$/;
+
         function premier(){
             n=parseInt(document.forprem.prem.value);
             let p=[]; 
             let texte="";
             let res=""; 
-            let tab=[2];              
-
-            for (let j = 3; j <=n; j++){
+            let tab=[2]; 
+            if (!motif.test(n)) {
+                dialog.innerHTML =result;
+                dialog.style.display='block'; 
+                dialog.showModal();
+            }else{
+                for (let j = 3; j <=n; j++){
                 if (j%2!=0) {
                     for (let i=1; i<=j; i++) {
                         if (j%i==0){
@@ -214,11 +221,17 @@
                     dialog.showModal();;
             return tab;            
         }
+        }
 
         function pgcd(){
             let  n1 = parseInt(document.forpgcd.pgcd1.value);
             let  n2 = parseInt(document.forpgcd.pgcd2.value);
             let di="";
+            if (!motif.test(n1)||!motif.test(n2)) {
+                dialog.innerHTML =result;
+                dialog.style.display='block'; 
+                dialog.showModal();
+            }else{
 
             if (n2>n1){
                 di=n1;
@@ -240,12 +253,18 @@
             dialog.style.display='block'; 
                     dialog.showModal();
         }
+         }
 
         function ppcm(){
             let  n1 = parseInt(document.forppcm.ppcm1.value);
             let  n2 = parseInt(document.forppcm.ppcm2.value);
             let di="";
 
+            if (!motif.test(n1)||!motif.test(n2)) {
+                dialog.innerHTML =result;
+                dialog.style.display='block'; 
+                dialog.showModal();
+            }else{
             if (n2>n1){
                 di=n1;
                 n1=n2;
@@ -266,18 +285,18 @@
             dialog.style.display='block'; 
             dialog.showModal();
         }
+        }
 
         function diviseurs() {
             var str = document.fordiv.div.value;
-            var motif = /[a-zA-Z §:;,!%²<>&é"'è(_çà)=°$?ùµ*%£¨!\-\+\^\/\[\.\]\{\}]/g;
-            var result = str.match(motif);
+            
             var text ="";
             var  n1 = parseInt(document.fordiv.div.value);
             var msg=document.getElementById('div');
             n1=Math.abs(n1);
 
-              if (msg.validity.valueMissing || result!=null) {
-dialog.innerHTML ="<h1><span>&#127799;</span><br>Caractère invalide !<br>Entrer dans ce champ un nombre entier positif</h1><button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none';document.fordiv.div.value='';\"><i class='fa fa-close'></i> </button>";
+              if (!motif.test(str)) {
+dialog.innerHTML =result;
                     dialog.style.display='block'; 
                     dialog.showModal();
               }else{
@@ -307,7 +326,13 @@ dialog.innerHTML ="<h1><span>&#127799;</span><br>Caractère invalide !<br>Entrer
 
             n=parseInt(document.forcomp.comp.value);
             let p=[]; 
-            let tab=[2];        
+            let tab=[2];
+
+            if (!motif.test(n)) {
+                dialog.innerHTML =result;
+                dialog.style.display='block'; 
+                dialog.showModal();
+            }else{        
 
             for (let j = 3; j <=n; j++){
                 if (j%2!=0) {
@@ -369,10 +394,16 @@ dialog.innerHTML ="<h1><span>&#127799;</span><br>Caractère invalide !<br>Entrer
                     dialog.showModal();
             } 
         }
+        }
 
         function triangle() {
             n = parseInt(document.fortri.tri.value);
             let tex;
+            if (!motif.test(n)) {
+                dialog.innerHTML =result;
+                dialog.style.display='block'; 
+                dialog.showModal();
+            }else{
             let L1=[1,1], L=[1,1];
             for (i=1;i<=n;i++) {    
                 let nL=[];   
@@ -393,6 +424,7 @@ dialog.innerHTML ="<h1><span>&#127799;</span><br>Caractère invalide !<br>Entrer
                 "<button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none'; dialog.innerHTML='';document.fortri.tri.value='';\"><i class='fa fa-close'></i></button>";
             dialog.style.display='block'; 
             dialog.showModal();
+        }
         }
     </script>
 </body>
