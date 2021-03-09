@@ -3,7 +3,7 @@
 <head>
 	<title>Mathématiques</title>
 	<meta charset="utf-8">
-    <link rel="icon" href="../images/mad.ico"sizes="20x20">
+    <link rel="icon" href="../images/logo.png"sizes="20x20">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/menu.css">
@@ -71,6 +71,7 @@
             color: #00f;
         }
         #mydialog{ 
+            border: 10px solid #ccc;
             border-radius: 10px;  
             display: none;
             text-align: center;
@@ -125,7 +126,7 @@
                     <legend>diviseurs</legend>
                     <label for="div">Entrez un nombre entier positif</label>
                     <input type="text" name="div" id="div" required class="put"placeholder="Entrez un nombre entier"><br>
-                    <input type="button" value="diviseurs" onclick="diviseurs()" class="but">
+                    <input type="button" value="diviseurs" onclick="diviseurs();document.fordiv.div.value='';" class="but">
                 </fieldset>
             </form>    
         
@@ -134,7 +135,7 @@
                     <legend>Triangle</legend>
                     <label for="tri">Entrez un nombre entier positif</label>
                     <input type="text" name="tri" id="tri" required    class="put"placeholder="Entrez un nombre entier"><br>
-                    <input type="button" onclick="triangle()" value="Triangle" class="but">
+                    <input type="button" onclick="triangle();document.fortri.tri.value='';" value="Triangle" class="but">
                 </fieldset>
             </form>    
            
@@ -143,7 +144,7 @@
                     <legend>Nombres premiers</legend>
                     <label for="prem">Entrez un nombre entier positif</label><br>
                     <input type="text" name="prem" id="prem" required class="put"placeholder="Entrez un nombre entier"><br>
-                    <input type="button" value="Premiers" onclick="premier()" class="but">
+                    <input type="button" value="Premiers" onclick="premier();document.forprem.prem.value='';" class="but">
                 </fieldset>
             </form>
         
@@ -152,7 +153,7 @@
                     <legend>Décomposition</legend>
                     <label for="comp">Entrez un nombre entier positif</label><br>
                     <input type="text" name="comp" id="comp" required     class="put"placeholder="Entrez un nombre entier"><br>
-                    <input type="button" onclick="composer()" value="Décomposer" class="but">
+                    <input type="button" onclick="composer();document.forcomp.comp.value='';" value="Décomposer" class="but">
                 </fieldset>
             </form>
         
@@ -163,7 +164,7 @@
                     <input type="text" name="pgcd1" id="pgcd1" required   class="put"placeholder="Entrez un nombre entier"><br>
                     <label for="pgcd2">Entrez le deuxième nombre entier positif</label>
                     <input type="text" name="pgcd2" id="pgcd2" required class="put"placeholder="Entrez un nombre entier"><br>
-                    <input type="button" value="PGCD" onclick="pgcd()" class="but">
+                    <input type="button" value="PGCD" onclick="pgcd();document.forpgcd.pgcd2.value='';document.forpgcd.pgcd1.value='';" class="but">
                 </fieldset>
             </form>    
             
@@ -174,14 +175,14 @@
                     <input type="text" name="ppcm1" id="ppcm1" required  class="put"placeholder="Entrez un nombre entier"><br>
                     <label for="ppcm2">Entrez le deuxième nombre entier positif</label>
                     <input type="text" name="ppcm2" id="ppcm2" required class="put"placeholder="Entrez un nombre entier"><br>
-                    <input type="button" onclick="ppcm()" value="PPCM" class="but">
+                    <input type="button" onclick="ppcm();document.forppcm.ppcm1.value='';document.forppcm.ppcm2.value='';" value="PPCM" class="but">
                 </fieldset>
             </form>
         </div>
     </div>
     <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
     <script>
-        let result="<h1><span>&#127799;</span><br>Caractère invalide !<br>Entrer dans ce champ un nombre entier positif</h1><button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none';document.fordiv.div.value='';\"><i class='fa fa-close'></i> </button>";
+        let result="<h1><span>&#127799;</span><br>Caractère invalide !<br>Entrer dans ce champ un nombre entier positif</h1><button class='btnMenu' onclick=\" dialog.close();dialog.style.display='none';\"><i class='fa fa-close'></i> </button>";
         let n=0;
         let dialog = document.getElementById('mydialog');
         let motif = /^[0-9]+$/;

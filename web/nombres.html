@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Les nombres</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../images/logo.png"sizes="20x20">
+  <link rel="stylesheet" href="../css/menu.css">
+  <script src="../js/script.js"></script>
+  <script src="../js/jquery-min.js"></script>
+</head>
+<body>
+    <header class="hed" id="header"><script>inclureHeader(header);</script></header>
+  <div id="conteneur">
+    <div id="sc">   
+      <nav class="nav1" id="nav1"><script>inclureMenu(menu);</script> </nav>
+    </div>
+    <div class="divMenu" id="divMenu">
+      <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+      <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+    </div>
+    <h1 style="text-shadow: -1px -1px white, 1px 1px #333; color:#0cb49f; font-size: 40px;">Les nombres</h1>    
+    <h3>Introduction</h3>
+    <p>
+      Les chiffres arabes de 0 à 9 en français sont:
+      0: zéro -
+      1: un -
+      2: deux -
+      3: trois -
+      4: quatre -
+      5: cinq -
+      6: six -
+      7: sept -
+      8: huit -
+      9: neuf.
+    </p><br>
+    <h3>
+      <input type="text" id="nombre"><br>
+      <input type="button" value="OK" onclick="nombres();">
+    </h3><br><h3>Affichage du résultat en lettres</h3>
+    <p id="fr"></p>
+     </div>
+  <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+  <script>
+      var chiffres =["zéro","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix",
+                      "onze","douze","treize","quatorze","quinze","seize"];
+       let nombres0 = ["vingt","trente","quarante","cinquante","soixante"];
+      function nombres(){
+        let n = document.getElementById("nombre").value;
+        n=parseInt(n);
+        // 
+        if(n<=16&&n>=0){
+          document.getElementById("fr").innerHTML = n+": "+chiffres[n];
+        }
+
+        if(n==17||n==18||n==19){
+          document.getElementById("fr").innerHTML = n+": "+chiffres[10]+"-"+chiffres[n%10];
+        }
+
+        if(n==20||n==30||n==40||n==50||n==60){
+          document.getElementById("fr").innerHTML = n+": "+nombres0[(n/10)-2];
+        }
+
+        if(n-(n%10)==20&&n%10==1){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[0]+" et un";
+        }
+
+        if(n>=22&&n<=29){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[0]+"-"+chiffres[n%10];
+        }
+        if(n-(n%10)==30&&n%10==1){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[1]+" et un";
+        }
+        if(n>=32&&n<=39){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[1]+"-"+chiffres[n%10];
+        }
+        if(n-(n%10)==40&&n%10==1){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[2]+" et un";
+        }
+        if(n>=42&&n<=49){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[2]+"-"+chiffres[n%10];
+        }
+        if(n-(n%10)==50&&n%10==1){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[3]+" et un";
+        }
+        if(n>=52&&n<=59){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[3]+"-"+chiffres[n%10];
+        }
+        if(n-(n%10)==60&&n%10==1){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[4]+" et un";
+        }
+        if(n>=62&&n<=69){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[4]+"-"+chiffres[n%10];
+        }
+        if(n>=70&&n<=76&&n!=71){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[(4)]+"-"+chiffres[n%10+10];
+        }
+        if(n==71){
+          document.getElementById("fr").innerHTML =n+": "+" soixante et onze";
+        }
+        if(n>=77&&n<=79){
+          document.getElementById("fr").innerHTML =n+": "+nombres0[(4)]+"-"+chiffres[10]+"-"+chiffres[n%10];
+        }
+        if(n==80){
+          document.getElementById("fr").innerHTML =n+": "+"quatre-vingts";
+        }
+        if(n==81){
+          document.getElementById("fr").innerHTML =n+": "+"quatre-vingt-un";
+        }
+        if(n>=82&&n<=89){
+          document.getElementById("fr").innerHTML =n+": "+chiffres[4]+"-"+nombres0[(0)]+"-"+chiffres[n%10];
+        }
+        if(n>=90&&n<=96){
+          document.getElementById("fr").innerHTML =n+": "+chiffres[4]+"-"+nombres0[(0)]+"-"+chiffres[n%10+10];
+        }
+        if(n>=97&&n<=99){
+          document.getElementById("fr").innerHTML =n+": "+chiffres[4]+"-"+nombres0[(0)]+"-"+chiffres[10]+"-"+chiffres[n%10];
+        }
+        if(n==100){
+          document.getElementById("fr").innerHTML =n+": "+"cent";
+        }
+    }
+    
+  </script>
+</body>
+</html>

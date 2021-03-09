@@ -3,7 +3,7 @@
 <head>
 	<title>Les expressions régulières</title>
 	<meta charset="utf-8">
-    <link rel="icon" href="../images/mad.ico"sizes="20x20">
+    <link rel="icon" href="../images/logo.png"sizes="20x20">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/menu.css">
@@ -41,14 +41,17 @@
         <h1 style="text-shadow: -1px -1px white, 1px 1px #333; color:#0cb49f; font-size: 40px;">Les expressions régulières</h1>
         <h3>Introduction</h3>
         <p>
-        	<b>Les expressions régulières</b> sont encore appelées expressions rationnelles ou en abrégé «Regex». Les expressions régulières ne sont pas des éléments des langage de programmations, mais constituent en fait un autre langage en soi. Les expressions régulières sont des schémas ou des motifs utilisés pour effectuer des recherches et des remplacements dans des chaînes de caractères. Elles permettent de vérifier la présence de certains caractères ou des suites de caractères dans une expression.<br> 
+        	<b>Les expressions régulières</b> sont encore appelées expressions rationnelles ou en abrégé «Regex».  Cette notion n'est pas propre au Javascript mais elle est prise en charge dans de nombreux langages de programmation tels que PHP, Perl, Java etc. Les expressions régulières ne sont pas des éléments des langage de programmations, mais constituent en fait un autre langage en soi. Les expressions régulières sont des schémas ou des motifs utilisés pour effectuer des recherches et des remplacements au sein des chaînes de caractères. Elles permettent de vérifier la présence de certains caractères ou des suites de caractères dans une expression.<br> 
         	En <b>JavaScript</b>, les expressions régulières sont des objets appartenant à l'objet global constructeur <b>RegExp.</b> On peut également passer les expressions régulières en argument de certaines méthodes de lobjet <b>String</b> pour effectuer des recherches ou des remplacements dans des chaînes de caractères. On dispose de deux façons pour créer les expressions régulières en JavaScript: soit déclarer les expressions régulières de manière littérale, en utilisant des slashs comme caractères d'encadrement, soit appeler le constructeur RegExp(). Le motif <b>/Mohamed/</b>,  va permettre de tester la présence de «Mohamed» c'est-à-dire d'un «M» suivi d'un «o» suivi d'un «h» suivi d'un «a» suivi d'un autre «m» suivi d'un «e» suivi d'un «d» dans une chaine de caractères.<br>
         	<b>let motif=/ Mohamed /; ou let motif=new RegExp('Mohamed');</b>
         </p><br>
         <h3>Le constructeur JavaScript RegExp</h3>
         <p>
         	La méthode <b>exec()</b> teste une correspondance dans une chaîne. Elle renvoie le texte correspondant si elle trouve une correspondance, sinon elle renvoie null.<br>
-        	<b></b>
+        	La méthode <b>text()</b> permet de tester si la chaîne de caractères passée en paramètre correspond à l'expression régulière. Si oui, elle retourne la valeur booléenne true, sinon elle retourne false. <pre>
+            str1="RAGiM Med";
+            strValide=new RegExp("^.+Med.+\..+");
+            let str2=strValide.test(str1); //retourne la valeur booléenne</pre>
         </p>
     </div>
     <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>

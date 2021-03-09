@@ -47,7 +47,7 @@ var header="&#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#99
     "&#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;"+
     "&#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;";
 
-var footer="Copyright &copy; 2015 - 2020 Développé et Réalisé par Ragim - Mohamed<br>"+        
+var footer="Copyright &copy; 2015 - 2021 Développé et Réalisé par Ragim - Mohamed<br>"+        
         "Tous droits réservés à RAGIM Mohamed. Il est strictement interdit de copier et de distribuer le contenu de ce site sans l'accord express de son propriétaire<br>"+
         '<span style="direction: rtl;">'+
        'جميع الحقوق محفوظة ل : رجيم محمد ويمنع منعا باتا نسخ وتوزيع محتويات هذا الموقع دون موافقة صريحة من مالكه <br><a href="/fattan/"style="text-decoration: none;">الرئيسية</a></span>';
@@ -81,6 +81,21 @@ function afficherCal(val){
 function effacer(){ 
     document.getElementById("output").value = "";
 }
+//calendrier  
+var moi;
+    var d = new Date();
+    var jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+    var mois = ["Janvier","Février","Mars","Avril","Mai","Juin","juillet"];
+    if(d.getDate()<10){
+      mo='0'+d.getDate();
+    }
+    var myVar = setInterval(myTimer, 1000);
+
+      function myTimer() { 
+      var d = new Date(); 
+      document.getElementById("cloc").innerHTML = jours[d.getDay()]+' '+mo+' '+mois[d.getMonth()]+' '+d.getFullYear();      
+        document.getElementById("cloc").innerHTML += '  '+d.toLocaleTimeString();
+      }
 
 
   	
