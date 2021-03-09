@@ -24,13 +24,15 @@ var menu='<div class="timeline__steps">              <!-- '+
                 '<span class="bloc"></span>'+
                 '<a href="/fattan/web/regex.html" class="timeline__step"><span class="c1">Regex</span></a>'+
                 '<span class="bloc"></span>'+
-                '<a href="#" class="timeline__step"><span class="c1">6</span></a>'+
+                '<a href="/fattan/web/nombres.html" class="timeline__step"><span class="c1">Les nombres</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="#" class="timeline__step"><span class="c1">7</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="#" class="timeline__step"><span class="c1">8</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="#" class="timeline__step"><span class="c1">9</span></a>'+
+                '<span class="bloc"></span>'+
+                '<a href="#" class="timeline__step"><span class="c1">10</span></a>'+
                 '<span class="bloc"></span>'+
                                                                 '<!--'+
                 'Dermier icôme '+
@@ -81,11 +83,12 @@ function afficherCal(val){
 function effacer(){ 
     document.getElementById("output").value = "";
 }
-//calendrier  
+//calendrier Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche. 
 var moi;
     var d = new Date();
     var jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-    var mois = ["Janvier","Février","Mars","Avril","Mai","Juin","juillet"];
+    var mois = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août",
+                "Septembre","Octobre","Novembre","Décembre"];
     if(d.getDate()<10){
       mo='0'+d.getDate();
     }
@@ -93,9 +96,9 @@ var moi;
 
       function myTimer() { 
       var d = new Date(); 
-      document.getElementById("cloc").innerHTML = jours[d.getDay()]+' '+mo+' '+mois[d.getMonth()]+' '+d.getFullYear();      
+      document.getElementById("cloc").innerHTML = jours[d.getDay()]+' '+mo+' '+mois[d.getMonth()]+
+      ' '+d.getFullYear();      
         document.getElementById("cloc").innerHTML += '  '+d.toLocaleTimeString();
-      }
-
-
-  	
+      } 
+      //les quatre saisons d'une année: le printemps, l'été, l'automne et l'hiver.
+      var mois = ["printemps", "été", "automne", "hiver"];
