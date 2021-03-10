@@ -156,3 +156,91 @@ p .med{
   object-fit: cover;
   box-shadow: 0 10px 6px -6px #777, 0 0 10px 10px #999;
 }
+
+
+
+
+
+
+
+
+
+ #fo,table,.pa{
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 100;
+            font-family: monospace;
+            background-color: #00a89b;
+            width: 95%;
+            margin: auto;
+            text-align: left;
+        }
+        .put{
+            background-color: #f8d7da;
+            height: 35px;
+            border-radius: 6px;
+            width: 215px;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: 5px 10px 18px #888f88;
+        }
+        .but{
+            background: linear-gradient(to right,#cecbc9, #f59f00, #f00, #ffbe02a1,#fd606aba);
+            height: 30px;
+            border-radius: 15px;
+            width: 105px;
+            font-size: 18px;
+            color: #fff;
+        }
+        input:hover{
+            background-color: #00ffff;
+            color: green;
+            box-shadow: -1px -1px 6px -6px #777;
+        }
+
+        fieldset{
+            background-color: #7451eb;
+            border: 5px solid #f90;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 5px 10px 18px #888;
+            text-align: center;
+        }
+        form{
+            background-color: #777877;
+            padding: 10px;
+            width: 300px;
+            margin: 5px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        legend{
+            color: #efe;
+            background-color: #a9002f;
+            border-radius: 10px;
+            font-size: 18px;
+            padding: 5px;
+        }
+        #div::placeholder{
+            color: #00f;
+        }
+        #mydialog{ 
+            border: 10px solid #ccc;
+            border-radius: 10px;  
+            display: none;
+            text-align: center;
+            background-color: #f1f0a1;
+            width: 70%;
+            margin:auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+        @media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  nav {
+    display: flex;
+  flex-direction: column; 
+    justify-content: center; 
+}
