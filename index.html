@@ -11,101 +11,6 @@
     <link rel="stylesheet" href="css/menu.css">
     <script src="js/script.js"></script>
     <script src="js/jquery-min.js"></script>
-    <style>
-      body{
-      height: 100vh;
-    }
-    .accueil{
-      height: 100%;
-      width: 100%;
-      display: none;
-    }
-    .loader{
-      position: absolute;
-      background-color: #7e2ea0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .lettre{
-      color: #ccc;
-      font-size: 30px;
-      letter-spacing: 15px;      
-      animation: flash 1.8s linear infinite;
-
-    }
-    @keyframes flash{
-      0%{
-        color: #f00;
-        text-shadow: -1px -1px #f00, 1px 1px #333; color:#f00; font-size: 30px;
-      }
-      90%{
-        color: #484848;
-        text-shadow: none;
-      }
-      100%{
-        color: #f00;
-        text-shadow: -1px -1px #00f, 1px 1px #f00; color:#00f; font-size: 30px;
-      }
-    }
-    .lettre:nth-child(1){
-      animation-delay: 0.1s;
-    }
-    .lettre:nth-child(2){
-      animation-delay: 0.2s;
-    }
-    .lettre:nth-child(3){
-      animation-delay: 0.3s;
-    }
-    .lettre:nth-child(4){
-      animation-delay: 0.4s;
-    }
-    .lettre:nth-child(5){
-      animation-delay: 0.5s;
-    }
-    .lettre:nth-child(6){
-      animation-delay: 0.6s;
-    }
-    .lettre:nth-child(7){
-      animation-delay: 0.7s;
-    }
-    .lettre:nth-child(8){
-      animation-delay: 0.8s;
-    }
-    .lettre:nth-child(9){
-      animation-delay: 0.9s;
-    }
-    .lettre:nth-child(10){
-      animation-delay: 1s;
-    }
-    .loader1 {
-  border-radius: 50%;
-  border-top: 10px solid blue;
-  border-right: 10px solid #c064d7;
-  border-left: 10px solid green;
-  border-bottom: 10px solid yellow;
-  width: 50px;
-  height: 50px;
-  background-image: url(images/med2.jpg);
-  background-size: cover;
-  animation: spin 1.2s linear infinite;
-}
-    @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-span.corps {
-  background-color: #4cafb0;
-  box-shadow: 0 4px 8px 0 grey, 0 6px 20px 0 #a9a9a9;
-  color: white;
-  display: inline-block;
-  padding: 10px;
-}
-
-  </style>
-
 </head>
 <body>
   
@@ -127,36 +32,12 @@ span.corps {
     <div class="divMenu" id="divMenu"style="background-color: #a9a9a9;max-width: 95%;margin: auto;">
       <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
       <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
-      <span id="cloc" class="corps"></span>
     </div>    
     <h4 style="color:#dbdad9;background-color: #a9a9a9;text-shadow: 2px 2px 3px #000;padding: 5px;text-align: center; max-width: 95%;">
       <marquee direction="left" height="" width="100%" behavior="alternate" onMouseOver='this.stop()' onMouseOut='this.start()' scrollAmount='1' scrollDelay='20'>
         Actualités أخبار news 
       </marquee>      
     </h4>        
-    <script>
-      $(function(){
-
-        $("#btnClose").click(function(){
-          $("#sc").slideUp(3000);
-          $('#btnClose').hide();
-          $('#btnMenu').show();
-        });
-
-        $("#btnMenu").click(function(){
-          $("#sc").slideDown(3000);
-            $('#btnMenu').hide();
-            $('#btnClose').show();
-        });
-
-            
-            $(".loader").fadeOut(6000, function(){
-              $('.accueil').fadeIn(3000);
-            });
-            
-              
-        });
-    </script>        
     <h4 style="text-align: center;">
       <span style="color: green;">
         &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
@@ -199,10 +80,30 @@ span.corps {
 </div>
   <script>
       $(function(){
+
         $("#but1").click(function(){
           $("#ain").slideToggle(5000);
           $("#p1").toggle(5000);          
         });
+
+        $("#btnClose").click(function(){
+          $("#sc").slideUp(3000);
+          $('#btnClose').hide();
+          $('#btnMenu').show();
+        });
+
+        $("#btnMenu").click(function(){
+          $("#sc").slideDown(3000);
+            $('#btnMenu').hide();
+            $('#btnClose').show();
+        });
+
+            
+        $(".loader").fadeOut(6000, function(){
+          $('.accueil').fadeIn(3000);
+        });
+            
+              
       });          
   </script> 
 </body>

@@ -47,37 +47,37 @@ a.timeline__step {
 }
 
 .nav1 a{
-    border-left: 1px solid rgba(0,0,0,.08);
-    font-size: 20px;
+  border-left: 1px solid rgba(0,0,0,.08);
+  font-size: 20px;
 }
 .nav1 a:hover{
-    background-color: #0cecec;    
-    color: #fff;
-    text-shadow: 2px 2px 3px #0e0e00;
+  background-color: #0cecec;    
+  color: #fff;
+  text-shadow: 2px 2px 3px #0e0e00;
 }
 
 .iconContainer {
-    display: table-cell;
-    vertical-align: top;
-    width: 30px;
+  display: table-cell;
+  vertical-align: top;
+  width: 30px;
 }
 
 
 a.roundIcon {
-    cursor: pointer;
-    text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .roundIcon {
-    display: inline-block;
-    line-height: 1.5em;
-    height: 1.5em;
-    width: 1.5em;
-    background: rgba(130,130,130,.6);
-    transition: all 3s;
-    color: #ff0;
-    text-align: center;
-    border-radius: 100%;
+  display: inline-block;
+  line-height: 1.5em;
+  height: 1.5em;
+  width: 1.5em;
+  background: rgba(130,130,130,.6);
+  transition: all 3s;
+  color: #ff0;
+  text-align: center;
+  border-radius: 100%;
 }
 
 .roundIcon .roundIcon__icon {
@@ -86,9 +86,8 @@ a.roundIcon {
     display: block;
 }
 .btnMenu, .btnClose{
-background-color: #4ec2c8;
+  background-color: #4ec2c8;
   border: 4px solid #80a;
-  /*color: white;*/
   padding: 5px;
   font-size: 16px;
   cursor: pointer;
@@ -98,18 +97,17 @@ background-color: #4ec2c8;
   transition: all 3s;
 }
 .btnMenu:hover, .btnClose:hover{
-    background-color: #fff;
-    color: #f00;
-    border: 4px solid #a00;
-    transition: all 2s;
+  background-color: #fff;
+  color: #f00;
+  border: 4px solid #a00;
+  transition: all 2s;
 }
 .divMenu{
-    text-align: center;
+  text-align: center;
 }
 
 
-  @media only screen and (max-width: 600px) {
-   
+@media only screen and (max-width: 600px) {   
   .nav1{
     display: block;
     text-align: center;
