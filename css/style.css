@@ -187,8 +187,8 @@ p .med{
         .but{
             background: linear-gradient(to right,#cecbc9, #f59f00, #f00, #ffbe02a1,#fd606aba);
             height: 30px;
-            border-radius: 15px;
-            width: 105px;
+            border-radius: 5px;
+            width: 90px;
             font-size: 18px;
             color: #000;
         }
@@ -209,8 +209,8 @@ p .med{
         form{
             background-color: #777877;
             padding: 10px;
-            width: 300px;
-            margin: 5px;
+            max-width: 300px;
+            margin: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
@@ -233,14 +233,4 @@ p .med{
             width: 70%;
             margin:auto;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-        @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-  nav {
-    display: flex;
-  flex-direction: column; 
-    justify-content: center; 
 }

@@ -35,98 +35,238 @@
       6: six -
       7: sept -
       8: huit -
-      9: neuf.
+      9: neuf.<br>
+      Le formulaire suivant permet de convertir des nombres en arabe, en français et en anglais.
     </p><br>
-    <h3>
-      <label for="nombre">Entrez un nombre entier positif</label><br>
-      &#8659;<br>
-      <input type="text" id="nombre" class="put"><br><br>
-      <input type="button" value="Convertir" onclick="nombres();document.getElementById('nombre').value='';" class="but">
-    </h3><h3 style="border-radius: 0px;">Résultat en lettres<br>&#8659;<br>
-      <span id="fr" style="border-radius: 0px;"></span>
+    <h3><form>
+      <label for="nombre">&#8659; Entrez un nombre entier positif &#8659;</label><br>
+      <span style="color: #a00;font-size: 18px;">&#8659;</span><br>
+      <input type="number" id="nombre" class="put"placeholder="Insérer un numéro"autofocus><br><br>
+      <input type="button" value="français" onclick="français();document.getElementById('nombre').value='';" class="but">
+      <input type="button" value="Arabe" onclick="arabe();document.getElementById('nombre').value='';" class="but">
+      <input type="button" value="English" onclick="english();document.getElementById('nombre').value='';" class="but">
+      </form>
     </h3>
+    <h3 style="border-radius: 0px;"> &#8659; Résultat en lettres &#8659;<br><span style="color: #a00;font-size: 18px;">&#8659;</span><br>
+      <span id="fr"></span>
+      <span style="color: #a00;font-size: 25px;"> &#8660; </span>
+      <span id="ar" style="text-align: right;"></span>
+      <span style="color: #a00;font-size: 25px;"> &#8660; </span>
+      <span id="en"></span>
+    </h3><br>
+    <h3>Ballonnements</h3>
+    <p>
+      C'est le processus d'écrire les nombres en lettres ou avec des mots au lieu des chiffres. L'avantage de ce processus est d'empêcher la falsification des nombres. Le processus de ponctuation est toujours accompagné de l'expression "seulement, rien que" afin de bloquer la manipulation des nombres. On écrit par exemple: <b>Mille dollars seulement</b>. Ici, une personne ne peut pas manipuler le nombre car ça ne sont pas seulement des chiffres mais un texte écrit en lettres. <br>
+      Le repérage est prédominant dans la rédaction des documents financiers, chèques, lettres de change et autres transactions financières sensibles. En plus du numéro inscrit en chiffres, un autre numéro écrit en lettres est ajouté.
+    </p>
     
      </div>
   <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
   <script>
-      var chiffres =["zéro","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix",
-                      "onze","douze","treize","quatorze","quinze","seize"];
-       let nombres0 = ["vingt","trente","quarante","cinquante","soixante"];
-      function nombres(){
+  $(function(){
+
+        $("#btnClose").click(function(){
+          $("#sc").slideUp(3000);
+          $('#btnClose').hide();
+          $('#btnMenu').show();
+        });
+
+        $("#btnMenu").click(function(){
+          $("#sc").slideDown(3000);
+            $('#btnMenu').hide();
+            $('#btnClose').show();
+        });              
+    });    
+      
+      function français(){
+        var chiffres =["Zéro","Un","Deux","Trois","Quatre","Cinq","Six","Sept","Huit","Neuf","Dix",
+                      "Onze","Douze","Treize","Tuatorze","Quinze","Seize"];
+       let nombres0 = ["Vingt","Trente","Quarante","Cinquante","Soixante"];
         let n = document.getElementById("nombre").value;
         n=parseInt(n);
-        // 
+        
         if(n<=16&&n>=0){
-          document.getElementById("fr").innerHTML = n+": "+chiffres[n];
+          document.getElementById("fr").innerHTML =chiffres[n]+": "+n;
         }
 
         if(n==17||n==18||n==19){
-          document.getElementById("fr").innerHTML = n+": "+chiffres[10]+"-"+chiffres[n%10];
+          document.getElementById("fr").innerHTML =chiffres[10]+"-"+chiffres[n%10]+": "+n;
         }
 
         if(n==20||n==30||n==40||n==50||n==60){
-          document.getElementById("fr").innerHTML = n+": "+nombres0[(n/10)-2];
+          document.getElementById("fr").innerHTML =nombres0[(n/10)-2]+": "+n;
         }
 
         if(n-(n%10)==20&&n%10==1){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[0]+" et un";
+          document.getElementById("fr").innerHTML =nombres0[0]+" et un"+": "+n;
         }
 
         if(n>=22&&n<=29){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[0]+"-"+chiffres[n%10];
+          document.getElementById("fr").innerHTML =nombres0[0]+"-"+chiffres[n%10].toLowerCase()+": "+n;
         }
         if(n-(n%10)==30&&n%10==1){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[1]+" et un";
+          document.getElementById("fr").innerHTML =nombres0[1]+" et un"+": "+n;
         }
         if(n>=32&&n<=39){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[1]+"-"+chiffres[n%10];
+          document.getElementById("fr").innerHTML =nombres0[1]+"-"+chiffres[n%10].toLowerCase()+": "+n;
         }
         if(n-(n%10)==40&&n%10==1){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[2]+" et un";
+          document.getElementById("fr").innerHTML =nombres0[2]+" et un"+": "+n;
         }
         if(n>=42&&n<=49){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[2]+"-"+chiffres[n%10];
+          document.getElementById("fr").innerHTML =nombres0[2]+"-"+chiffres[n%10].toLowerCase()+": "+n;
         }
         if(n-(n%10)==50&&n%10==1){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[3]+" et un";
+          document.getElementById("fr").innerHTML =nombres0[3]+" et un"+": "+n;
         }
         if(n>=52&&n<=59){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[3]+"-"+chiffres[n%10];
+          document.getElementById("fr").innerHTML =nombres0[3]+"-"+chiffres[n%10].toLowerCase()+": "+n;
         }
         if(n-(n%10)==60&&n%10==1){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[4]+" et un";
+          document.getElementById("fr").innerHTML =nombres0[4]+" et un"+": "+n;
         }
         if(n>=62&&n<=69){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[4]+"-"+chiffres[n%10];
+          document.getElementById("fr").innerHTML =nombres0[4]+"-"+chiffres[n%10].toLowerCase()+": "+n;
         }
         if(n>=70&&n<=76&&n!=71){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[(4)]+"-"+chiffres[n%10+10];
+          document.getElementById("fr").innerHTML =nombres0[(4)]+"-"+chiffres[n%10+10].toLowerCase()+": "+n;
         }
         if(n==71){
-          document.getElementById("fr").innerHTML =n+": "+" soixante et onze";
+          document.getElementById("fr").innerHTML =" soixante et onze"+": "+n;
         }
         if(n>=77&&n<=79){
-          document.getElementById("fr").innerHTML =n+": "+nombres0[(4)]+"-"+chiffres[10]+"-"+chiffres[n%10];
+          document.getElementById("fr").innerHTML =nombres0[(4)]+"-"+chiffres[10].toLowerCase()+"-"+chiffres[n%10].toLowerCase()+": "+n;
         }
         if(n==80){
-          document.getElementById("fr").innerHTML =n+": "+"quatre-vingts";
+          document.getElementById("fr").innerHTML ="Quatre-vingts"+": "+n;
         }
         if(n==81){
-          document.getElementById("fr").innerHTML =n+": "+"quatre-vingt-un";
+          document.getElementById("fr").innerHTML ="Quatre-vingt-un"+": "+n;
         }
         if(n>=82&&n<=89){
-          document.getElementById("fr").innerHTML =n+": "+chiffres[4]+"-"+nombres0[(0)]+"-"+chiffres[n%10];
+          document.getElementById("fr").innerHTML =chiffres[4]+"-"+nombres0[(0)].toLowerCase()+"-"+chiffres[n%10].toLowerCase()+": "+n;
         }
         if(n>=90&&n<=96){
-          document.getElementById("fr").innerHTML =n+": "+chiffres[4]+"-"+nombres0[(0)]+"-"+chiffres[n%10+10];
+          document.getElementById("fr").innerHTML =chiffres[4]+"-"+nombres0[(0)].toLowerCase()+"-"+chiffres[n%10+10].toLowerCase()+": "+n;
         }
         if(n>=97&&n<=99){
-          document.getElementById("fr").innerHTML =n+": "+chiffres[4]+"-"+nombres0[(0)]+"-"+chiffres[10]+"-"+chiffres[n%10];
+          document.getElementById("fr").innerHTML =chiffres[4]+"-"+nombres0[(0)].toLowerCase()+"-"+chiffres[10].toLowerCase()+"-"+chiffres[n%10].toLowerCase()+": "+n;
         }
         if(n==100){
-          document.getElementById("fr").innerHTML =n+": "+"cent";
+          document.getElementById("fr").innerHTML ="Cent"+": "+n;
         }
     }
+    function arabe(){
+      let chiffres=["صفر", "واحد", "إثنان", "ثلاثة", "أربعة", "خمسة", "ستة", "سبعة", "ثمانية", "تسعة","عشرة"];
+      let acharates=["عشرون", "ثلاثون", "أربعون", "خمسون", "ستون", "سبعون", "ثمانون", "تسعون" ,"مئة"]
+      let n = parseInt(document.getElementById("nombre").value);
+      let achar="عشر";
+      let ihda="أحد عشر";
+      let ithna="اثنا عشر";
+
+      if(n>=0&&n<=10){
+        document.getElementById("ar").innerHTML =chiffres[n]+": "+n;
+      }
+
+      if(n%10==0&&n!=0){
+        document.getElementById("ar").innerHTML =acharates[n/10-2]+": "+n;
+      }
+
+      if(n==11){
+        document.getElementById("ar").innerHTML =ihda+": "+n;
+      }
+
+      if(n==12){
+        document.getElementById("ar").innerHTML =ithna+": "+n;
+      }
+
+      if(n>=13&&n<=19){
+        document.getElementById("ar").innerHTML =chiffres[n%10]+" "+achar+": "+n;
+      }
+
+      if(n>=21&&n<=29){
+        document.getElementById("ar").innerHTML =chiffres[n%10]+" و  "+acharates[0]+": "+n;
+      }
+
+      if(n>=31&&n<=39){
+        document.getElementById("ar").innerHTML =chiffres[n%10]+" و  "+acharates[1]+": "+n;
+      }
+
+      if(n>=41&&n<=49){
+        document.getElementById("ar").innerHTML =chiffres[n%10]+" و  "+acharates[2]+": "+n;
+      }
+
+      if(n>=51&&n<=59){
+        document.getElementById("ar").innerHTML =chiffres[n%10]+" و  "+acharates[3]+": "+n;
+      }
+
+      if(n>=61&&n<=69){
+        document.getElementById("ar").innerHTML =chiffres[n%10]+" و  "+acharates[4]+": "+n;
+      }
+
+      if(n>=71&&n<=79){
+        document.getElementById("ar").innerHTML =chiffres[n%10]+" و  "+acharates[5]+": "+n;
+      }
+
+      if(n>=81&&n<=89){
+        document.getElementById("ar").innerHTML =chiffres[n%10]+" و  "+acharates[6]+": "+n;
+      }
+
+      if(n>=91&&n<=99){
+        document.getElementById("ar").innerHTML =chiffres[n%10]+" و  "+acharates[7]+": "+n;
+      }
+      
+    }
+
+    function english(){
+      let chiffres=["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+      let acharates=["Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety", "One Hundred"]
+      let n = parseInt(document.getElementById("nombre").value);
+      let achar="";
+      let ihda=" ";
+      let ithna=" ";
+
+      if(n>=0&&n<=19){
+        document.getElementById("en").innerHTML =chiffres[n]+": "+n;
+      }
+
+      if(n%10==0&&n!=0&&n!=10){
+        document.getElementById("en").innerHTML =acharates[n/10-2]+": "+n;
+      }
+
+      if(n>=21&&n<=29){
+        document.getElementById("en").innerHTML =acharates[0]+"-"+chiffres[n%10].toLowerCase()+": "+n;
+      }
+
+      if(n>=31&&n<=39){
+        document.getElementById("en").innerHTML =acharates[1]+"-"+chiffres[n%10].toLowerCase()+": "+n;
+      }
+
+      if(n>=41&&n<=49){
+        document.getElementById("en").innerHTML =acharates[2]+"-"+chiffres[n%10].toLowerCase()+": "+n;
+      }
+
+      if(n>=51&&n<=59){
+        document.getElementById("en").innerHTML =acharates[3]+"-"+chiffres[n%10].toLowerCase()+": "+n;
+      }
+
+      if(n>=61&&n<=69){
+        document.getElementById("en").innerHTML =acharates[4]+"-"+chiffres[n%10].toLowerCase()+": "+n;
+      }
+
+      if(n>=71&&n<=79){
+        document.getElementById("en").innerHTML =acharates[5]+"-"+chiffres[n%10].toLowerCase()+": "+n;
+      }
+
+      if(n>=81&&n<=89){
+        document.getElementById("en").innerHTML =acharates[6]+"-"+chiffres[n%10].toLowerCase()+": "+n;
+      }
+
+      if(n>=91&&n<=99){
+        document.getElementById("en").innerHTML =acharates[7]+"-"+chiffres[n%10].toLowerCase()+": "+n;
+      }
+
+      }
     
   </script>
 </body>
