@@ -37,7 +37,7 @@ body{
   margin: auto;
   max-width: 95%;
   color: #feef0e;
-  background-color: RoyalBlue;
+  background-color: #416;
   padding: 10px;
   overflow: auto;
   font-family: monospace;
@@ -185,7 +185,7 @@ p .med{
             box-shadow: 5px 10px 18px #888f88;
         }
         .but{
-            background: linear-gradient(to right,#cecbc9, #f59f00, #f00, #ffbe02a1,#fd606aba);
+            background: linear-gradient(to right,#416,#fd606aba, #ffbe02a1, #f90, #ffbe02a1,#fd606aba,#416);
             height: 30px;
             border-radius: 5px;
             width: 90px;
@@ -207,7 +207,7 @@ p .med{
             text-align: center;
         }
         form{
-            background-color: #777877;
+            background-color: #416;
             padding: 10px;
             max-width: 300px;
             margin: auto;
