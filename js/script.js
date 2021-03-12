@@ -16,7 +16,7 @@ var menu='<div class="timeline__steps">              <!-- '+
           'Fin du premier icôme '+
           '*************                             -->'+
                 '<span class="bloc"></span>    '+
-                '<a href="/fattan/maths/index.html" class="timeline__step"><span class="c1"><i class="fas fa-square-root-alt"></i> Maths</span></a>'+
+                '<a href="/fattan/activites/activitesMaths.html" class="timeline__step"><span class="c1"><i class="fas fa-square-root-alt"></i> Maths</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="/fattan/web/index.html" class="timeline__step"><span class="c1">&Wopf; Web</span></a>'+
                 '<span class="bloc"></span>'+
@@ -24,7 +24,7 @@ var menu='<div class="timeline__steps">              <!-- '+
                 '<span class="bloc"></span>'+
                 '<a href="/fattan/web/regex.html" class="timeline__step"><span class="c1">Regex</span></a>'+
                 '<span class="bloc"></span>'+
-                '<a href="/fattan/web/nombres.html" class="timeline__step"><span class="c1">Les nombres</span></a>'+
+                '<a href="/fattan/activites/nombres.html" class="timeline__step"><span class="c1">Les nombres</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="#" class="timeline__step"><span class="c1">7</span></a>'+
                 '<span class="bloc"></span>'+
@@ -53,8 +53,24 @@ var footer="Copyright &copy; 2015 - 2021 Développé et Réalisé par Ragim - Mo
         "Tous droits réservés à RAGIM Mohamed. Il est strictement interdit de copier et de distribuer le contenu de ce site sans l'accord express de son propriétaire<br>"+
         '<span style="direction: rtl;">'+
        'جميع الحقوق محفوظة ل : رجيم محمد ويمنع منعا باتا نسخ وتوزيع محتويات هذا الموقع دون موافقة صريحة من مالكه <br><a href="/fattan/"style="text-decoration: none;">الرئيسية</a></span>';
-
-		function inclureMenu(t){
+/*== Début Cloc ==*/
+var mo="";
+    var d = new Date();
+    var jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+    var mois = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août", "Septembre","Octobre","Novembre","Décembre"];
+    mo=d.getDate();
+    if(d.getDate()<10){
+      mo='0'+d.getDate();
+    }
+      function myTimer() { 
+      var d1 = new Date(); 
+      document.getElementById("cloc").innerHTML = jours[d1.getDay()]+' '+mo+' '+mois[d1.getMonth()]+' '+d1.getFullYear();      
+        document.getElementById("cloc").innerHTML += '  '+d1.toLocaleTimeString();
+      }
+      setInterval(myTimer, 1000);
+/*== Fin Cloc ==*/
+		
+    function inclureMenu(t){
 			document.getElementById('nav1').innerHTML=t;
 		}
 
@@ -330,27 +346,11 @@ function effacer(){
 /*== Fin Les activités mathématiques ==*/
 
 
-/*calendrier Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche. */
-var moi;
-    var d = new Date();
-    var jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-    var mois = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août",
-                "Septembre","Octobre","Novembre","Décembre"];
-    if(d.getDate()<10){
-      mo='0'+d.getDate();
-    }
-    var myVar = setInterval(myTimer, 1000);
 
-      function myTimer() { 
-      var d = new Date(); 
-      document.getElementById("cloc").innerHTML = jours[d.getDay()]+' '+mo+' '+mois[d.getMonth()]+
-      ' '+d.getFullYear();      
-        document.getElementById("cloc").innerHTML += '  '+d.toLocaleTimeString();
-      }
 
        
       //les quatre saisons d'une année: le printemps, l'été, l'automne et l'hiver.
-      var mois = ["printemps", "été", "automne", "hiver"];
+      var saisons = ["printemps", "été", "automne", "hiver"];
 
       /*== Début Les nombres ==*/
       function français(){
