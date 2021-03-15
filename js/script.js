@@ -26,7 +26,7 @@ var menu='<div class="timeline__steps">              <!-- '+
                 '<span class="bloc"></span>'+
                 '<a href="/fattan/activites/nombres.html" class="timeline__step"><span class="c1">Les nombres</span></a>'+
                 '<span class="bloc"></span>'+
-                '<a href="#" class="timeline__step"><span class="c1">7</span></a>'+
+                '<a href="/fattan/activites/sompteur.html" class="timeline__step"><span class="c1">Compteur</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="#" class="timeline__step"><span class="c1">8</span></a>'+
                 '<span class="bloc"></span>'+
