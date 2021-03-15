@@ -53,6 +53,7 @@ var footer="Copyright &copy; 2015 - 2021 Développé et Réalisé par Ragim - Mo
         "Tous droits réservés à RAGIM Mohamed. Il est strictement interdit de copier et de distribuer le contenu de ce site sans l'accord express de son propriétaire<br>"+
         '<span style="direction: rtl;">'+
        'جميع الحقوق محفوظة ل : رجيم محمد ويمنع منعا باتا نسخ وتوزيع محتويات هذا الموقع دون موافقة صريحة من مالكه <br><a href="/fattan/"style="text-decoration: none;">الرئيسية</a></span>';
+
 /*== Début Cloc ==*/
 var mo="";
     var d = new Date();
@@ -443,7 +444,7 @@ function effacer(){
         document.getElementById("ar").innerHTML =chiffres[n]+": "+n;
       }
 
-      if(n%10==0&&n!=0){
+      if(n%10==0&&n!=0&&n!=10){
         document.getElementById("ar").innerHTML =acharates[n/10-2]+": "+n;
       }
 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Compteur</title>
+	<meta charset="utf-8">
+    <link rel="icon" href="../images/logo.png"sizes="20x20">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <script src="../js/jquery-min.js"></script>
+    <script src="../js/script.js"></script>
+    <style>
+        textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #f0f;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  font-size: 18px;
+  resize: none; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  background-color: #416;
+  color: yellow;
+}
+    </style>  
+</head>
+<body>
+    <dialog id="mydialog">T</dialog>
+    <header class="hed" id="header"><script>inclureHeader(header);</script></header>  
+    <div id="conteneur">
+        <h1 class="titre">Compteur</h1>
+        <h3>
+            <label for="lab">⇓ Zone de texte à compter ⇓</label><br><span style="color: #ff6347;font-size: 18px;">⇓</span><br>
+            <textarea wrap="hard" form="usrform"name="fich" placeholder="Coller ici le texte à compter" id="lab"></textarea><br>Résultats<br>
+            <span style="color: #ff6347;font-size: 18px;">⇓</span><br>
+            <span id="resul"></span>
+        </h3>
+        
+        <form name="dment" class="compteur" id="usrform">     
+            <input type="button" class="but" value="Compter" onclick="compter()">
+            <input type="reset" class="but" value="Effacer" onclick="document.getElementById('resul').innerHTML = '';">
+        </form>
+        
+    <script>
+
+        var dialog = document.getElementById('mydialog');
+        function compter(){
+             var str = document.dment.fich.value;
+            var n=0,m="";
+            str=str.trim();
+            var arr = str.split(" ");
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]==""){n++;}
+                if(arr[i].length>=9){dialog.innerHTML ="<h1>Attention!</h1><h2 style='background-color:#f1f0a1;'>"+arr[i]+": n'est pas un mot</h2> "+" <br><button class='btnMenu' onclick=\" var dialog = document.getElementById('mydialog');dialog.close();dialog.style.display='none';\"><i class='fa fa-close'></i></button>";dialog.style.display='block';dialog.style.color='#f00';dialog.showModal();break;}
+                if(arr[i].length==1){m+="  "+arr[i];}
+            }
+            document.getElementById("resul").innerHTML = "Si on compte ces caractères <span style='font-size:25px;'>&#9758;</span> "+m+" <span style='font-size:25px;'>&#9756;</span> Ce document contient: "+(arr.length-n)+" mots";
+
+        }
+    </script>
+
+    </div>
+    <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+</body>
+</html>

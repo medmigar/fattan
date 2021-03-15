@@ -48,6 +48,9 @@ body{
 h1{
   text-align: center;
 }
+h1.titre{
+  text-shadow: -1px -1px white, 1px 1px #333; color:#0cb49f; font-size: 40px;
+}
 h{
   text-align: center;
   background-color: #fff;
@@ -210,6 +213,7 @@ p .med{
             background-color: #416;
             padding: 10px;
             max-width: 300px;
+            border: 2px solid #f0f;
             margin: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
