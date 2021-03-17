@@ -544,3 +544,5 @@ function effacer(){
 
       }
       /*== Fin Les nombres ==*/
+
+      

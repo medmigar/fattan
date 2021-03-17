@@ -49,7 +49,9 @@ h1{
   text-align: center;
 }
 h1.titre{
-  text-shadow: -1px -1px white, 1px 1px #333; color:#0cb49f; font-size: 40px;
+  text-shadow: -1px -1px white, 1px 1px #333; 
+  color:#0cb49f; 
+  font-size: 40px;
 }
 h{
   text-align: center;
@@ -240,6 +242,26 @@ p .med{
             margin:auto;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+ textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #f0f;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  font-size: 18px;
+  resize: none; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  background-color: #416;
+  color: yellow;
+}
+form#file{
+   background-color: #f8f8f8;  
+ }
 
 
 
@@ -327,3 +349,78 @@ p .med{
   100% { transform: rotate(360deg); }
 }
 /*== Fin Loader ==*/
+
+
+/*  */
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed;  
+  padding-top: 150px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4);
+  animation-name: animatetop1;
+  animation-duration: 1s 
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+  background-color: #fefefe;
+  border-radius: 15px;
+  width: 60%;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 3s
+}
+
+.close {
+  color: #f00;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-header, .modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  text-align: center;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@-webkit-keyframes animatetop1 {
+  from {left: :-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #f0f;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  font-size: 18px;
+  resize: none; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  background-color: #416;
+  color: yellow;
+}
+form#file{
+   background-color: #f8f8f8; 
+}
