@@ -37,9 +37,7 @@ function affDmt() {
         modal.style.display = "none";    
     }
     /*== Fin Compteur ==*/
-    document.getElementById("btnModal").onclick = function() {
-        modal.style.display = "block";    
-    }
+    
 
     /*== Début Les activités mathématiques*/ 
       let result="<h3 style='width:90%;border-radius: 0;'><span style='font-size:30px;'>&#127799;</span></h3><p  class='pa' style='width:90%;'>Caractère invalide !<br>Entrer dans ce champ un nombre entier positif</p>";       

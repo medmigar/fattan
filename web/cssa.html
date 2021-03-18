@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>CSS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../images/logo.png"sizes="20x20">
+  <link rel="stylesheet" href="../css/menu.css">
+  <script src="../js/script.js"></script>
+  <script src="../js/jquery-min.js"></script>
+</head>
+<body>
+    <header class="hed" id="header"><script>inclureHeader(header);</script></header>
+  <div id="conteneur">
+    <div id="sc">   
+      <nav class="nav1" id="nav1"><script>inclureMenu(menu);</script> </nav>
+    </div>
+    <div class="divMenu" id="divMenu">
+      <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+      <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+    </div>
+    <h1 style="text-shadow: -1px -1px white, 1px 1px #333; color:#0cb49f; font-size: 40px;">Le CSS أوراق الأنماط المتتالية</h1>    
+    <h3>مقدمة</h3>
+    <p style="direction: rtl;">
+    في الأيام الأولى للويب، لم يكن  CSS موجودًا. وكان في بداية الويب، لغة HTML فقط، والتي ظهرت في عام 1991. وCSS هي اللغة التي جاءت لتكملة HTML في عام 1996. وتسمح بالتنسيق، وتزيين النتيجة المرئية النهائية، كتحديد اللون والحجم والمحاذاة من النص إلخ….
+وCSS هي اختصار العبارة: Cascading Style Sheets التي يمكن ترجمتها إلى: أوراق الأنماط المتتالية، ونقول "Style sheet" لأننا بشكل عام نكتب كود CSS في ملف منفصل.  يحتاج CSS إلى صفحة HTML للعمل. وإن ملف HTML عند فتحه، يحمّل ملف CSS ويطبق معلومات أسلوبه.
+
+    </p>
+    <ul class="parhpe"  style="direction: rtl;">
+      <li>CSS هي لغة تصف نمط مستند HTML، وهي اللغة المستخدمة لتصميم مستند HTML.</li>
+      <li>CSS يصف كيفية عرض عناصر HTML على الشاشة أو في الطباعة أو في بعض الوسائط الأخرى.</li>
+      <li>CSS يوفر الكثير من العمل. يمكنه التحكم في تخطيط صفحات الويب المتعددة في نفس الوقت.</li>
+      <li>يتم تخزين أوراق الأنماط الخارجية في ملفات CSS.</li>
+      <li>باستخدام ملف ورقة نمط خارجي، يمكن للمرء تغيير مظهر موقع ويب بأكمله عن طريق تغيير ملف واحد.</li>
+      <li>CSS يسمح بتنويعات التخطيط والعرض لمختلف الأجهزة وأحجام الشاشات.</li>
+      <li>CSS يتيح تحديد الخط المستخدم على الموقع، كما يسمح لك بتحديد حجم النص والحدود والخلفية إلخ….</li>
+      <li>CSS يتمم كود HTML وينسقها ويعطي محتواها الشكل المراد فعله.</li>
+      <li>عندما يقرأ المستعرض (Navigateur) ورقة الأنماط (CSS)، فإنه يقوم بتنسيق مستند HTML بناءً على المعلومات الموجودة في ورقة الأنماط.</li>
+    </ul><br>
+    <h3  style="direction: rtl;">أين نكتب CSS؟</h3>
+    <ul class="parhpe"  style="direction: rtl;">لدينا خيار كتابة وإدراج ورقة الأنماط في الكود في ثلاثة أماكن مختلفة:
+      <li>في ملف ورقة الأنماط الخارجية مستند CSS خارج مستند HTML وهي أكثر الطرق الموصى بها وتسمى CSS خارجي.</li>
+    </ul>
+    <pre>
+      &lt;head>
+        &lt;link rel="stylesheet" href="style.css">
+      &lt;/head>
+    </pre>
+    <ul class="parhpe"  style="direction: rtl;">
+      <li>في رأس < head > لملف HTML (CSS داخلي) إذا كان لصفحة HTML واحدة نمط فريد. يمكن استخدام ورقة الأنماط الداخلية إذا كان للصفحة الواحدة نمط فريد. يتم تحديد الأنماط الداخلية في عنصر < style >، في قسم < head > بصفحة HTML.
+      </li>
+    </ul>
+    <pre>
+  &lt;head>
+    &lt;style>
+      body {
+        background-color: linen;
+      }
+      h1 {
+        color: maroon;
+        margin-left: 40px;
+      } 
+    &lt;/style>
+  &lt;/head>
+</pre>
+    <ul class="parhpe" style="direction: rtl;">
+      <li>مباشرة في عنصر  HTML عبر السمة: style (أسلوب CSS الأقل الموصى به على الإنترنت). يمكن استخدام النمط المضمن لتطبيق نمط فريد على عنصر HTML واحد.. لاستخدام الأنماط المضمنة، نضف سمة النمط إلى العنصر المناسب. يمكن أن تحتوي سمة النمط على أي خاصية CSS. يوضح المثال أدناه كيفية تغيير اللون والهامش الأيسر لعنصر < h1 >
+      </li>
+    </ul>
+    <pre>
+  &lt;h1 style="color:blue;margin-left:30px;">This is a heading&lt;/h1>
+</pre>
+<p style="direction: rtl;">
+  يجب أن تتضمن كل صفحة مرجعًا لملف ورقة الأنماط الخارجية داخل عنصر < link >. يدخل عنصر < link > داخل قسم < head >.
+يمكن كتابة ورقة أنماط خارجية في أي محرر نصوص. يجب ألا يحتوي الملف على أي علامات HTML. يجب حفظ ملف ورقة الأنماط بامتداد .css. <br>عندما يكون هناك أكثر من نمط واحد محدد لعنصر HTML ، فإن الأنماط ستتدرج في ورقة أنماط "افتراضية" جديدة وفقًا للقواعد التالية:<br>
+
+نمط مضمن (داخل عنصر HTML)<br>
+أوراق الأنماط الخارجية والداخلية (في القسم الرئيسي)<br>
+المتصفح بشكل افتراضي 
+
+</p>
+  </div>
+  <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+  <script>
+    $(function(){
+
+      $("#btnClose").click(function(){
+        $("#sc").slideUp(3000);
+        $('#btnClose').hide();
+        $('#btnMenu').show();
+      });
+
+      $("#btnMenu").click(function(){
+        $("#sc").slideDown(3000);
+        $('#btnMenu').hide();
+        $('#btnClose').show();
+      });
+    });
+  </script>
+  </body>
+  </html>
