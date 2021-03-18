@@ -53,11 +53,6 @@ h1.titre{
   color:#0cb49f; 
   font-size: 40px;
 }
-h{
-  text-align: center;
-  background-color: #fff;
-  color: #000;
-}
 
 h3,h4,h2,.anachid{
   text-align: center;
@@ -351,8 +346,7 @@ form#file{
 /*== Fin Loader ==*/
 
 
-/*  */
-/* The Modal (background) */
+/* Début Fenêtre Modal */
 .modal {
   display: none; 
   position: fixed;  
@@ -403,24 +397,4 @@ form#file{
   from {left: :-300px; opacity:0} 
   to {top:0; opacity:1}
 }
-
-textarea {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #f0f;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  font-size: 18px;
-  resize: none; 
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
-  background-color: #416;
-  color: yellow;
-}
-form#file{
-   background-color: #f8f8f8; 
-}
+/* Fin Fenêtre Modal */
