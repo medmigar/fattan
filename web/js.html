@@ -37,6 +37,20 @@
        Le Javascript est un langage dit <b>client-side</b>, c'est-à-dire que les scripts sont exécutés par le navigateur chez l'internaute (le client). Cela diffère des langages de scripts dits<b> server-side</b> qui sont exécutés par le serveur Web. C'est le cas des langages comme le PHP, Java...<br>
        Un script server-side va s'occuper de « créer » la page Web qui sera envoyée au navigateur. Ce dernier va alors afficher la page puis exécuter les scripts client-side tel que le Javascript.
        Le Javascript a évolué vers d'autres destinées. Il est utilisé pour réaliser des extensions des différents programmes, et utilisé pour réaliser des applications. Le Javascript est utilisé majoritairement au sein des pages Web.
+    </p><br>
+    <h3>Les informations sur un fichier</h3>
+    <p>
+      Pour récupérer le nom, la taille, le type et la date de modification d'un fichier en JavaScript:<br>
+      Récupérer le nom: <b>document.getElementById('myFile').files[0].name</b><br>
+      Récupérer la taille: <b>document.getElementById('myFile').files[0].size</b><br>
+      Récupérer le type: <b>document.getElementById('myFile').files[0].type</b><br>
+      Récupérer la date de modification: <b>document.getElementById('myFile').files[0].lastModifiedDate</b><br>
+      Pour  récupérer l'URL de la page courante: <b>var str = window.location.href;</b><br>
+      Pour récupérer les paramètres d'URL en JavaScript:<br> 
+      <b>var str = window.location.href;(?name=Med)</b><br>
+      <b>var url = new URL(str);</b><br>
+      <b>var name = url.searchParams.get("name")//Med;</b><br>
+      Pour vérifier si le paramètre existe dans l'URL. On peut  utiliser La méthode has(). Elle renvoie true si le paramètre existe, sinon il renvoie false. (<b>search_params.has('name')</b>).<br>
     </p>
     </div>
     <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>

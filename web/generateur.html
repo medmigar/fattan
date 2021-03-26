@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Générateur</title>
+	<meta charset="utf-8">
+    <link rel="icon" href="../images/logo.png"sizes="20x20">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <script src="../js/jquery-min.js"></script>
+    <script src="../js/script.js"></script>
+    <style>
+        label.border{
+            font-size: 17px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <header class="hed" id="header"><script>inclureHeader(header);</script></header>    
+    <div id="conteneur">
+        <div id="sc">   
+          <nav class="nav1" id="nav1"><script>inclureMenu(menu);</script> </nav>
+        </div>
+        <h1 class="titre">Générateur</h1>
+        <h3>Introduction</h3>
+        <p>
+            Le <b>CSS</b> est le langage utilisé pour styliser des pages Web. Il permet de définir le style des éléments HTML, et la mise en page et les variations d'affichage pour différents appareils et tailles d'écran. Il existe plusieurs types de propriétés disponibles pour styliser les éléments HTML. Ici, ce générateur de code est destiné à créer les bordures d'un div de cinq façons différentes. Sachant qu'il existe <a href="/fattan/web/css.html#css">trois</a> façons d'insérer une feuille de style dans un document HTML: 
+        </p>
+        <ul class="parhpe">
+            <li>CSS externe</li>
+            <li>CSS interne</li>
+            <li>CSS en ligne</li>
+        </ul> <br>
+        <h3 style="width: 330px;">La bordure abrégée</h3>
+        <form onmouseleave="document.getElementById('myRange').style.display='none';" style="border-radius: 0px 0px 10px 10px; border-top-style: none;">
+          <label class="border">Largeur de la bordure</label>
+          <input type="text" name="" id="num" onfocus="foc()" value="5" class="put"><br> 
+          <input type="range" min="1" max="50" value="5" id="myRange"  oninput="myFunction();resultatAbrgee();" style="display: none;" class="put"><br>    
+          <label class="border">Style de la bordure</label>
+          <select id="border" onchange="borderStyle();resultatAbrgee();" class="put">        
+            <option value="dotted">dotted</option>
+            <option value="dashed">dashed</option>
+            <option value="solid">solid</option>
+            <option value="double">double</option>        
+            <option value="groove">groove</option>
+            <option value="ridge">ridge</option>
+            <option value="inset">inset</option>
+            <option value="outset">outset</option>
+            <option value="none">none</option>        
+          </select><br>
+          <label for="col"  class="border">Couleur de la bordure</label>
+          <input type="color" id="col" onchange="borderColor();resultatAbrgee();"class="put">          
+        </form><br>        
+        <div style="height: 300px; width: 300px;margin: auto;background-color: #f898f8;" id="div"></div>
+        <div id="re" style="width: 95%;margin: auto;"></div><br><hr>
+        <input type="button" id="btnDiff" value="AutreCode" onclick="autre()">
+        <input type="button" id="cache" value="CacherCode" onclick="cache()" style="display: none;">        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;background-color: #cecbc9;width: 95%;margin: auto; display: none;" id="autre">
+            <h3 style="width: 330px;">La bordure différente pour chaque côté</h3>
+        <form onmouseleave="document.getElementById('superieureRange').style.display='none';">
+            <h3>La bordure supérieure</h3>
+          <label class="border">Largeur &#9755; </label>
+          <input type="text" name="" id="superieure" onfocus="focSup()" value="5" class="put"style="width: 40px;">
+          <input type="range" min="1" max="50" value="5" id="superieureRange"  oninput="superieur();resultatSup();" style="display: none;width: 50px;" class="put">    
+          <label class="border">Style &#9755; </label>
+          <select id="borderSup" onchange="borderStyleSup();resultatSup();" class="put" style="width: 85px;">        
+            <option value="dotted">dotted</option>
+            <option value="dashed">dashed</option>
+            <option value="solid">solid</option>
+            <option value="double">double</option>        
+            <option value="groove">groove</option>
+            <option value="ridge">ridge</option>
+            <option value="inset">inset</option>
+            <option value="outset">outset</option>
+            <option value="none">none</option>        
+          </select>
+          <label for="coleurSup" class="border">Couleur &#9755; </label>
+          <input type="color" id="couleurSup" onchange="borderColorSup();resultatSup();"class="put" style="width: 30px;height: 25.5px;">
+        </form>
+         
+        <form onmouseleave="document.getElementById('droiteRange').style.display='none';">
+            <h3>La bordure droite</h3>
+          <label class="border">Largeur &#9755; </label>
+          <input type="text" name="" id="numDroite" onfocus="focDroite()" value="5" class="put"style="width: 40px;">
+          <input type="range" min="1" max="50" value="5" id="droiteRange"  oninput="droite();resultatDroite();" style="display: none;width: 50px;" class="put">    
+          <label class="border">Style &#9755; </label>
+          <select id="borderDroite" onchange="borderStyleDroite();resultatDroite();" class="put" style="width: 85px;">        
+            <option value="dotted">dotted</option>
+            <option value="dashed">dashed</option>
+            <option value="solid">solid</option>
+            <option value="double">double</option>        
+            <option value="groove">groove</option>
+            <option value="ridge">ridge</option>
+            <option value="inset">inset</option>
+            <option value="outset">outset</option>
+            <option value="none">none</option>        
+          </select>
+          <label for="coleurDroite" class="border">Couleur &#9755; </label>
+          <input type="color" id="coleurDroite" onchange="borderColorDroite();resultatDroite();"class="put"style="width: 30px;height: 25.5px;">
+        </form>
+        <form onmouseleave="document.getElementById('basRange').style.display='none';">
+            <h3>La bordure du bas</h3>
+          <label class="border">Largeur &#9755; </label>
+          <input type="text" name="" id="numBas" onfocus="focBas()" value="5" class="put"style="width: 40px;">
+          <input type="range" min="1" max="50" value="5" id="basRange"  oninput="bas();resultatBas();" style="display: none;width: 50px;" class="put">    
+          <label class="border">Style &#9755; </label>
+          <select id="borderBas" onchange="borderStyleBas();resultatBas();" class="put" style="width: 85px;">  
+            <option value="dotted">dotted</option>
+            <option value="dashed">dashed</option>
+            <option value="solid">solid</option>
+            <option value="double">double</option>        
+            <option value="groove">groove</option>
+            <option value="ridge">ridge</option>
+            <option value="inset">inset</option>
+            <option value="outset">outset</option>
+            <option value="none">none</option>        
+          </select>
+          <label for="col" class="border">Couleur &#9755; </label>
+          <input type="color" id="colorBas" onchange="borderColorBas();resultatBas();"class="put"style="width: 30px;height: 25.5px;">
+        </form>
+        <form onmouseleave="document.getElementById('gaucheRange').style.display='none';">
+            <h3>La bordure gauche</h3>
+          <label class="border">Largeur &#9755; </label>
+          <input type="text" name="" id="numGauche" onfocus="focGauche()" value="5" class="put"style="width: 40px;">
+          <input type="range" min="1" max="50" value="5" id="gaucheRange"  oninput="gauche();resultatGauche();" style="display: none;width: 50px;" class="put">    
+          <label class="border">Style &#9755; </label>
+          <select id="borderGauche" onchange="borderStyleGauche();resultatGauche();" class="put" style="width: 85px;">        
+            <option value="dotted">dotted</option>
+            <option value="dashed">dashed</option>
+            <option value="solid">solid</option>
+            <option value="double">double</option>        
+            <option value="groove">groove</option>
+            <option value="ridge">ridge</option>
+            <option value="inset">inset</option>
+            <option value="outset">outset</option>
+            <option value="none">none</option>        
+          </select>
+          <label for="colorGauche" class="border">Couleur &#9755; </label>
+          <input type="color" id="colorGauche" onchange="borderColorGauche();resultatGauche();"class="put"style="width: 30px;height: 25.5px;">
+        </form>        
+    </div><hr>    
+    </div>
+    <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+    <script src="../js/script2.js"></script>
+    <script>
+        function autre(){
+          document.getElementById("autre").style.display="block";
+          document.getElementById("btnDiff").style.display="none";
+          document.getElementById("cache").style.display="block";  
+        }
+        function cache(){
+         document.getElementById("autre").style.display="none";
+         document.getElementById("btnDiff").style.display="block";
+         document.getElementById("cache").style.display="none";   
+        }
+
+      /* Début de La bordure abrégée */
+    function resultatAbrgee(){
+      var t="<br><h3>Code</h3><pre>div{<br>   border: "+document.getElementById("num").value+"px "+
+      document.getElementById("border").value+" "+document.getElementById("col").value+";<br>}</pre>";
+      document.getElementById("re").innerHTML =t;
+      }
+    function myFunction() {
+     document.getElementById("num").value = document.getElementById("myRange").value;
+     document.getElementById("div").style.borderWidth=document.getElementById("num").value+"px ";
+    }
+    function foc() {
+      document.getElementById("num").style.backgroundColor = "yellow";
+      document.getElementById("myRange").style.display="block";
+    }
+    function borderStyle() {
+      document.getElementById("div").style.borderStyle=document.getElementById("border").value;
+    }
+    function borderColor() {
+      document.getElementById("div").style.borderColor=document.getElementById("col").value;
+    }
+    borderStyle();
+/* Fin de La bordure abrégée */
+
+/* Début de La bordure supérieure */
+    function resultatSup(){
+      var t="<br><h3>Code</h3><pre>div{<br>   border-top-style: "+document.getElementById("superieure").value+"px "+
+      document.getElementById("borderSup").value+" "+document.getElementById("couleurSup").value+";<br>}</pre>";
+      document.getElementById("re").innerHTML=t;
+    }
+    function superieur() {
+      document.getElementById("superieure").value=document.getElementById("superieureRange").value;
+      document.getElementById("div").style.borderTopWidth=document.getElementById("superieure").value+"px ";
+    }
+    function focSup() {
+      document.getElementById("superieure").style.backgroundColor="yellow";
+      document.getElementById("superieureRange").style.display="block";
+    }
+    function borderStyleSup() {
+      document.getElementById("div").style.borderTopStyle=document.getElementById("borderSup").value;
+    }
+    function borderColorSup() {
+      document.getElementById("div").style.borderTopColor=document.getElementById("couleurSup").value;
+    }
+    borderStyleSup();
+    /* Fin de La bordure supérieure */
+
+    /* Début de La bordure droite */
+    function resultatDroite(){
+      var t="<br><h3>Code</h3><pre>div{<br>   border-right-style: "+document.getElementById("numDroite").value+"px "+
+      document.getElementById("borderDroite").value+" "+document.getElementById("coleurDroite").value+";<br>}</pre>";
+      document.getElementById("re").innerHTML=t;
+    }
+    function droite() {
+      document.getElementById("numDroite").value=document.getElementById("droiteRange").value;
+      document.getElementById("div").style.borderRightWidth=document.getElementById("numDroite").value+"px ";
+    }
+    function focDroite() {
+      document.getElementById("numDroite").style.backgroundColor="yellow";
+      document.getElementById("droiteRange").style.display="block";
+    }
+    function borderStyleDroite() {
+      document.getElementById("div").style.borderRightStyle=document.getElementById("borderDroite").value;
+    }
+    function borderColorDroite() {
+      document.getElementById("div").style.borderRightColor=document.getElementById("coleurDroite").value;
+    }
+    borderStyleDroite();
+    /* Fin de La bordure droite */
+
+    /* Début de La bordure bas */
+    function resultatBas(){
+      var t="<br><h3>Code</h3><pre>div{<br>   border-bottom-style: "+document.getElementById("numBas").value+"px "+
+      document.getElementById("borderBas").value+" "+document.getElementById("colorBas").value+";<br>}</pre>";
+      document.getElementById("re").innerHTML=t;
+    }
+    function bas() {
+      document.getElementById("numBas").value=document.getElementById("basRange").value;
+      document.getElementById("div").style.borderBottomWidth=document.getElementById("numBas").value+"px ";
+    }
+    function focBas() {
+      document.getElementById("numBas").style.backgroundColor="yellow";
+      document.getElementById("basRange").style.display="block";
+    }
+    function borderStyleBas() {
+      document.getElementById("div").style.borderBottomStyle=document.getElementById("borderBas").value;
+    }
+    function borderColorBas() {
+      document.getElementById("div").style.borderBottomColor=document.getElementById("colorBas").value;
+    }
+    borderStyleBas();
+    /* Fin de La bordure bas */
+
+    /* Début de La bordure gauche */
+    function resultatGauche(){
+      var t="<br><h3>Code</h3><pre>div{<br>   border-left-style: "+document.getElementById("numGauche").value+"px "+
+      document.getElementById("borderGauche").value+" "+document.getElementById("colorGauche").value+";<br>}</pre>";
+      document.getElementById("re").innerHTML=t;
+    }
+    function gauche() {
+      document.getElementById("numGauche").value=document.getElementById("gaucheRange").value;
+      document.getElementById("div").style.borderLeftWidth=document.getElementById("numGauche").value+"px ";
+    }
+    function focGauche() {
+      document.getElementById("numGauche").style.backgroundColor="yellow";
+      document.getElementById("gaucheRange").style.display="block";
+    }
+    function borderStyleGauche() {
+      document.getElementById("div").style.borderLeftStyle=document.getElementById("borderGauche").value;
+    }
+    function borderColorGauche() {
+      document.getElementById("div").style.borderLeftColor=document.getElementById("colorGauche").value;
+    }
+    borderStyleGauche();
+    /* Fin de La bordure gauche */
+</script>
+</body>
+</html>
