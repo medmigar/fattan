@@ -267,3 +267,6 @@ function affDmt() {
         }
         }
 /*== Fin Les activités mathématiques ==*/
+
+
+

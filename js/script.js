@@ -40,6 +40,12 @@ var menu='<div class="timeline__steps">              <!-- '+
                 '<span class="bloc"></span>'+
                 '<a href="#" class="timeline__step"><span class="c1">13</span></a>'+
                 '<span class="bloc"></span>'+
+                '<a href="#" class="timeline__step"><span class="c1">14</span></a>'+
+                '<span class="bloc"></span>'+
+                '<a href="#" class="timeline__step"><span class="c1">15</span></a>'+
+                '<span class="bloc"></span>'+
+                '<a href="#" class="timeline__step"><span class="c1">16</span></a>'+
+                '<span class="bloc"></span>'+
                                                                 '<!--'+
                 'Dermier icôme '+
                 '*************                                   -->'+
