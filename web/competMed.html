@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>	
+	<title>Cours Site Web</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  	<link rel="icon" href="../images/logo.png"sizes="20x20">
+  	<link rel="stylesheet" href="../css/style.css">
+  	<link rel="stylesheet" href="../css/menu.css">
+  	<script src="../js/script.js"></script>
+  	<script src="../js/jquery-min.js"></script>
+</head>
+<body><br>
+	<header class="hed" id="header"><script>inclureHeader(header);</script></header>    
+	<div id="conteneur">		
+		<div id="sc"><nav class="nav1" id="nav1"><script>inclureMenu(menu);</script></nav></div>
+		<div class="divMenu" id="divMenu">
+	      <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+	      <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+    	</div>
+    	<h1 class="titre">Créer son site Web</h1>
+    	<h3>Objectifs de ce cours</h3>
+    	<p>
+    		Bienvenue sur ce site qui a pour objectif d'annoncer le début d'un cours qui vous apprendra à faire un site web professionel. <span style="color: red;">Cette offre annoncera l'institut dans laquelle  sera donnée ce cours et la date de son commencement</span>.<br>
+    		 Créer un site web c'est passionnant (مثير ), il n'y a pas de limite pour votre imagination. Le temps nécessaire dépendra de vos attentes et de vos goûts, mais je peux vous donner les moyens techniques pour mettre en ligne un site internet basique, à travers des cours, pour les débutants sur HTML5, CSS3 et JavaScript. L'objectif est de modifier les fichiers et de comprendre comment tout cela fonctionne pour adapter le contenu à vos besoins.<br>    	    		
+			Dans ce cours, vous allez:
+		</p>
+		<ul class="parhpe">
+			<li>Créer une page Web de base en HTML</li>
+			<li>Appliquer des styles aux éléments de la page à l'aide de CSS</li>
+			<li>Créer des thèmes en utilisant CSS</li>
+			<li>Ajouer une interactivité avec l'utilisateur via le JavaScript</li>
+			<li>Exécuterer le site dans votre navigateur par défaut</li>
+			<li>En fin inspecter le site Web à l'aide des outils de développement des navigateurs</li>
+		</ul><br>
+		<h3>Un site web, c'est quoi ?</h3>
+    	<p>
+    		Un <b>site web</b> c'est un ensemble de fichiers codés avec les langages HTML,CSS et JavaScript, accessible depuis une adresse web. Il peut être:<br>
+ 			statique, c'est-à-dire qu'il possède un contenu fixe ou <a href="/fattan/web/index.html#web">dynamique</a> comme une eboutique.<br>
+ 			La différence entre ces deux modèles est l'interactivité avec l'utilisateur, technologie à connaître. Un site <b>Statique</b> est codé seulement avec HTML et CSS, tandis que le site <b>Dynamique</b> en plus de HTML et CSS, il est lié à un serveur: l'ordinateur distant qui répond à la demande de la page. On peut utiliser un serveur local, sur notre propre ordinateur, pour faire des tests avant de mettre le travail sur un serveur distant public.<br>
+ 			Dans ce cours, on va créer une structure de projet simple qui comprend trois fichiers: un fichier HTML, un fichier CSS et un fichier JavaScript.<br>
+ 			Le language HTML sert à décrire  la structure de la page web que le navigateur doit afficher. HTML se compose d'une série d'éléments:les balises HTML qui indiquent au navigateur comment afficher le contenu. Le navigateur n'affiche pas les balises HTML, mais il les utilise pour déterminer comment afficher le contenu du document. Depuis les débuts du World Wide Web, il existe de nombreuses versions de HTML. Dans ce cours on va suivre la dernière norme <b>HTML5.</b><br>
+ 			<b>Remarque</b>:
+ 			Un site web n'est pas forcément accessible depuis l'internet. Il peut l'être uniquement en local, sur sa propre machine, ou sur un réseau privé. On parle d'<b>intranet</b>. Cette solution existe surtout pour les entreprises. Il permet une plus grande sécurité et ainsi, on bloque toute agression extérieure au réseau, et on facilite les raisons de performance et de maintenance.<br>
+ 			
+    	</p><br>
+			<!-- <p>
+						 
+
+			la structure d'un projet  change au fil du temps. Les grands projets nécessitent souvent un degré plus élevé de soin et d'attention, afin que de nombreuses personnes puissent s'y retrouver.<br>
+			
+			  Le type de document &lt;!DOCTYPE html>indique qu'il s'agit du code HTML5. La balise &lt;meta> indique des informations de métadonnées qui ne sont généralement pas visibles par le visiteur, ells présentent des informations descriptives sur la page web. Le jeu de caractères (charset) UTF-8 peut sembler sans importance, mais il est essentiel pour définir comment les ordinateurs interprètent les caractères. Le titre d'une page web apparaît en haut d'une fenêtre de navigateur et il est important pour plusieurs raisons. Par exemple, le titre est utilisé par les moteurs de recherche et y apparaît.<br>
+			 Aujourd'hui il est impossible d'exceller dans tant de domaines qui ne cessent de muter.
+    	</p> -->
+    	
+    	
+    </div>
+    	<footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+	<script>
+	    $(function(){
+
+	      $("#btnClose").click(function(){
+	        $("#sc").slideUp(3000);
+	        $('#btnClose').hide();
+	        $('#btnMenu').show();
+	      });
+
+	      $("#btnMenu").click(function(){
+	        $("#sc").slideDown(3000);
+	        $('#btnMenu').hide();
+	        $('#btnClose').show();
+	      });
+	      
+	    });
+	</script>	
+</body>
+</html>

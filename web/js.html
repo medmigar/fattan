@@ -38,6 +38,25 @@
        Un script server-side va s'occuper de « créer » la page Web qui sera envoyée au navigateur. Ce dernier va alors afficher la page puis exécuter les scripts client-side tel que le Javascript.
        Le Javascript a évolué vers d'autres destinées. Il est utilisé pour réaliser des extensions des différents programmes, et utilisé pour réaliser des applications. Le Javascript est utilisé majoritairement au sein des pages Web.
     </p><br>
+    <h3>Où écrit-on le Javascript ?</h3>
+    <p>
+      La balise &lt;script> permet d'insérer du javascript qui s'execute coté client. Pour intégrer du code javascript dans une page web, on peut soit le mettre dans un fichier externe avec l'extension <b>.js</b>, soit l'écrire directement dans la page web. Pour le script externe:</p>
+      <pre>
+  &lt;script src="/script.js" >&lt;/script>
+      </pre><p>
+      Pour le script interne:</p>
+      <pre>
+  &lt;script> 
+    // code javascript 
+  &lt;/script>
+      </pre><p>
+      Pour le code en ligne dans une balise HTML:</p>
+      <pre>
+  &lt;a href="#" onclick="code javascript">&lt;/a>      
+      </pre>
+
+    
+    <br>
     <h3>Les informations sur un fichier</h3>
     <p>
       Pour récupérer le nom, la taille, le type et la date de modification d'un fichier en JavaScript:<br>

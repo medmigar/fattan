@@ -25,7 +25,7 @@
     <h1 style="text-shadow: -1px -1px white, 1px 1px #333; color:#0cb49f; font-size: 40px;">Le CSS</h1>    
     <h3>Introduction</h3>
     <p>
-      Au début du Web, CSS n'existait pas. En fait, il n'y avait initialement que le langage HTML, qui est né en 1991. Le <b>CSS</b> est le langage qui est venu compléter le <b>HTML</b> en 1996. Il permet de mettre en forme, d'enjoliver le résultat visuel final, de définir la couleur, la taille, l'alignement d'un texte….<br> Le <b>CSS</b> est le diminutif de <b>C</b>ascading <b>S</b>tyle <b>S</b>heets, qui peut se traduire en français par: feuilles de styles en cascade. On dit "Feuille de style" car en général, on écrit le code <b>CSS</b> dans un fichier à part. Le <b>CSS</b> a besoin d'une page <b>HTML</b> pour fonctionner. C'est le fichier <b>HTML</b> qui, lors de son ouverture, va charger le <b>CSS</b> et appliquer les informations de son style.
+      Au début du Web, CSS n'existait pas. En fait, il n'y avait initialement que le langage HTML, qui est né en 1991. Le <b>CSS</b> est le langage qui est venu compléter le <b>HTML</b> en 1996. Il permet de mettre en forme, d'enjoliver le résultat visuel final, de définir la couleur, la taille, l'alignement d'un texte…etc.<br> Le <b>CSS</b> est le diminutif de <b>C</b>ascading <b>S</b>tyle <b>S</b>heets, qui peut se traduire en français par: feuilles de styles en cascade. On dit "Feuille de style" car en général, on écrit le code <b>CSS</b> dans un fichier à part. Le <b>CSS</b> a besoin d'une page <b>HTML</b> pour fonctionner. C'est le fichier <b>HTML</b> qui, lors de son ouverture, charge le <b>CSS</b> et applique les informations de son style.
     </p>
     <ul class="parhpe">
         <li><b>CSS</b> est un langage qui décrit le style d'un document <b>HTML</b>, c'est le langage que l'on utilise pour styliser un document HTML.</li>
@@ -35,18 +35,22 @@
         <li>Avec un fichier de feuille de style externe, on peut changer l'apparence d'un site Web entier en changeant un seul fichier.</li>
         <li><b>CSS</b> permet de faire la mise en page et les variations d'affichage pour différents appareils et tailles d'écran.  </li>
         <li><b>CSS</b> permet de sélectionner la police utilisée sur un  site, permet encore de définir la taille du texte, les bordures, le fond…</li>
+        <li>Le <b>CSS</b> complète le code <b>HTML</b> et le met en forme  et donne à son contenu l'apparence que l'on souhaite.</li>
     </ul>
     <p>
-       Le <b>CSS</b> complète le code <b>HTML</b> et le met en forme  et donne à son contenu l'apparence que l'on souhaite.<br><br>
       <b>Remarques:</b><br> Avec <b>HTML</b> et <b>CSS</b> on transforme une maquette en page web.<br>
       Lorsqu'un navigateur lit une feuille de style, il formate le document HTML en fonction des informations contenues dans la feuille de style.
     </p><br>
     <h3 id="css">Où écrit-on le CSS ?</h3>
     <p>
-      On a le choix d'écrire et insérer une feuille de style du code en langage CSS à trois endroits différents :<br>
-      - dans un fichier.css: fichier de feuille de style externe (méthode la plus recommandée: <b>CSS externe</b>).<br>
-      - dans l'en-tête <b>&lt;head></b> du fichier HTML.(<b>CSS interne</b>) Elle peut être utilisée si une seule page HTML a un style unique.<br>
-      - directement dans les balises du fichier HTML via l'attribut: style (méthode la moins recommandée <b>CSS en ligne</b>). Le style en ligne peut être utilisé pour appliquer un style unique à un seul élément HTML.<br>
+      On a le choix d'écrire et insérer une feuille de style du code en langage CSS à trois endroits différents:
+    </p>
+      <ul class="parhpe">
+        <li>dans un fichier.css: fichier de feuille de style externe (méthode la plus recommandée: <b>CSS externe</b>).</li>
+        <li>dans l'en-tête <b>&lt;head></b> du fichier HTML: <b>CSS interne</b>. Elle peut être utilisée si une seule page HTML a un style unique.</li>
+        <li>directement dans les balises du fichier HTML via l'attribut: style, (<b>CSS en ligne</b>: méthode la moins recommandée). Le style en ligne peut être utilisé pour appliquer un style unique à un seul élément HTML.</li>
+      </ul>
+      <p>
       Chaque page doit inclure une référence au fichier de feuille de style externe à l'intérieur de l'élément <b>&lt;link>.</b> L'élément <b>&lt;link></b> va à l'intérieur de la section <b>&lt;head>.</b> <br>
       Une feuille de style externe peut être écrite dans n'importe quel éditeur de texte. Le fichier ne doit contenir aucune balise HTML. Le fichier de feuille de style doit être enregistré avec une extension <b>.css.</b>
     </p>
@@ -57,7 +61,6 @@
     </pre>
     <p>
       Une feuille de style interne peut être utilisée si une seule page a un style unique.
-
 Les styles internes sont définis dans l'élément &lt;style>, dans la section &lt;head> d'une page HTML:
 </p>
 <pre>
@@ -73,28 +76,26 @@ Les styles internes sont définis dans l'élément &lt;style>, dans la section &
       } 
     &lt;/style>
   &lt;/head>
-</pre>
-<p>
-  Un style en ligne peut être utilisé pour appliquer un style unique à un seul élément.
-
-Pour utiliser des styles en ligne, on ajoute l'attribut style à l'élément approprié. L'attribut style peut contenir n'importe quelle propriété CSS.
-
-L'exemple ci-dessous montre comment changer la couleur et la marge gauche d'un élément &lt;h1>:
-
-<pre>
-  &lt;h1 style="color:blue;margin-left:30px;">This is a heading&lt;/h1>
-</pre>
-<p>
-  <b>Remarque</b><br>
-Quand il y a plus d'un style spécifié pour un élément HTML, les styles seront mis en cascade dans une nouvelle feuille de style "virtuelle" selon les règles suivantes:
-</p>
-<ol class="parhpe">
-  <li>Style en ligne (à l'intérieur d'un élément HTML)</li>
-  <li>Feuilles de style externes et internes (dans la section principale)</li>
-  <li>Navigateur par défaut</li>
-</ol>
-  
-  
+    </pre>
+    <p>
+      Un style en ligne peut être utilisé pour appliquer un style unique à un seul élément.
+      Pour utiliser des styles en ligne, on ajoute l'attribut style à l'élément approprié. L'attribut style peut contenir n'importe quelle propriété CSS. L'exemple ci-dessous montre comment changer la couleur et la marge gauche d'un élément &lt;h1>:
+    </p>
+    <pre>
+      &lt;h1 style="color:blue;margin-left:30px;">This is a heading&lt;/h1>
+    </pre>
+    <p>
+      <b>Remarque</b><br>
+      Quand il y a plus d'un style spécifié pour un élément HTML, les styles seront mis en cascade dans une nouvelle feuille de style "virtuelle" selon les règles suivantes:
+    </p>
+    <ol class="parhpe">
+      <li>Style en ligne (à l'intérieur d'un élément HTML)</li>
+      <li>Feuilles de style externes et internes (dans la section principale)</li>
+      <li>Navigateur par défaut</li>
+    </ol>
+    <p>
+      Les styles définis en dernier, remplacent les styles définis auparavant. Le style d'un élément HTML peut être hérité d'un élément "parent".
+    </p>  
   </div>
   <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
   <script>
