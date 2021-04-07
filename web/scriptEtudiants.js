@@ -26,6 +26,12 @@ var form1=document.getElementById("myform");
 function reinitiliser() {
         form1.reset();
         document.getElementById("nom").focus();
+        var nomMn = document.getElementById("nomManqn");
+	var nomMp = document.getElementById("nomManqp");
+	var nomMa = document.getElementById("nomManqa");
+        nomMn.innerHTML="";
+        nomMp.innerHTML="";
+        nomMa.innerHTML="";
 }
 
 
@@ -213,13 +219,11 @@ function chercher(){
 			j=0;
 	}else{
 		if(vr==""){
-			// show(spanE+ 'Entrez le nom à chercher !</p>');
 			mybody.innerHTML ="<p style='width: 90%;font-size:16px;'>Entrez le nom à chercher !</p>";
   				modal.style.display="block";
   				setTimeout(()=>{modal.style.display="none";}, 6000);
 			reinitiliser();
 		}else{
-			// show(spanE+ vr+" n'existe pas</p>");
 			mybody.innerHTML ="<p style='width: 90%;font-size:16px;'>"+ vr+" n'existe pas</p>";
   				modal.style.display="block";
   				setTimeout(()=>{modal.style.display="none";}, 6000);
@@ -243,7 +247,6 @@ function modifier(){
 		etudiants[str].age=document.getElementById("age").value;
 		for (var i = 0; i < etudiants.length; i++) {
   			etudiants[i].numero=i+1;
-  			// show(spanS+"Modification avec succès</p>");
   			mybody.innerHTML ="<p style='width: 90%;font-size:16px;'>Modification avec succès</p>";
   				modal.style.display="block";
   				setTimeout(()=>{modal.style.display="none";}, 6000);
@@ -251,16 +254,11 @@ function modifier(){
   		}
   			
 	}else{
-		// show(spanE+"Sélectinnez l'étudiant à modifier!</p>");
 		mybody.innerHTML ="<p style='width: 90%;font-size:16px;'>Sélectinnez l'étudiant à modifier!</p>";
   				modal.style.display="block";
   				setTimeout(()=>{modal.style.display="none";}, 6000);
 		reinitiliser();
 	}
-}
-
-function delayed() {
-	window.setTimeout(fermer, 4000);
 }
 
 //Fin Etudiant ==============

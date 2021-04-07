@@ -26,26 +26,16 @@ caption {
   caption-side: top;
 }
 label{
-			font-size: 17px;
-			text-align: right;			
+			font-size: 16px;
+			text-align: right;
+			color: #fff;			
 		}
-input{
+
+input.etud{
 	height: 30px;
 	padding: 5px;
-
-}
-input.etud{
 	width: 100px;
 	cursor: pointer;
-}
-a {
-	text-decoration: none;
-	font-weight: bold;
-	
-}
-a:hover{
-	background-color: #f00;
-	color: #fff;
 }
 select {
   width: 100%;
@@ -69,28 +59,37 @@ select {
 	   <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
 	   <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
     </div>
-		<h1 class="titre">Les Etudians</h1>			  	
-	  	<form autocomplete="on" id="myform" method="get">	  				
-	  		<label for="nom">&#9997; Nom</label>
-	  		<input type="text" id="nom" name="nom"size="20" maxlength="15" required autofocus autocomplete="on" placeholder="Nom"> <span id="nomManqn"></span><br>
-		  	<label for="prenom">&#9997; Prénom</label>
-		  	<input type="text" id="prenom" name="prenom"size="20"maxlength="15" required autocomplete="on"placeholder="Prénom"> <span id="nomManqp"></span><br>
-		  	<label for="age">&#9997; Age</label>
-		  	<input type="text" id="age" name="age"size="20"maxlength="15" required autocomplete="on" placeholder="Age"> <span id="nomManqa"></span><br>				  				
-		  	<label for="numero">&#8477; Zone de recherche </label>
-		  	<input type="text" id="numero" name="numero"size="20"maxlength="15" required autocomplete="on" placeholder="Rechercher"><br>
-		  	<label for="myfile">Sélectionner un fichier</label>
-		  	<input type="file" id="myfile" name="myfile" multiple value="">  					
+		<h1 class="titre">Les Etudians</h1>
+		<div style=" width: 90%;margin: auto;">
+			<ul style="display: flex;width: 100%; margin: auto;list-style-type: none; padding: 5px;flex-direction: row;justify-content: center; align-items: center;">
+    		<li>
+    			<nav style="flex: 1;">
+				    <ul style="list-style-type: none;">
+				    	<li><input type="button" value="&#128190; Enregistrer" onclick="enregistrer();" class="etud"></li>
+				    	<li><input type="button" value="&#128194; Afficher" onclick="afficher();" class="etud"></li>
+				      	<li><input type="button" value="Réinitiliser" onclick="reinitiliser();" class="etud"></li>
+				      	<li><input type="button" value="&#9410; Modifier" onclick="modifier();" class="etud"></li>
+				      	<li><input type="button" value="Sélectinner" onclick="selModifier();" class="etud"></li>
+				      	<li><input type="button" value="Chercher" onclick="chercher();" class="etud"></li>
+				      	<li><input type="button" value="&#128686; Supprimer" onclick="supprimer();" class="etud"></li>
+				    </ul>
+	  			</nav>
+	  		</li>
+	  		<li>		  	
+	  	<form autocomplete="on" id="myform" method="get" style="flex: 5;padding: 15px;">	  				
+	  		<span style="color: #fff;font-size: 18px;">⇓</span><label for="nom">Nom</label><span style="color: #fff;font-size: 18px;">⇓</span><br>
+	  		<input type="text" id="nom" name="nom"size="20" maxlength="15" required autofocus autocomplete="on" placeholder="Nom" style="height: 23px;"> <span id="nomManqn"></span><br>
+		  	<span style="color: #fff;font-size: 18px;">⇓</span><label for="prenom">Prénom</label><span style="color: #fff;font-size: 18px;">⇓</span><br>
+		  	<input type="text" id="prenom" name="prenom"size="20"maxlength="15" required autocomplete="on"placeholder="Prénom" style="height: 23px;"> <span id="nomManqp"></span><br>
+		  	<span style="color: #fff;font-size: 18px;">⇓</span><label for="age">Âge</label><span style="color: #fff;font-size: 18px;">⇓</span><br>
+		  	<input type="text" id="age" name="age"size="20"maxlength="15" required autocomplete="on" placeholder="Âge" style="height: 23px;"> <span id="nomManqa"></span><br>				  				
+		  	<span style="color: #fff;font-size: 18px;">⇓</span><label for="numero">Zone de recherche</label><span style="color: #fff;font-size: 18px;">⇓</span><br>
+		  	<input type="text" id="numero" name="numero"size="20"maxlength="15" required autocomplete="on" placeholder="Rechercher" style="height: 23px;">  					
 	  	</form>
-	  	<p style="text-align: center;">
-			<input type="button" value="&#128190; Enregistrer" onclick="enregistrer();" class="etud">
-			<input type="button" value="&#128194; Afficher" onclick="afficher();" class="etud">
-			<input type="button" value="&#128686; Supprimer" onclick="supprimer();" class="etud">			
-			<input type="button" value="Réinitiliser" onclick="reinitiliser();" class="etud">
-			<input type="button" value="&#9410; Modifier" onclick="modifier();" class="etud">
-			<input type="button" value="Sélectinner" onclick="selModifier();" class="etud">
-			<input type="button" value="Chercher" onclick="chercher();" class="etud">			
-	  	</p>		
+	  </li>
+	</ul>
+	  	
+	  	</div>		
 		<article id="demo"></article>
 		<select id="liste" name="liste" size="3"></select>
 		<article id="myModal" class="modal">
