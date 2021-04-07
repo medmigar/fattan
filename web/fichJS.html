@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>	
+	<title>Cours Site Web JavaScript</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  	<link rel="icon" href="../images/logo.png"sizes="20x20">
+  	<link rel="stylesheet" href="../css/style.css">
+  	<link rel="stylesheet" href="../css/menu.css">
+  	<script src="../js/script.js"></script>
+  	<script src="../js/jquery-min.js"></script>
+</head>
+<body><br>
+	<header class="hed" id="header"><script>inclureHeader(header);</script></header>    
+	<div id="conteneur">		
+		<div id="sc"><nav class="nav1" id="nav1"><script>inclureMenu(menu);</script></nav></div>
+		<div class="divMenu" id="divMenu">
+	   <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+	   <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+    </div>
+    <h1 class="titre">Fichier JavaScript</h1>
+    <h3>Itroduction</h3>
+    <p>
+    	JavaScript est avant tout le langage de programmation du Web. Il a été inventé en 1995 par Brendan Eich, qui travaillait à l'époque pour la société Netscape, créatrice du premier navigateur Web populaire, l'ancêtre de Firefox. L'idée de départ était de créer un langage simple pour rendre dynamiques et interactives les pages Web, qui étaient très simples à l'époque. Le JavaScript a donc été progressivement intégré à l'ensemble des navigateurs. N'importe quel navigateur Web est aujourd'hui capable d'exécuter du code écrit en JavaScript. Ceci a rendu JavaScript de plus en plus populaire. JavaScript a été standardisé en 1997 sous le nom d'ECMAScript et subit des améliorations régulières. Le langage JavaScript peut maintenant être utilisé pour programmer dans de très nombreux environnements : serveurs, applications mobiles, objets connectés... Il est devenu essentiel pour de très nombreux développeurs. Il s'agit d'un excellent choix comme premier langage de programmation.
+    </p>
+    </div>
+      <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+  <script>
+      $(function(){
+
+        $("#btnClose").click(function(){
+          $("#sc").slideUp(3000);
+          $('#btnClose').hide();
+          $('#btnMenu').show();
+        });
+
+        $("#btnMenu").click(function(){
+          $("#sc").slideDown(3000);
+          $('#btnMenu').hide();
+          $('#btnClose').show();
+        });
+        
+      });
+  </script> 
+</body>
+</html> 

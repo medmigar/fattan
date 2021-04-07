@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>	
+	<title>Cours Site Web CSS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  	<link rel="icon" href="../images/logo.png"sizes="20x20">
+  	<link rel="stylesheet" href="../css/style.css">
+  	<link rel="stylesheet" href="../css/menu.css">
+  	<script src="../js/script.js"></script>
+  	<script src="../js/jquery-min.js"></script>
+</head>
+<body><br>
+	<header class="hed" id="header"><script>inclureHeader(header);</script></header>    
+	<div id="conteneur">		
+		<div id="sc"><nav class="nav1" id="nav1"><script>inclureMenu(menu);</script></nav></div>
+		<div class="divMenu" id="divMenu">
+	   <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+	   <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+    </div>
+    <h1 class="titre">Fichier CSS</h1>
+    <h3>Itroduction</h3>
+    <p>
+       Le CSS compléte le langage HTML et mettre en forme la page web.
+       Il existe de nombreuses façons de sélectionner la portion de la page que l'on veut mettre en forme. on peut viser:<br>
+      toutes les balises d'un même type, en écrivant simplement leur nom.<br>
+      certaines balises spécifiques, auxquelles on a donné des noms à l'aide des attributs class  ou id.<br>uniquement les balises qui se trouvent à l'intérieur d'autres balises. etc.<br>
+       langage à balise  se traduit par markup language.<br>
+       Valideur: Le W3C fournit un service de validation en ligne de balisage: http://validator.w3.org/<br>
+       l’indentation pour faciliter la lecture.<br>
+       Comme pour le HTML, le W3C fournit un service en ligne de validation de CSS: http://jigsaw.w3.org/css-validator/<br>
+       
+    </p>
+    </div>
+      <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+  <script>
+      $(function(){
+
+        $("#btnClose").click(function(){
+          $("#sc").slideUp(3000);
+          $('#btnClose').hide();
+          $('#btnMenu').show();
+        });
+
+        $("#btnMenu").click(function(){
+          $("#sc").slideDown(3000);
+          $('#btnMenu').hide();
+          $('#btnClose').show();
+        });
+        
+      });
+  </script> 
+</body>
+</html>

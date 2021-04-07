@@ -68,8 +68,10 @@
       Pour récupérer les paramètres d'URL en JavaScript:<br> 
       <b>var str = window.location.href;(?name=Med)</b><br>
       <b>var url = new URL(str);</b><br>
-      <b>var name = url.searchParams.get("name")//Med;</b><br>
+      <b>var name = url.searchParams.get("name") //Med;</b><br>
       Pour vérifier si le paramètre existe dans l'URL. On peut  utiliser La méthode has(). Elle renvoie true si le paramètre existe, sinon il renvoie false. (<b>search_params.has('name')</b>).<br>
+      Pour copier le contenu d'un fichier(myf) et le coller dans un div(div1)<br>
+      document.getElementById('myf').files[0].text().then(t => document.getElementById('div1').textContent=t); 
     </p>
     </div>
     <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>

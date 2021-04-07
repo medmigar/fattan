@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>	
+	<title>Cours Site Web HTML</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  	<link rel="icon" href="../images/logo.png"sizes="20x20">
+  	<link rel="stylesheet" href="../css/style.css">
+  	<link rel="stylesheet" href="../css/menu.css">
+  	<script src="../js/script.js"></script>
+  	<script src="../js/jquery-min.js"></script>
+</head>
+<body><br>
+	<header class="hed" id="header"><script>inclureHeader(header);</script></header>    
+	<div id="conteneur">		
+		<div id="sc"><nav class="nav1" id="nav1"><script>inclureMenu(menu);</script></nav></div>
+		<div class="divMenu" id="divMenu">
+	   <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+	   <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+    </div>
+    <h1 class="titre">Fichier HTML</h1>
+    <h3>Itroduction</h3>
+    <p>
+      La page web est un document HTML, qui est lui même un fichier avec l'extension <b>.html</b>.
+      HTML c'est le langage de balisage standard pour la création des pages Web. Le language HTML sert à décrire  la structure de la page web que le navigateur doit afficher. IL se compose d'une série d'éléments HTML:les balises qui indiquent au navigateur comment afficher le contenu. Le navigateur n'affiche pas les balises HTML, mais il les utilise pour déterminer comment afficher le contenu du document. Depuis les débuts du World Wide Web, il existe de nombreuses versions de HTML. Dans ce cours on va suivre la dernière norme <b>HTML5.</b><br>
+    </p><br>
+    <h3>Structure simple de la page web</h3>
+    <pre>
+      &lt;!DOCTYPE html>
+      &lt;html>
+        &lt;head>
+         &lt;title>Titlre&lt;/title>
+         &lt;meta charset="utf-8">
+         &lt;link rel="stylesheet" href="">
+         &lt;script src="">&lt;/script>
+        &lt;/head>
+        &lt;body>
+         &lt;h1>Mon premier titre&lt;/h1>
+         &lt;p>Mon premier paragraphe.&lt;/p>
+         &lt;a href="https://www.google.com">Ceci est lien&lt;/a>
+         &lt;img src="med.jpg" alt="photo Med" width="104" height="142">
+        &lt;/body>
+      &lt;/html>
+    </pre>
+    <p>
+      Un élément HTML est défini par une balise de début, du contenu et une balise de fin.<br>
+      <b>Remarque:</b> certains éléments HTML n'ont pas de contenu, comme l'élément &lt;meta charset="utf-8">. Ces éléments sont appelés éléments vides. Les éléments vides n'ont pas de balise de fin !
+    </p>
+      <ul class="parhpe">
+        <li>La déclaration: &lt;!DOCTYPE html> indique que ce document est un document HTML5. IL indique au navigateur qu'il s'agit du code HTML5.</li>
+        <li>L'élément &lt;html> est l'élément racine de la page HTML, avec l'attribut <b>lang</b>.</li>
+        <li>L'élément &lt;head> contient des méta-informations sur la page HTML. Le contenu de cet élément n'est pas visible par le visiteur.</li>
+        <li>L'élément &lt;title> spécifie un titre pour la page HTML, qui s'affiche dans la barre du titre du navigateur ou dans l'onglet de la page. Il est important de le définir pour plusieurs raisons. Le titre est utilisé par les moteurs de recherche</li>
+        <li>La balise &lt;meta> indique des informations de métadonnées qui ne sont généralement pas visibles par le visiteur, ells représentent les informations descriptives sur la page web. Le jeu des caractères charset="utf-8" peut sembler sans importance, mais il est essentiel pour définir comment les ordinateurs interprètent les caractères.</li>
+        <li>L'élément &lt;link> permet de mettre en relation la page avec d'autres documents externes. La plupart du temps cela concerne les feuilles de style CSS externes avec une relation du type stylesheet, mais il est aussi possible de définir d'autres types de relations, par exemple avec author, icon, prefetch, next, prev..etc.</li>
+        <li>L'élément &lt;script> permet d'ajouter des scripts de JavaScript qui vont s'éxécuter côté client dans le navigateur dès leur chargement.</li>
+        <li>L'élément &lt;body> définit le corps du document. Il est le conteneur pour tous les contenus visibles, tels que les titres, les paragraphes, les images, les hyperliens, les tableaux, les listes...etc.</li>
+        <li>L'élément &lt;h1> définit un grand titre</li>
+        <li>L'élément &lt;p> définit un paragraphe</li>
+        <li>L'élément &lt;a href="https://www.google.com">Google&lt;/a> définit un lien. La destination du lien est spécifiée dans l'attribut <b>href</b>. L'attribut href spécifie l'URL, absolue ou relative de la page vers laquelle dirige ce lien. Rien n'empêche bien sûr la balise &lt;a> de contenir dautres balises.</li>
+        <li> <b>Les attributs</b> sont utilisés pour fournir des informations supplémentaires aux éléments HTML. Les attributs sont toujours spécifiés dans la balise de début Ils se présentent généralement sous forme de paires nom/valeur comme: nom = "valeur"</li>
+        <li>L'élément &lt;img src="med.jpg" alt="photo Med" width="104" height="142">définit une image. La destination de l'image est spécifiée dans l'attribut <b>src</b>:source. L'attribut <b>src</b>  spécifie le chemin d'accès à l'image à afficher. Elle a deux attributs obligatoires:
+        src: l'URL, absolue ou relative de l'image<br>
+        alt: une description textuelle de l'image, obligatoire pour les situations où l'image ne peut pas être affichée</li>
+      </ul><br>
+      <h3>Les autres éléments HTML5</h3>
+      <p>        
+        Une fois la structure de base est préparée, on commence à placer d'autres éléments HTML pour le contenu selon le besoin comme: paragraphes, listes, liens, images, vidéos, tableaux de données, formulaires...etc.
+
+        Éléments de section &lt;section>, &lt;article>, &lt;header>, &lt;footer>, &lt;nav> et &lt;aside>
+        Élément &lt;datalist>
+        Éléments &lt;details> et &lt;summary>
+        Éléments &lt;figure> et &lt;figcaption>
+        Éléments média &lt;audio> et &lt;video> complétés par &lt;source>
+        Élément &lt;canvas>
+        Éléments &lt;meter>, &lt;output> et &lt;progress>
+        Élément &lt;time> et &lt;mark><br>
+        Balises historiques, Elles sont encore valides en HTML5:<br>
+        &lt;b>:  texte en gras
+        &lt;i>: texte en italique
+        &lt;u>: texte souligné
+        &lt;br>:  saut de ligne<br>
+        Listes<br>
+        Liste non ordonnée
+      &lt;ul>
+        &lt;li>sucre&lt;/li>
+        &lt;li>céréales&lt;/li>
+        &lt;li>lait&lt;/li>
+      &lt;/ul><br>
+      Liste ordonnée
+    &lt;ol>
+      &lt;li>sucre&lt;/li>
+      &lt;li>céréales&lt;/li>
+      &lt;li>lait&lt;/li>
+    &lt;/ol><br>
+    Remarque: On note que:<br>
+
+    &lt;ul> signifie unordered list,
+    &lt;ol> signifie ordered list,
+    &lt;li> signifie list item,<br>
+    Vidéo: En plus des images, HTML5 permet d'inclure des vidéos, grâce à la balise &lt;video>.<br>
+    &lt;video src="_static/Chrome_ImF.webm">
+    Ici, une vidéo représentant...
+    &lt;/video><br>
+    Le contenu textuel de la balise &lt;video>, s'affiche uniquement si le navigateur ne supporte pas cette balise. Il joue le rôle de l'attribut alt pour les images.<br>
+    Attributs de la balise video<br>
+    La balise video supporte les attributs suivants:<br>
+    autoplay : lance la lecture automatiquement,
+    controls : affiche l’interface de lecture,
+    loop : reprend automatiquement la lecture à la fin de la vidéo,
+    muted : fixe le volume sonore à 0,
+    poster : URL d’une image à afficher avant la lecture<br>
+    Méta-données<br>
+    Les balises &lt;meta> sont situées dans l’élément &lt;head> du document.
+    Elles contiennent des méta-données : des données sur le document lui-même.<br>
+    &lt;meta charset="utf-8">
+    &lt;meta name="description" lang="en"
+          content="apprenez plus de tours en HTML">
+    &lt;meta name="author"
+          content="Pierre-Antoine Champin">
+    &lt;meta name="keywords" content="html web iut"><br>
+    Formulaires et interactivité<br>
+Champs de saisie
+Certaines pages HTML comportent des champs permettant à l'utilisateur de saisir de l'information. La balise offrant cette possibilité est la balise &lt;input>.<br>
+Types de champs<br>
+HTML offre un certain nombre de types de champs, les plus utilisés étant:<br>
+&lt;input type="text">, 
+&lt;input type="password">, 
+&lt;input type="checkbox">, 
+&lt;input type="radio">,  
+
+&lt;input type="file">,
+&lt;input type="number">, 
+&lt;input type="range">;<br>
+Liste<br>
+Un autre type de champ permet de sélectionner un ou plusieurs éléments dans une liste. L'attribut <b>multiple</b> autorise la sélection de plusieurs éléments.<br>
+&lt;select>
+  &lt;option>Georges&lt;/option>
+  &lt;option>John</option>
+  &lt;option>Paul&lt;/option>
+  &lt;option>Ringo&lt;/option>
+&lt;/select><br>
+Zone de texte<br>
+Le champ &lt;input> ne permet pas la saisie de texte sur plusieurs lignes. Pour cela, on utilise le champ &lt;textarea>.<br>
+
+&lt;textarea placeholder="type your message">Hello
+world&lt;/textarea><br>
+Boutons<br>
+La balise &lt;button> permet de créer des boutons.
+
+&lt;button>Ok&lt;/button> &lt;button>&lt;em>Annuler&lt;/em>&lt;/button><br>
+Historiquement, les boutons étaient générés par la balise &lt;input> avec des types spécifiques: button et submit notamment.<br>
+
+      </p>
+      <br><h3>Éditeurs HTML</h3>
+      <p>
+        Un simple éditeur de texte est suffisant pour écrire et modifier un fichier HTML. Cependant il est recommandé de choisir un éditeur de texte professionnel. Mais l'utilisation d'un simple éditeur de texte est un bon moyen pour les débutants.
+      </p><br>
+      <h3>Structure minimale de base de la Page Web</h3>
+      <p>
+        Tous les documents HTML doivent commencer par la déclaration de type de document: &lt;!DOCTYPE html>.<br>
+        Le document HTML lui-même commence par &lt;html>et se termine par &lt;/html>.<br>
+        La partie visible du document HTML est comprise entre &lt;body>et &lt;/body>.<br>
+        Voici un exemple de page minimale:
+      </p>
+      <pre>
+        &lt;!DOCTYPE html>
+        &lt;html>
+          &lt;body>
+            &lt;h1>Mon premier titre&lt;/h1>
+            &lt;p>Mon premier paragraphe.&lt;/p>
+          &lt;/body>
+        &lt;/html>
+      </pre>
+      <p>
+        Comme on voit le HTML utilise ce que l'on nomme des balises afin de structurer les informations.
+      </p>
+
+      <br><h3>Navigateurs Web</h3>
+    <p>
+      Le navigateur Web est le logiciel qui sert à surfer sur la Toile en affichant les pages Web.
+      Le but d'un navigateur Web (Chrome, Edge, Firefox, Safari) est de lire les documents HTML et de les afficher correctement.<br>
+      Un navigateur n'affiche pas les balises HTML, mais les utilise pour déterminer comment afficher le document. Tous les ordinateurs actuels, qu'ils soient fixes, portables ou mobiles, intègrent au moins un navigateur Web.
+    </p><br>
+    <h3>Principales parties d'un document</h3>
+      <p>
+        La page HTML peut être divisé en deux parties:<br>
+        L'en-tête située entre les balises &lt;head> et &lt;/head>, qui regroupe toutes les méta-informations.<br>
+        La deuxième partie comprend le corps &lt;body>,ou on retrouvera tout le reste du contenu HTML, structuré par des balises variées.
+
+        Pour mettre en œuvre le marquage sémantique, HTML fournit des balises dédiées que l'on peut utiliser pour représenter les différentes parties d'un document qui sont:<br>
+        En‑tête (header), Barre de navigation, Contenu principal, Barre latérale et Pied de page C'est un endroit pour mettre de l'information commune (comme l'en-tête)<br>
+header : &lt;header>. Une grande bande placée en haut de la page avec un titre ou un logo. C'est là où les principales informations du site restent d'une page à l'autre.<br>
+barre de navigation : &lt;nav>.<br>
+contenu principal : &lt;main>, avec diverses sous‑sections de contenu représentées à l'aide de des éléments &lt;article>, &lt;section> et &lt;div>.<br>
+barre latérale : &lt;aside> ; souvent mise à l'intérieur de l'élément &lt;main>.<br>
+pied de page : &lt;footer>.C'est à cet endroit que l'on peut mettre des informations commune comme à l'en-tête.
+</p><br>
+<h3>Les balises structurantes de HTML5</h3>
+<p>
+  HTML5 a introduit des balises nouvelles pour structurer et bien construit les pages Web, et pour être prêt à être mis en forme ensuite. Ses balises sont:<br>
+  &lt;header>: l'en-tête. Il peut contenir tout ce que l'on veut: images, liens, textes…etc.<br>
+  &lt;footer>: le pied de page
+  À l'inverse de l'en-tête, le pied de page se trouve en général tout en bas du document. Dans le pied de page on trouve des informations comme des liens de contact, le nom de l'auteur…etc.<br>
+  &lt;main>:  contenu principal de la page<br>
+  &lt;nav>: principaux liens de navigation
+  La balise &lt;nav> doit regrouper tous les principaux liens de navigation du site. On placere souvent le menu principal du site dans cet élément.<br>
+  &lt;section>: une section de page.
+  La balise &lt;section>  sert à regrouper des contenus en fonction de leur thématique. Elle englobe généralement une portion du contenu au centre de la page.<br>
+  &lt;aside>: informations complémentaires.
+  La balise &lt;aside>  est conçue pour contenir des informations complémentaires au document que l'on visualise. Ces informations sont généralement placées sur le côté. Il peut y avoir plusieurs blocs &lt;aside>  dans la page.<br>
+  &lt;article>: un article indépendant.
+  La balise &lt;article>  sert à englober une portion généralement autonome de la page. C'est une partie de la page qui pourrait ainsi être reprise sur un autre site.
+</p><br>
+<h3>Exemple d'utilisation des balises</h3>
+<pre>
+  &lt;!DOCTYPE html>
+&lt;html>
+    &lt;head>
+        &lt;meta charset="utf-8" />
+        &lt;title>Zozor - Le Site Web&lt;/title>
+    &lt;/head>
+
+    &lt;body>
+        &lt;header>
+            &lt;h1>Zozor&lt;/h1>
+            &lt;h2>Carnets de voyage&lt;/h2>
+        &lt;/header>
+        
+        &lt;nav>
+            &lt;ul>
+                &lt;li>&lt;a href="#">Accueil&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Blog&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">CV&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+        
+        &lt;section>
+            &lt;aside>
+                &lt;h1>À propos de l'auteur&lt;/h1>
+                &lt;p>C'est moi, Zozor ! Je suis né un 23 novembre 2005.&lt;/p>
+            &lt;/aside>
+            &lt;article>                
+                &lt;h1>Je suis un grand voyageur&lt;/h1>
+                &lt;p>Bla bla bla bla (texte de l'article)&lt;/p>
+            &lt;/article>
+        &lt;/section>
+        
+        &lt;footer>
+            &lt;p>Copyright Zozor - Tous droits réservés&lt;br />
+            &lt;a href="#">Me contacter !&lt;/a>&lt;/p>
+        &lt;/footer>
+        
+    &lt;/body>
+&lt;/html>
+</pre>
+
+
+
+
+ <!-- <p>
+      la structure d'un projet  change au fil du temps. Les grands projets nécessitent souvent un degré plus élevé de soin et d'attention, afin que de nombreuses personnes puissent s'y retrouver.<br>
+       Aujourd'hui il est impossible d'exceller dans tant de domaines qui ne cessent de muter.
+      </p> -->
+  </div>
+      <footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+  <script>
+      $(function(){
+
+        $("#btnClose").click(function(){
+          $("#sc").slideUp(3000);
+          $('#btnClose').hide();
+          $('#btnMenu').show();
+        });
+
+        $("#btnMenu").click(function(){
+          $("#sc").slideDown(3000);
+          $('#btnMenu').hide();
+          $('#btnClose').show();
+        });
+        
+      });
+  </script> 
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Etudians</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+	<link rel="stylesheet"  href="../css/style.css">
+	<link rel="stylesheet" href="../css/menu.css">
+	<script src="../js/script.js"></script>
+  	<script src="../js/jquery-min.js"></script>
+	<style>
+
+	
+		table.etudians{
+			border-collapse: collapse;
+		}
+tr:hover {background-color:aqua;}
+th, .reinitiliser, tr ,td{
+  background-color: #4CAF50;
+  text-align: left;
+
+}
+caption {
+  caption-side: top;
+}
+label{
+			font-size: 17px;
+			text-align: right;			
+		}
+input{
+	height: 30px;
+	padding: 5px;
+
+}
+input.etud{
+	width: 100px;
+}
+a {
+	text-decoration: none;
+	font-weight: bold;
+	
+}
+a:hover{
+	background-color: #f00;
+	color: #fff;
+}
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+	 
+                @media (max-width: 600px) {
+
+  p {
+    flex-direction: column;
+  }
+
+}
+        </style>
+</head>
+<body>
+	<header class="hed" id="header"><script>inclureHeader(header);</script></header>    
+	<div id="conteneur">		
+		<div id="sc"><nav class="nav1" id="nav1"><script>inclureMenu(menu);</script></nav></div>
+		<div class="divMenu" id="divMenu">
+	   <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
+	   <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
+    </div>
+		<h1 class="titre">Les Etudians</h1>
+	  	<p style="width: 50%; margin: auto; display: flex;flex-direction: row;">
+			<input type="button" value="&#128190; Enregistrer" onclick="enregistrer();" class="etud">
+			<input type="button" value="&#128686; Supprimer" onclick="supprimer();" class="etud">
+			<input type="button" value="&#128194; Afficher" onclick="afficher();" class="etud">
+			<input type="button" value="Réinitiliser" onclick="reinitiliser();" class="etud">
+			<input type="button" value="&#9410; Modifier" onclick="modifier();" class="etud">
+			<input type="button" value="Sélectinner" onclick="selModifier();" class="etud">
+			<input type="button" value="Chercher" onclick="chercher();" class="etud">			
+	  	</p>
+	  	<form style="flex-grow: 8;height: 240px; padding-top: 15px;" autocomplete="on" id="myform" method="get">	  				
+	  		<label for="nom">&#9997; Nom</label>
+	  		<input type="text" id="nom" name="nom"size="20" maxlength="15" required autofocus autocomplete="on" placeholder="Nom"> <span id="nomManqn"></span><br>
+		  	<label for="prenom">&#9997; Prénom</label>
+		  	<input type="text" id="prenom" name="prenom"size="20"maxlength="15" required autocomplete="on"placeholder="Prénom"> <span id="nomManqp"></span><br>
+		  	<label for="age">&#9997; Age</label>
+		  	<input type="text" id="age" name="age"size="20"maxlength="15" required autocomplete="on" placeholder="Age"> <span id="nomManqa"></span><br>				  				
+		  	<label for="numero">&#8477; Zone de recherche </label>
+		  	<input type="text" id="numero" name="numero"size="20"maxlength="15" required autocomplete="on" placeholder="Rechercher"><br>
+		  	<label for="myfile">Sélectionner un fichier</label>
+		  	<input type="file" id="myfile" name="myfile" multiple value="">  					
+	  	</form>		
+		<article id="demo"></article>
+		<select id="liste" name="liste" size="3"></select>
+		<article id="myModal" class="modal">
+        <article class="modal-content">
+            <header class="modal-header">
+                &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
+                &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
+                <h1>أهلا وسهلا بك زائرنا الكريم  Bienvenue notre honorable visiteur </h1>
+                &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958;
+                &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#9958; 
+            </header>
+            <div class="modal-body" id="mybody"></div>
+            <footer class="modal-footer">
+              Copyright &copy; 2015 - 2021 Développé et Réalisé par Ragim - Mohamed<br><span class="close">&times;</span>
+            </footer>
+        </article>
+    </article>	
+	</div>
+	<footer class="pied" id="footer"><script>inclureFooter(footer);</script></footer>
+  <script>
+      $(function(){
+
+        $("#btnClose").click(function(){
+          $("#sc").slideUp(3000);
+          $('#btnClose').hide();
+          $('#btnMenu').show();
+        });
+
+        $("#btnMenu").click(function(){
+          $("#sc").slideDown(3000);
+          $('#btnMenu').hide();
+          $('#btnClose').show();
+        });
+        
+      });
+  </script>
+	<script src="scriptEtudiants.js"></script>
+
+</body>
+</html>
