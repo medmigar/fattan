@@ -36,6 +36,7 @@ input{
 }
 input.etud{
 	width: 100px;
+	cursor: pointer;
 }
 a {
 	text-decoration: none;
@@ -55,11 +56,7 @@ select {
 }
 
 	 
-                @media (max-width: 600px) {
-
-  p {
-    flex-direction: column;
-  }
+@media (max-width: 600px) {
 
 }
         </style>
@@ -72,17 +69,8 @@ select {
 	   <button class='btnMenu' id="btnMenu" style="display: none;"><i class='fa fa-bars'></i> Menu</button>
 	   <button class='btnClose' id="btnClose"><i class='fa fa-close'></i> Close</button>
     </div>
-		<h1 class="titre">Les Etudians</h1>
-	  	<p style="width: 50%; margin: auto; display: flex;flex-direction: row;">
-			<input type="button" value="&#128190; Enregistrer" onclick="enregistrer();" class="etud">
-			<input type="button" value="&#128686; Supprimer" onclick="supprimer();" class="etud">
-			<input type="button" value="&#128194; Afficher" onclick="afficher();" class="etud">
-			<input type="button" value="Réinitiliser" onclick="reinitiliser();" class="etud">
-			<input type="button" value="&#9410; Modifier" onclick="modifier();" class="etud">
-			<input type="button" value="Sélectinner" onclick="selModifier();" class="etud">
-			<input type="button" value="Chercher" onclick="chercher();" class="etud">			
-	  	</p>
-	  	<form style="flex-grow: 8;height: 240px; padding-top: 15px;" autocomplete="on" id="myform" method="get">	  				
+		<h1 class="titre">Les Etudians</h1>			  	
+	  	<form autocomplete="on" id="myform" method="get">	  				
 	  		<label for="nom">&#9997; Nom</label>
 	  		<input type="text" id="nom" name="nom"size="20" maxlength="15" required autofocus autocomplete="on" placeholder="Nom"> <span id="nomManqn"></span><br>
 		  	<label for="prenom">&#9997; Prénom</label>
@@ -93,7 +81,16 @@ select {
 		  	<input type="text" id="numero" name="numero"size="20"maxlength="15" required autocomplete="on" placeholder="Rechercher"><br>
 		  	<label for="myfile">Sélectionner un fichier</label>
 		  	<input type="file" id="myfile" name="myfile" multiple value="">  					
-	  	</form>		
+	  	</form>
+	  	<p style="text-align: center;">
+			<input type="button" value="&#128190; Enregistrer" onclick="enregistrer();" class="etud">
+			<input type="button" value="&#128194; Afficher" onclick="afficher();" class="etud">
+			<input type="button" value="&#128686; Supprimer" onclick="supprimer();" class="etud">			
+			<input type="button" value="Réinitiliser" onclick="reinitiliser();" class="etud">
+			<input type="button" value="&#9410; Modifier" onclick="modifier();" class="etud">
+			<input type="button" value="Sélectinner" onclick="selModifier();" class="etud">
+			<input type="button" value="Chercher" onclick="chercher();" class="etud">			
+	  	</p>		
 		<article id="demo"></article>
 		<select id="liste" name="liste" size="3"></select>
 		<article id="myModal" class="modal">
