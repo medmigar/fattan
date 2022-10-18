@@ -16,7 +16,7 @@ var menu='<div class="timeline__steps">              <!-- '+
           'Fin du premier icôme '+
           '*************                             -->'+
                 '<span class="bloc"></span>    '+
-                '<a href="/fattan/activites/activitesMaths.html" class="timeline__step"><span class="c1"><i class="fas fa-square-root-alt"></i> Maths</span></a>'+
+                '<a href="activites/activitesMaths.html" class="timeline__step"><span class="c1"><i class="fas fa-square-root-alt"></i> Maths</span></a>'+
                 '<span class="bloc"></span>'+
                 '<a href="/fattan/web/index.html" class="timeline__step"><span class="c1">&Wopf; Web</span></a>'+
                 '<span class="bloc"></span>'+
@@ -64,7 +64,7 @@ var header="&#9956; &#9957; &#9958; &#9956; &#9957; &#9958; &#9956; &#9957; &#99
 var footer="Copyright &copy; 2015 - 2021 Développé et Réalisé par Ragim - Mohamed<br>"+        
         "Tous droits réservés à RAGIM Mohamed. Il est strictement interdit de copier et de distribuer le contenu de ce site sans l'accord express de son propriétaire<br>"+
         '<span style="direction: rtl;">'+
-       'جميع الحقوق محفوظة ل : رجيم محمد ويمنع منعا باتا نسخ وتوزيع محتويات هذا الموقع دون موافقة صريحة من مالكه <br><a href="/fattan/"style="text-decoration: none;">الرئيسية</a></span>';
+       'جميع الحقوق محفوظة ل : رجيم محمد ويمنع منعا باتا نسخ وتوزيع محتويات هذا الموقع دون موافقة صريحة من مالكه <br><a href="../index.html"style="text-decoration: none;">الرئيسية</a></span>';
 
 /*== Début Cloc ==*/
 var mo="";
